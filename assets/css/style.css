@@ -36,7 +36,15 @@ h5,
 h6 {
   font-family: "Nunito", sans-serif;
 }
-
+header .container-fluid .logoDetalhes{
+  height: 10vh;
+  width: 10vw;
+  
+}
+header .container-fluid .logoDetalhes  img{
+  height: 100%;
+  width: 100%;
+}
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
