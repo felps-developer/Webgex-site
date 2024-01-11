@@ -9,12 +9,20 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0]j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2Q7PWNV');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <!-- Favicons -->
   <link href="assets/img/favicon-16x16.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -27,40 +35,51 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: FlexStart
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+<!-- Gestão de cokkeis -->
+<link rel="stylesheet" type="text/css"
+href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+
+<!-- Star chat TIFLUX VERIFICAR TOKEN -->
+<script>  var organization_token = '0d981fcf883001fc94c13816450f8c295ae5d600';   var icon_color = 'null';   var init_minimal = 'true';   var show_chat_icon = 'false';   var script = document.createElement('script');   script.type = 'text/javascript';  script.src = 'https://public-assets.tiflux.com/chat_widget.js?organization_token='+organization_token;   document.head.appendChild(script); </script> 
+<!-- End chat TIFLUX -->
+
 </head>
 
 <body>
-  
- <!-- Gestão de Cookies -->
- <!-- <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
- <script>
-   window.cookieconsent.initialise({
-     "palette": {
-       "popup": {
-         "background": "#237afc"
-       },
-       "button": {
-         "background": "#fff",
-         "text": "#237afc"
-       }
-     },
-     "theme": "classic",
-     "position": "bottom-left",
-     "content": {
-       "message": "Nosso site utiliza cookies para melhorar a experiência do usuário. Não coletamos e nem armazenamos informações pessoais dos visitantes.",
-       "dismiss": "Vamos lá",
-       "link": "Politica de privacidade",
-       "href": "policy.html"
-     }
-   });
- </script> -->
+
+  <!-- Gestão de Cookies  -->
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+  <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#237afc"
+        },
+        "button": {
+          "background": "#fff",
+          "text": "#237afc"
+        }
+      },
+      "theme": "classic",
+      "position": "bottom-left",
+      "content": {
+        "message": "Nosso site utiliza cookies para melhorar a experiência do usuário. Não coletamos e nem armazenamos informações pessoais dos visitantes.",
+        "dismiss": "Vamos lá",
+        "link": "Politica de privacidade",
+        "href": "policy.html"
+      }
+    });
+  </script>
+
+  <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
+    class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-left cc-color-override--1360619034 "
+    style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Nosso site utiliza cookies para
+      melhorar a experiência do usuário. Não coletamos e nem armazenamos informações pessoais dos visitantes. <a
+        aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="policy.html"
+        rel="noopener noreferrer nofollow" target="_blank">Politica de privacidade</a></span>
+    <div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0"
+        class="cc-btn cc-dismiss">Vamos lá</a></div><!--googleon: all-->
+  </div>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
@@ -77,10 +96,11 @@
           <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
           <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
           <li><a class="nav-link scrollto" href="#services">Serviços</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Preço</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portifólio</a></li>
           <li><a class="nav-link scrollto" href="#team">Time</a></li>
           <li><a href="blog.html">Blog</a></li>
-          
+
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -144,7 +164,8 @@
           <!-- <h2 data-aos="fade-up" data-aos-delay="400">We are team of talented designers making websites with Bootstrap</h2> -->
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="#services"
+                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Conheça</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -174,7 +195,8 @@
                 Implementamos sistemas de gestão que ajudam a sua empresa a alcançar o sucesso!.
               </p>
               <div class="text-center text-lg-start">
-                <a href="sobre.html" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                <a href="sobre.html"
+                  class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
                   <span>Leia Mais</span>
                   <i class="bi bi-arrow-right"></i>
                 </a>
@@ -243,7 +265,8 @@
             <div class="count-box">
               <i class="bi bi-emoji-smile"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Happy Clients</p>
               </div>
             </div>
@@ -253,7 +276,8 @@
             <div class="count-box">
               <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Projects</p>
               </div>
             </div>
@@ -263,7 +287,8 @@
             <div class="count-box">
               <i class="bi bi-headset" style="color: #15be56;"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Hours Of Support</p>
               </div>
             </div>
@@ -273,7 +298,8 @@
             <div class="count-box">
               <i class="bi bi-people" style="color: #bb0852;"></i>
               <div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                  class="purecounter"></span>
                 <p>Hard Workers</p>
               </div>
             </div>
@@ -372,45 +398,57 @@
             <div class="tab-content">
 
               <div class="tab-pane fade show active" id="tab1">
-                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque
+                  consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
                 </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non
+                  eveniet magni quaerat nemo et.</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Incidunt non veritatis illum ea ut nisi</h4>
                 </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure
+                  molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et
+                  perferendis.</p>
               </div><!-- End Tab 1 Content -->
 
               <div class="tab-pane fade show" id="tab2">
-                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque
+                  consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
                 </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non
+                  eveniet magni quaerat nemo et.</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Incidunt non veritatis illum ea ut nisi</h4>
                 </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure
+                  molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et
+                  perferendis.</p>
               </div><!-- End Tab 2 Content -->
 
               <div class="tab-pane fade show" id="tab3">
-                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
+                <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque
+                  consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Repudiandae rerum velit modi et officia quasi facilis</h4>
                 </div>
-                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non eveniet magni quaerat nemo et.</p>
+                <p>Laborum omnis voluptates voluptas qui sit aliquam blanditiis. Sapiente minima commodi dolorum non
+                  eveniet magni quaerat nemo et.</p>
                 <div class="d-flex align-items-center mb-2">
                   <i class="bi bi-check2"></i>
                   <h4>Incidunt non veritatis illum ea ut nisi</h4>
                 </div>
-                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
+                <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure
+                  molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et
+                  perferendis.</p>
               </div><!-- End Tab 3 Content -->
 
             </div>
@@ -501,8 +539,8 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Services</h2>
-          <p>Veritatis et dolores facere numquam et praesentium</p>
+          <h2>Serviços</h2>
+          <p>Solução completa para sua empresa</p>
         </header>
 
         <div class="row gy-4">
@@ -510,54 +548,78 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-box blue">
               <i class="ri-discuss-line icon"></i>
-              <h3>Nesciunt Mete</h3>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+              <h3>CADASTROS</h3>
+              <p>Ao longo de 20 anos nossa solução foi sendo enriquecida com uma
+                sólida estrutura de dados cadastrais que constituem os alicerces do nosso ERP. Todos
+                os nossos cadastros são pensados para prover os dados necessários aos mais variados
+                segmentos de negócios.</p>
+              <a href="cadastros.html" class="read-more"><span>Leia mais</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-box orange">
+            <div class="service-box green">
               <i class="ri-discuss-line icon"></i>
-              <h3>Eosle Commodi</h3>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+              <h3>FINANCEIRO</h3>
+              <p>O módulo de finanças é responsável por registrar,
+                controlar e rastrear todo o fluxo Financeiro da empresa. O nosso
+                módulo financeiro, com tesouraria, caixa e bancos, tem todas as
+                ferramentas necessárias à uma gestão ágil e segura do fluxo de
+                caixa das organizações.</p>
+              <a href="financeiro.html" class="read-more"><span>Leia mais</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-box green">
+            <div class="service-box orange">
               <i class="ri-discuss-line icon"></i>
-              <h3>Ledo Markt</h3>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+              <h3>CONTROLADORIA</h3>
+              <p>Concentramos na área de controladoria da nossa
+                solução, toda a coordenação, o monitoramento e a otimização de
+                processos de uma organização. Além disso, nossa visão de
+                controladoria ajuda na análise dos números reais comparando-os
+                com os objetivos de negócios planejados.</p>
+              <a href="control.html" class="read-more"><span>Leia mais</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-box red">
               <i class="ri-discuss-line icon"></i>
-              <h3>Asperiores Commodi</h3>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+              <h3>OPERAÇÕES</h3>
+              <p>Disponilizamos para nossos clientes um conjunto de
+                módulos operacionais cuidadosamente especificados para controlar
+                com flexibilidade e segurança todas as suas atividades
+                fundamentais. O principal processo abordado nesta área é a
+                gestão de suprimentos e a gestão do relacionamento com
+                fornecedores.</p>
+              <a href="operacoes.html" class="read-more"><span>Leia mais</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-box purple">
               <i class="ri-discuss-line icon"></i>
-              <h3>Velit Doloremque.</h3>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+              <h3>VENDAS COM CRM INTEGRADO</h3>
+              <p>Nosso módulo de gestão de vendas com CRM (Gestão
+                do Relacionamento com o Cliente) fornece ferramentas para
+                ajudá-lo a gerir de forma eficiente todo o processo de venda e o
+                ciclo de vida do cliente, desde o contato inicial até o
+                fechamento da venda, o atendimento pós-venda e suporte.</p>
+              <a href="crm.html" class="read-more"><span>Leia mais</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
             <div class="service-box pink">
               <i class="ri-discuss-line icon"></i>
-              <h3>Dolori Architecto</h3>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+              <h3>INTEGRAÇÃO COM PARCEIROS</h3>
+              <p>Nosso ERP está pronto para "conversar" com outros
+                sistemas, foi concebido desde o início para consumir e prover
+                dados, "de" e "para" outras soluções. Podemos trocar informações
+                com bancos, empresas de cartões de créditos, portais de
+                pagamentos, centrais de compras e muitas outras soluções. </p>
+              <a href="intreg.html" class="read-more"><span>Leia mais</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -573,74 +635,51 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Pricing</h2>
-          <p>Check our Pricing</p>
+          <h2>Preços</h2>
+          <p>Competitividade e escalabilidade</p>
         </header>
 
-        <div class="row gy-4" data-aos="fade-left">
+        <div class="row gy-3" data-aos="fade-left">
 
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-8" data-aos="zoom-in" data-aos-delay="100">
             <div class="box">
-              <h3 style="color: #07d5c0;">Free Plan</h3>
-              <div class="price"><sup>$</sup>0<span> / mo</span></div>
+              <h3 style="color: #07d5c0;">ERP Webgex</h3>
+              <div class="price"><sup>R$</sup>175<span> / mo</span></div>
               <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <p>Utilizador da solução completa do ERP.
+                  Para quantidades superiores a 10 acessos, fale conosco.</p>
+
               </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
+              <a href="#contact" class="btn-buy">Compre já</a>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-lg-4 col-md-8" data-aos="zoom-in" data-aos-delay="200">
             <div class="box">
               <span class="featured">Featured</span>
-              <h3 style="color: #65c600;">Starter Plan</h3>
-              <div class="price"><sup>$</sup>19<span> / mo</span></div>
+              <h3 style="color: #65c600;">PDV Integrado com o ERP</h3>
+              <div class="price"><sup>R$</sup>175<span> / mo</span></div>
               <img src="assets/img/pricing-starter.png" class="img-fluid" alt="">
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <p>Valor mensal por cada caixa que utilizar nossa aplicação de
+                  PDV no frente de loja. Se utilizar TEF o valor passa para R$
+                  275 por caixa.</p>
               </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
+              <a href="#contact" class="btn-buy">Compre já</a>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="col-lg-4 col-md-8" data-aos="zoom-in" data-aos-delay="300">
             <div class="box">
-              <h3 style="color: #ff901c;">Business Plan</h3>
-              <div class="price"><sup>$</sup>29<span> / mo</span></div>
+              <h3 style="color: #ff901c;">Armazenamento</h3>
+              <div class="price"><sup>R$</sup>150<span> / 1 GB</span></div>
               <img src="assets/img/pricing-business.png" class="img-fluid" alt="">
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <p>Para empresas que utilizarem armazenamento extra de imagens e
+                  documentos digitalizados integrados ao ERP.</p>
               </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="box">
-              <h3 style="color: #ff0071;">Ultimate Plan</h3>
-              <div class="price"><sup>$</sup>49<span> / mo</span></div>
-              <img src="assets/img/pricing-ultimate.png" class="img-fluid" alt="">
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
+              <a href="#contact" class="btn-buy">Compre já</a>
             </div>
           </div>
 
@@ -666,39 +705,48 @@
             <div class="accordion accordion-flush" id="faqlist1">
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-1">
                     Non consectetur a erat nam at lectus urna duis?
                   </button>
                 </h2>
                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                   <div class="accordion-body">
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
+                    gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-2">
                     Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
                   </button>
                 </h2>
                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                   <div class="accordion-body">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
+                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
+                    elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-3">
                     Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
                   </button>
                 </h2>
                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                   <div class="accordion-body">
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
+                    elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
+                    eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
+                    sed odio morbi quis
                   </div>
                 </div>
               </div>
@@ -713,39 +761,49 @@
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-1">
                     Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
                   </button>
                 </h2>
                 <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                   <div class="accordion-body">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
+                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
+                    elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-2">
                     Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
                   </button>
                 </h2>
                 <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                   <div class="accordion-body">
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in.
+                    Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est.
+                    Purus gravida quis blandit turpis cursus in
                   </div>
                 </div>
               </div>
 
               <div class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-3">
                     Varius vel pharetra vel turpis nunc eget lorem dolor?
                   </button>
                 </h2>
                 <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                   <div class="accordion-body">
-                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
+                    nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut
+                    venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas
+                    egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
                   </div>
                 </div>
               </div>
@@ -789,7 +847,8 @@
                 <h4>App 1</h4>
                 <p>App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -803,7 +862,8 @@
                 <h4>Web 3</h4>
                 <p>Web</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -817,7 +877,8 @@
                 <h4>App 2</h4>
                 <p>App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -831,7 +892,8 @@
                 <h4>Card 2</h4>
                 <p>Card</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -845,7 +907,8 @@
                 <h4>Web 2</h4>
                 <p>Web</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -859,7 +922,8 @@
                 <h4>App 3</h4>
                 <p>App</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -873,7 +937,8 @@
                 <h4>Card 1</h4>
                 <p>Card</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -887,7 +952,8 @@
                 <h4>Card 3</h4>
                 <p>Card</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -901,7 +967,8 @@
                 <h4>Web 3</h4>
                 <p>Web</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
+                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
+                    class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
                   <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
                 </div>
               </div>
@@ -930,10 +997,12 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium
+                  quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -946,10 +1015,12 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                  quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -962,10 +1033,12 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
+                  tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -978,10 +1051,12 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
+                  minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
@@ -994,10 +1069,12 @@
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
+                  labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
                 </p>
                 <div class="profile mt-auto">
                   <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
@@ -1041,7 +1118,8 @@
               <div class="member-info">
                 <h4>Walter White</h4>
                 <span>Chief Executive Officer</span>
-                <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
+                <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum
+                  exercitationem iure minima enim corporis et voluptate.</p>
               </div>
             </div>
           </div>
@@ -1060,7 +1138,8 @@
               <div class="member-info">
                 <h4>Sarah Jhonson</h4>
                 <span>Product Manager</span>
-                <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
+                <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis.
+                  Voluptate sed quas reiciendis animi neque sapiente.</p>
               </div>
             </div>
           </div>
@@ -1079,7 +1158,8 @@
               <div class="member-info">
                 <h4>William Anderson</h4>
                 <span>CTO</span>
-                <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
+                <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut
+                  architecto porro aspernatur molestiae modi.</p>
               </div>
             </div>
           </div>
@@ -1098,7 +1178,8 @@
               <div class="member-info">
                 <h4>Amanda Jepson</h4>
                 <span>Accountant</span>
-                <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque ut possimus ipsum officia.</p>
+                <p>Rerum voluptate non adipisci animi distinctio et deserunt amet voluptas. Quia aut aliquid doloremque
+                  ut possimus ipsum officia.</p>
               </div>
             </div>
           </div>
@@ -1153,7 +1234,8 @@
               <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
               <span class="post-date">Tue, September 15</span>
               <h3 class="post-title">Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit</h3>
-              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
+                  class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -1162,7 +1244,8 @@
               <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
               <span class="post-date">Fri, August 28</span>
               <h3 class="post-title">Et repellendus molestiae qui est sed omnis voluptates magnam</h3>
-              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
+                  class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -1171,7 +1254,8 @@
               <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
               <span class="post-date">Mon, July 11</span>
               <h3 class="post-title">Quia assumenda est et veritatis aut quae</h3>
-              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span>Read More</span><i
+                  class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -1187,8 +1271,8 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
+          <h2>Contato</h2>
+          <p>FALE CONOSCO</p>
         </header>
 
         <div class="row gy-4">
@@ -1199,36 +1283,53 @@
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street,<br>New York, NY 535022</p>
+                  <h3>Endereço</h3>
+                  <p>Rua Cel. Antônio Botelho de Souza, 27 - Sala 9 - Centro, <br>Maranguape - CE, 61940-005</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                  <h3>Telefone</h3>
+                  <p>+55 85 9863-0052</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@example.com<br>contact@example.com</p>
+                  <h3>Email </h3>
+                  <p>helpdesk@unigex.com.br</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
-                  <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                  <h3>Horário de Funcionamento</h3>
+                  <p>Segunda - Sexta<br>8:00 - 18:00</p>
                 </div>
               </div>
             </div>
 
           </div>
-
           <div class="col-lg-6">
+            <div class="price-button mt-md-3" align="center"> <a class="btn text-uppercase"
+                href="https://central.tiflux.com.br/externals/tickets/#/new/a69a5f82e87075e3bb6eb039c84a312b73afdbe2">Abrir
+                um ticket</a> </div>
+            <div class="row contact_information">
+              <p id="explica"> Certifique-se que apenas fornece as informações necessárias ao
+                tratamento da sua solicitação. Não envie dados que possam ser
+                considerados sensíveis pela legislação de proteção de dados, tais
+                como dados que revelem sua origem racial ou étnica, suas opiniões
+                políticas, suas convicções religiosas ou filosóficas, ou sua
+                filiação sindical, bem como dados genéticos, dados biométricos que o
+                identifiquem de forma inequívoca, dados relativos à sua saúde ou
+                dados relativos à sua vida sexual ou sua orientação sexual. Caso sua
+                mensagem contenha algum destes dados, a mesma será apagada e não
+                será respondida.</p>
+            </div>
+          </div>
+
+          <!-- <div class="col-lg-6">
             <form action="forms/contact.php" method="post" class="php-email-form">
               <div class="row gy-4">
 
@@ -1257,9 +1358,9 @@
                 </div>
 
               </div>
-            </form>
+            </form> -->
 
-          </div>
+          <!-- </div> -->
 
         </div>
 
@@ -1294,9 +1395,10 @@
           <div class="col-lg-5 col-md-12 footer-info">
             <a href="index.html" class="logo d-flex align-items-center">
               <img src="assets/img/logo.png" alt="">
-              <span>FlexStart</span>
+
             </a>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
+              darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -1345,19 +1447,17 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>FlexStart</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Unigex</span></strong>.
+        Todos os direitos reservados
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="http://unigex.com.br/">Unigex</a>
       </div>
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>

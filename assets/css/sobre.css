@@ -156,8 +156,16 @@ a.navbar-brand i {
 }
 
 .py-md-5 {
-    padding-top: 10rem !important;
+    padding-top: 5rem !important;
 }
+ #webgex{
+   position: relative;
+    top: 2rem;
+}
+#bussiness{
+    position: relative;
+    top: 4rem;
+ }
 /*-- //header --*/
 
 /* banner */

@@ -37,8 +37,9 @@ h6 {
   font-family: "Nunito", sans-serif;
 }
 header .container-fluid .logoDetalhes{
-  height: 10vh;
-  width: 10vw;
+  height: 15vh;
+  width: 22vw;
+ 
   
 }
 header .container-fluid .logoDetalhes  img{
@@ -2250,6 +2251,26 @@ section {
   color: #a5c5fe;
   font-size: 14px;
 }
+
+/* contatos */
+.col-lg-6 .mt-md-3 .btn{
+  background-color: #4154f1;
+  color: white;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  margin-top: 90px;
+  border-radius: 4px;
+  width: 80wh;
+  height: 4vh;
+}
+ #explica{
+  margin-top: 40px;
+  font-size: 16px;
+  font-family: "Nunito", sans-serif;
+  color: #444444;
+}
+/* fim contatos */
 
 /*--------------------------------------------------------------
 # Footer
