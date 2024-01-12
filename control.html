@@ -19,14 +19,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- //Meta tag Keywords -->
 
     <!-- Custom-Files -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
     <!-- Bootstrap-Core-CSS -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="css/slider.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="assets/css/sobre.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="assets/css/slider.css" type="text/css" media="all" />
 	
 	<!-- Style-CSS -->
     <!-- font-awesome-icons -->
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
 	
 	<!-- //font-awesome-icons -->
     <!-- /Fonts -->
@@ -38,38 +39,83 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
 	<!-- header -->
-    <header>
-		<div class="container">
-		  <div id="logo"> </div>
-		  <!-- nav -->
-		  <div>
-			<nav class="py-3 d-lg-flex"> <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
-			  <input id="drop" type="checkbox"> <img src="images/Logo.png" auto=""
-				alt="Webgex" style="top: 55px; left: 192px; width: 238px; height: 76px;">
-			  <ul class="menu ml-auto mt-1">
-				<li class="details"><a href="index.html">InIcio</a></li>
-				<li class="details"><a href="http://www.unigex.com.br/" target="_blank">Sobre
-					nós</a></li>
-				<li class=""><a href="blog.html">Blog</a></li>
-				<li class="last-grid"><a href="http://erp.webgex.com.br/" target="_blank">Acesse
-					agora</a></li>
-			  </ul>
-			</nav>
-			<!-- //nav --> </div>
+    <header id="header" class="header fixed-top">
+		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+		  <div class="logoDetalhes">
+			<a href="index.html" class="">
+			  <img src="assets/img/Logo.png" alt="">
+			  <!-- <span>FlexStart</span> -->
+			</a>
+		  </div>
+	
+		  <nav id="navbar" class="navbar">
+			<ul>
+			  <li><a class="nav-link scrollto active" href="index.html">Início</a></li>
+			  <li><a href="blog.html">Blog</a></li>
+			  
+			  <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+				<ul>
+				  <li><a href="#">Drop Down 1</a></li>
+				  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+					<ul>
+					  <li><a href="#">Deep Drop Down 1</a></li>
+					  <li><a href="#">Deep Drop Down 2</a></li>
+					  <li><a href="#">Deep Drop Down 3</a></li>
+					  <li><a href="#">Deep Drop Down 4</a></li>
+					  <li><a href="#">Deep Drop Down 5</a></li>
+					</ul>
+				  </li>
+				  <li><a href="#">Drop Down 2</a></li>
+				  <li><a href="#">Drop Down 3</a></li>
+				  <li><a href="#">Drop Down 4</a></li>
+				</ul>
+			  </li> -->
+	
+			  <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
+				<ul>
+				  <li>
+					<a href="#">Column 1 link 1</a>
+					<a href="#">Column 1 link 2</a>
+					<a href="#">Column 1 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 2 link 1</a>
+					<a href="#">Column 2 link 2</a>
+					<a href="#">Column 3 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 3 link 1</a>
+					<a href="#">Column 3 link 2</a>
+					<a href="#">Column 3 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 4 link 1</a>
+					<a href="#">Column 4 link 2</a>
+					<a href="#">Column 4 link 3</a>
+				  </li>
+				</ul>
+			  </li> -->
+	
+			  <li><a class="nav-link scrollto" href="#contact">Contatos</a></li>
+			  <li><a class="getstarted scrollto" href="https://app.webgex.com.br/">Acesse</a></li>
+			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		  </nav><!-- .navbar -->
+	
 		</div>
-	  </header>
+	  </header><!-- End Header -->
 	<!-- //header -->
 
 	<!-- about -->
 	<section class="services py-5" id="services">
 	<div class="container py-md-5 py-3">
-		<h5 class="heading mb-2"><br>
+		<h5 class="heading mb-2 text-center"><br>
 		<br>
 		<br>
 		<br>
 		<br>
 		Diferenciais</h5>
-		<h3 class="heading  mb-5">CONTROLADORIA</h3>
+		<h3 class="heading  mb-5 text-center">CONTROLADORIA</h3>
 		<div class="feature-grids row">
 		<div class="col-lg-4 col-md-6 col-sm-6 mb-5">
 			<div class="bottom-gd"> <span class="fa fa-check-circle"></span>
@@ -117,24 +163,88 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</section>
 	<!-- about bottom -->
 
-	<!-- copyright -->
-	<div class="copyright">
-		<div class="container py-4">
-			<div class=" text-center">
-				<p>© 2020 UNIGEX | Design by <a href="http://unigex.com.br/"> UNIGEX</a>
-					| <a href="policy.html"> Política de privacidade</a>  </p>
-			</div>
-		</div>
-	</div>
-	<!-- //copyright -->
-		
-	<!-- move top -->
-	<div class="move-top text-right">
-		<a href="index.html" class="move-top"> 
-			<span class="fa fa-angle-up  mb-3" aria-hidden="true"></span>
-		</a>
-	</div>
-	<!-- move top -->
+	<!-- ======= Footer ======= -->
+	<footer id="footer" class="footer">
 
+		<!-- <div class="footer-newsletter"> -->
+		  <!-- <div class="container"> -->
+			<!-- <div class="row justify-content-center"> -->
+			  <!-- <div class="col-lg-12 text-center">
+				<h4>Our Newsletter</h4>
+				<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+			  </div> -->
+			  <!-- <div class="col-lg-6">
+				<form action="" method="post">
+				  <input type="email" name="email"><input type="submit" value="Subscribe">
+				</form>
+			  </div> -->
+			<!-- </div> -->
+		  <!-- </div> -->
+		<!-- </div> -->
+	
+		<div class="footer-top">
+		  <div class="container">
+			<div class="row gy-4">
+			  <div class="col-lg-6 col-md-12 footer-info">
+				<a href="index.html" class="logo d-flex align-items-center">
+				  <img src="assets/img/logo.png" alt="">
+	
+				</a>
+				<p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
+				  darta donna mare fermentum iaculis eu non diam phasellus.</p>
+				<div class="social-links mt-3">
+				  <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
+				  <a href="https://www.facebook.com/unigexsolucoes/" class="facebook"><i class="bi bi-facebook"></i></a>
+				  <a href="https://www.instagram.com/unigexsolucoes/" class="instagram"><i class="bi bi-instagram"></i></a>
+				  <a href="https://www.linkedin.com/company/unigex-solucoes-integradas-de-gestao/about/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+				</div>
+			  </div>
+	
+			  <div class="col-lg-3 col-6 footer-links">
+				<h4>Links</h4>
+				<ul>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#hero">Início</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#about">Sobre</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#services">Serviços</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#">Termos e serviços</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="policy.html">Política de privacidade</a></li>
+				</ul>
+			  </div>
+	
+			  <!-- <div class="col-lg-2 col-6 footer-links">
+				<h4>Our Services</h4>
+				<ul>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+				  <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+				</ul>
+			  </div> -->
+	
+			  <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+				<h4>Contatos </h4>
+				<p>
+				  <p>Rua Cel. Antônio Botelho de Souza, 27 - Sala 9 - Centro, <br>Maranguape - CE, 61940-005 <br><br>
+				  <strong>Fone:</strong> +55 85 9863-0052<br>
+				  <strong>Email:</strong> helpdesk@unigex.com.br<br>
+				</p>
+	
+			  </div>
+	
+			</div>
+		  </div>
+		</div>
+	
+		<div class="container">
+		  <div class="copyright">
+			&copy; Copyright <strong><span>Unigex</span></strong>.
+			Todos os direitos reservados
+		  </div>
+		  <div class="credits">
+			Designed by <a href="http://unigex.com.br/">Unigex</a>
+		  </div>
+		</div>
+	  </footer><!-- End Footer -->
 </body>
 </html>
