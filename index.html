@@ -11,7 +11,7 @@
 
   <!-- Google Tag Manager -->
   <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0]j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2Q7PWNV');
+    (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0]j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-T2Q7PWNV');
   </script>
   <!-- End Google Tag Manager -->
 
@@ -34,20 +34,34 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="outros" href="assets/css/sobre.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/slider.css" type="text/css" media="all" />
+  <link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
 
-<!-- Gestão de cokkeis -->
-<link rel="stylesheet" type="text/css"
-href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+  <!-- Gestão de cokkeis -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 
-<!-- Star chat TIFLUX VERIFICAR TOKEN -->
-<script>  var organization_token = '0d981fcf883001fc94c13816450f8c295ae5d600';   var icon_color = 'null';   var init_minimal = 'true';   var show_chat_icon = 'false';   var script = document.createElement('script');   script.type = 'text/javascript';  script.src = 'https://public-assets.tiflux.com/chat_widget.js?organization_token='+organization_token;   document.head.appendChild(script); </script> 
-<!-- End chat TIFLUX -->
+  <!-- Star chat TIFLUX VERIFICAR TOKEN -->
+  <script>  var organization_token = '0d981fcf883001fc94c13816450f8c295ae5d600'; var icon_color = 'null'; var init_minimal = 'true'; var show_chat_icon = 'false'; var script = document.createElement('script'); script.type = 'text/javascript'; script.src = 'https://public-assets.tiflux.com/chat_widget.js?organization_token=' + organization_token; document.head.appendChild(script); </script>
+  <!-- End chat TIFLUX -->
 
 </head>
 
 <body>
 
-  <!-- Gestão de Cookies  -->
+  <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-left cc-color-override--1360619034 " style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Nosso site utiliza cookies para melhorar a experiência do usuário. Não coletamos e nem armazenamos informações pessoais dos visitantes. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="policy.html" rel="noopener noreferrer nofollow" target="_blank">Politica de privacidade</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">Vamos lá</a></div><!--googleon: all--></div>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q7PWNV" height="0" width="0"
+      style="display:none;visibility:hidden">
+    </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Gestão de Cookies -->
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
   <script>
     window.cookieconsent.initialise({
@@ -71,15 +85,15 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
     });
   </script>
 
-  <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
+  <!-- <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
     class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-left cc-color-override--1360619034 "
-    style=""><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">Nosso site utiliza cookies para
+    style="">googleoff: all<span id="cookieconsent:desc" class="cc-message">Nosso site utiliza cookies para
       melhorar a experiência do usuário. Não coletamos e nem armazenamos informações pessoais dos visitantes. <a
         aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="policy.html"
         rel="noopener noreferrer nofollow" target="_blank">Politica de privacidade</a></span>
     <div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0"
-        class="cc-btn cc-dismiss">Vamos lá</a></div><!--googleon: all-->
-  </div>
+        class="cc-btn cc-dismiss">Vamos lá</a></div>googleon: all
+  </div> -->
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
@@ -376,13 +390,13 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 
         </div>  / row -->
 
-        <!-- Feature Tabs -->
-        <!-- <div class="row feture-tabs" data-aos="fade-up">
+    <!-- Feature Tabs -->
+    <!-- <div class="row feture-tabs" data-aos="fade-up">
           <div class="col-lg-6">
             <h3>Neque officiis dolore maiores et exercitationem quae est seda lidera pat claero</h3>
 
              Tabs -->
-            <!-- <ul class="nav nav-pills mb-3">
+    <!-- <ul class="nav nav-pills mb-3">
               <li>
                 <a class="nav-link active" data-bs-toggle="pill" href="#tab1">Saepe fuga</a>
               </li>
@@ -394,8 +408,8 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
               </li>
             </ul>End Tabs -->
 
-            <!-- Tab Content -->
-            <!-- <div class="tab-content">
+    <!-- Tab Content -->
+    <!-- <div class="tab-content">
 
               <div class="tab-pane fade show active" id="tab1">
                 <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque
@@ -415,7 +429,7 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                   perferendis.</p>
               </div>End Tab 1 Content -->
 
-              <!-- <div class="tab-pane fade show" id="tab2">
+    <!-- <div class="tab-pane fade show" id="tab2">
                 <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque
                   consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
@@ -433,7 +447,7 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                   perferendis.</p>
               </div>End Tab 2 Content -->
 
-              <!-- <div class="tab-pane fade show" id="tab3">
+    <!-- <div class="tab-pane fade show" id="tab3">
                 <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque
                   consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
@@ -451,7 +465,7 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                   perferendis.</p>
               </div>End Tab 3 Content -->
 
-            <!-- </div>
+    <!-- </div>
 
           </div>
 
@@ -459,10 +473,10 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
             <img src="assets/img/features-2.png" class="img-fluid" alt="">
           </div> -->
 
-        <!-- </div>End Feature Tabs -->
+    <!-- </div>End Feature Tabs -->
 
-        <!-- Feature Icons -->
-        <!-- <div class="row feature-icons" data-aos="fade-up">
+    <!-- Feature Icons -->
+    <!-- <div class="row feature-icons" data-aos="fade-up">
           <h3>Ratione mollitia eos ab laudantium rerum beatae quo</h3>
 
           <div class="row">
@@ -529,9 +543,9 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 
         </div>End Feature Icons -->
 
-      <!-- </div>
+    <!-- </div>
 
-    </section>End Features Section --> 
+    </section>End Features Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -696,7 +710,7 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 
         <header class="section-header">
           <h2>F.A.Q</h2>
-          <p>Frequently Asked Questions</p>
+          <p>Perguntas Frequentes</p>
         </header>
 
         <div class="row">
@@ -707,13 +721,12 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faq-content-1">
-                    Non consectetur a erat nam at lectus urna duis?
+                    O que diferencia o seu ERP de outros sistemas de gestão empresarial?
                   </button>
                 </h2>
                 <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                   <div class="accordion-body">
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                    gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    Nosso ERP se destaca pela integração abrangente, incluindo CRM, contabilidade, gestão fiscal, financeiro, estoques, gestão de preços, regras comerciais e auditoria, tudo na nuvem para uma experiência eficiente e colaborativa.
                   </div>
                 </div>
               </div>
@@ -722,14 +735,12 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faq-content-2">
-                    Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
+                    Como funciona a integração do CRM com outros módulos do sistema?
                   </button>
                 </h2>
                 <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                   <div class="accordion-body">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
-                    elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    O CRM é totalmente integrado, permitindo uma visão holística do cliente. As informações são compartilhadas entre todos os módulos, proporcionando uma gestão unificada e eficaz.
                   </div>
                 </div>
               </div>
@@ -738,15 +749,38 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faq-content-3">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
+                    Quais medidas de segurança estão implementadas para proteger os dados empresariais?
                   </button>
                 </h2>
                 <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                   <div class="accordion-body">
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                    elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
-                    eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
-                    sed odio morbi quis
+                    Utilizamos protocolos de segurança avançados para proteger dados sensíveis. Nossa infraestrutura na nuvem é projetada com as melhores práticas de segurança para garantir a confidencialidade e integridade dos dados.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-3">
+                    O ERP é acessível a partir de dispositivos móveis?
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    Sim, nosso sistema é completamente responsivo, proporcionando acesso fácil e seguro a partir de dispositivos móveis para que você possa gerenciar sua empresa em qualquer lugar.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq-content-3">
+                    Quais funcionalidades são cobertas pela gestão fiscal e contábil do ERP?
+                  </button>
+                </h2>
+                <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
+                  <div class="accordion-body">
+                    A gestão fiscal abrange desde emissão de notas fiscais até apuração de impostos. A contabilidade é completa, incluindo balanço patrimonial, demonstrativo de resultados e relatórios fiscais.
                   </div>
                 </div>
               </div>
@@ -763,14 +797,12 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faq2-content-1">
-                    Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+                    Como o sistema auxilia na gestão de preços e aplicação de regras comerciais?
                   </button>
                 </h2>
                 <div id="faq2-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                   <div class="accordion-body">
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
-                    elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                    Nosso ERP oferece ferramentas robustas para a definição e aplicação de políticas de preços e regras comerciais. Isso proporciona flexibilidade e precisão na estratégia de precificação e na condução de negociações.
                   </div>
                 </div>
               </div>
@@ -779,14 +811,12 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faq2-content-2">
-                    Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+                    É possível personalizar o sistema de acordo com as necessidades específicas da minha empresa?
                   </button>
                 </h2>
                 <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                   <div class="accordion-body">
-                    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in.
-                    Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est.
-                    Purus gravida quis blandit turpis cursus in
+                    Sim, nosso ERP é altamente personalizável. Adaptamos o sistema para atender às necessidades específicas de cada cliente, garantindo uma solução sob medida.
                   </div>
                 </div>
               </div>
@@ -795,15 +825,38 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#faq2-content-3">
-                    Varius vel pharetra vel turpis nunc eget lorem dolor?
+                    Como funciona o suporte técnico e a assistência ao cliente?
                   </button>
                 </h2>
                 <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                   <div class="accordion-body">
-                    Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
-                    nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut
-                    venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas
-                    egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                    Oferecemos suporte técnico dedicado e uma equipe de atendimento ao cliente pronta para auxiliá-lo. Além disso, disponibilizamos recursos online, tutoriais e documentação para facilitar o uso do sistema.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-3">
+                    Qual é a abordagem para migração de dados ao adotar o sistema?
+                  </button>
+                </h2>
+                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Oferecemos um processo de migração de dados eficiente, com suporte técnico para garantir uma transição suave. Os dados são migrados de forma segura e precisa para preservar a integridade das informações.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#faq2-content-3">
+                    O ERP suporta auditorias internas e externas?
+                  </button>
+                </h2>
+                <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
+                  <div class="accordion-body">
+                    Sim, nosso sistema inclui ferramentas específicas para auditorias internas e externas, proporcionando transparência e conformidade com as normas contábeis e regulamentações fiscais.
                   </div>
                 </div>
               </div>
@@ -817,170 +870,47 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 
     </section><!-- End F.A.Q Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+  
+   
 
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>Portfolio</h2>
-          <p>Check our latest work</p>
-        </header>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
+       <!-- /Segmentos -->
+       <section class="plans-sec py-5" id="segment">
+        <div class="container py-md-5 py-3">
+          <h5 class="heading mb-2 text-center"> Verticais</h5>
+          <h3 class="heading mb-sm-5 mb-3 text-center">SEGMENTOS DE NEGÓCIOS</h3>
+          <div class="row pricing-plans">
+            <div class="col-md-4 price-main text-center mb-4">
+              <div class="pricing-grid card"> <img src="assets/img/varejo.jpeg" class="img-fluid" alt="">
+                <div>
+                  <h4 class="text-uppercase">VAREJO</h4>
+                  <div class="price-button mt-md-3" align="center" > <a class="btn text-uppercase" href="varejo.html">Conheça</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 price-main text-center mb-4">
+              <div class="pricing-grid card"> <img src="assets/img/atacado.jpg" class="img-fluid" alt="">
+                <div>
+                  <h4 class="text-uppercase">ATACADO</h4>
+                  <div class="price-button mt-md-3" align="center"> <a class="btn text-uppercase" href="atacado.html">Conheça</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 price-main price-main1  text-center mb-4">
+              <div class="pricing-grid card"> <img src="assets/img/oficina.jpeg" class="img-fluid" alt="">
+                <div>
+                  <h4 class="text-uppercase">CENTROS AUTOMOTIVOS</h4>
+                  <div class="price-button mt-md-3" align="center"> <a class="btn text-uppercase" href="autom.html">Conheça</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="App 1"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="App 2"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="Card 2"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="Web 2"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="App 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="Card 1"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="Card 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                    class="portfokio-lightbox" title="Web 3"><i class="bi bi-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- End Portfolio Section -->
-
+      </section>
+  <!-- //Segmentos -->
+         
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
 
@@ -1088,7 +1018,7 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
           <div class="swiper-pagination"></div>
         </div>
 
-      </div>
+      
 
     </section><!-- End Testimonials Section -->
 
@@ -1196,20 +1126,20 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Our Clients</h2>
-          <p>Temporibus omnis officia</p>
+          <h2>Nossos Parceiros</h2>
+          <!-- <p>Alguns de nossos parceiros de negócios.</p> -->
         </header>
 
         <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+          <div class=" swiper-wrapper align-items-center">
+            <div class="swiper-slide"><a href="https://cappta.com.br/"></a><img src="http://www.unigex.com.br/images/cappta.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><a href="https://www.softwareexpress.com.br/"><img src="http://www.unigex.com.br/images/soft.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="https://www.indiceconsultoria.com.br/"><img src="http://www.unigex.com.br/images/indice.png" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a href="https://boavistatecnologia.com.br/"></a><img src="http://www.unigex.com.br/images/Boavista.png" class="img-fluid" alt=""></div>
+            <!-- <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div> -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -1374,19 +1304,19 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
   <footer id="footer" class="footer">
 
     <!-- <div class="footer-newsletter"> -->
-      <!-- <div class="container"> -->
-        <!-- <div class="row justify-content-center"> -->
-          <!-- <div class="col-lg-12 text-center">
+    <!-- <div class="container"> -->
+    <!-- <div class="row justify-content-center"> -->
+    <!-- <div class="col-lg-12 text-center">
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
           </div> -->
-          <!-- <div class="col-lg-6">
+    <!-- <div class="col-lg-6">
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
           </div> -->
-        <!-- </div> -->
-      <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
     <!-- </div> -->
 
     <div class="footer-top">
@@ -1403,7 +1333,8 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
               <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
               <a href="https://www.facebook.com/unigexsolucoes/" class="facebook"><i class="bi bi-facebook"></i></a>
               <a href="https://www.instagram.com/unigexsolucoes/" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/unigex-solucoes-integradas-de-gestao/about/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.linkedin.com/company/unigex-solucoes-integradas-de-gestao/about/" class="linkedin"><i
+                  class="bi bi-linkedin"></i></a>
             </div>
           </div>
 
@@ -1432,7 +1363,7 @@ href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contatos </h4>
             <p>
-              <p>Rua Cel. Antônio Botelho de Souza, 27 - Sala 9 - Centro, <br>Maranguape - CE, 61940-005 <br><br>
+            <p>Rua Cel. Antônio Botelho de Souza, 27 - Sala 9 - Centro, <br>Maranguape - CE, 61940-005 <br><br>
               <strong>Fone:</strong> +55 85 9863-0052<br>
               <strong>Email:</strong> helpdesk@unigex.com.br<br>
             </p>
