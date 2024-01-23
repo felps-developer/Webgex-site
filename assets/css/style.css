@@ -79,6 +79,9 @@ section {
   font-weight: 700;
   color: #012970;
 }
+#services .container .gy-4 .col-lg-4 .sem-traco:hover{
+  text-decoration: none;
+}
 
 @media (max-width: 768px) {
   .section-header p {
@@ -2464,3 +2467,10 @@ section {
 .footer .credits a:hover{
   text-decoration: underline;
 }
+
+
+/* tela BI */
+#bi-edita{
+  padding-top: 10rem !important;
+}
+/* end BI */

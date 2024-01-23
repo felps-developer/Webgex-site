@@ -23,12 +23,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             }
         </script>
         <!-- Custom Theme files -->
-        <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-        <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+        <link href="assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="all">
+        <link href="assets/css/sobre.css" type="text/css" rel="stylesheet" media="all">
         <!-- font-awesome icons -->
-        <link href="css/fontawesome-all.min.css" rel="stylesheet">
+        <link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
         <!-- pop up box -->
-        <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="assets/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <!-- //Custom Theme files -->
         <!-- online-fonts -->
         <link href="//fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
@@ -43,66 +45,99 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
     <!-- banner -->
     <div class="inner-banner">
-        <!-- header -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary pt-3">
-                <h1>
-                    <a class="navbar-brand text-white" href="index.html"><img src="images/Logo.png"></a>
-                </h1>
-                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-lg-auto text-center">
-                        <li class="nav-item active  mr-3 mt-lg-0 mt-3">
-                            <a class="nav-link" href="index.html">Inicio
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item  mr-3 mt-lg-0 mt-3">
-                            <a class="nav-link" href="index.html#quemsomos">Quem Somos</a>
-                        </li>
-						<li class="nav-item  mr-3 mt-lg-0 mt-3">
-                            <a class="nav-link" href="index.html#portfolio">Portfólio</a>
-                        </li>
-                        <li class="nav-item mr-3 mt-lg-0 mt-3">
-                            <a class="nav-link" href="index.html#contact">Contato</a>
-                        </li>
-                        <li class="nav-item mr-3 mt-lg-0 mt-3">
-                            <a class="nav-link" href="https://unigex.blogspot.com/" target="_blank">Blog</a>
-                        </li>
-                    </ul>
-                </div>
-			</nav>
-        </header>
-        <!-- //header -->
+      <!-- header -->
+    <header id="header" class="header fixed-top">
+		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+		  <div class="logoDetalhes">
+			<a href="index.html" class="">
+			  <img src="assets/img/Logo.png" alt="">
+			  <!-- <span>FlexStart</span> -->
+			</a>
+		  </div>
+	
+		  <nav id="navbar" class="navbar">
+			<ul>
+			  <li><a class="nav-link scrollto active" href="index.html">Início</a></li>
+			  <li><a href="blog.html">Blog</a></li>
+			  
+			  <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+				<ul>
+				  <li><a href="#">Drop Down 1</a></li>
+				  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+					<ul>
+					  <li><a href="#">Deep Drop Down 1</a></li>
+					  <li><a href="#">Deep Drop Down 2</a></li>
+					  <li><a href="#">Deep Drop Down 3</a></li>
+					  <li><a href="#">Deep Drop Down 4</a></li>
+					  <li><a href="#">Deep Drop Down 5</a></li>
+					</ul>
+				  </li>
+				  <li><a href="#">Drop Down 2</a></li>
+				  <li><a href="#">Drop Down 3</a></li>
+				  <li><a href="#">Drop Down 4</a></li>
+				</ul>
+			  </li> -->
+	
+			  <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
+				<ul>
+				  <li>
+					<a href="#">Column 1 link 1</a>
+					<a href="#">Column 1 link 2</a>
+					<a href="#">Column 1 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 2 link 1</a>
+					<a href="#">Column 2 link 2</a>
+					<a href="#">Column 3 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 3 link 1</a>
+					<a href="#">Column 3 link 2</a>
+					<a href="#">Column 3 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 4 link 1</a>
+					<a href="#">Column 4 link 2</a>
+					<a href="#">Column 4 link 3</a>
+				  </li>
+				</ul>
+			  </li> -->
+	
+			  <!-- <li><a class="nav-link scrollto" href="#contact">Contatos</a></li> -->
+			  <li><a class="getstarted scrollto" href="https://app.webgex.com.br/">Acesse</a></li>
+			</ul>
+			<i class="bi bi-list mobile-nav-toggle"></i>
+		  </nav><!-- .navbar -->
+	
+		</div>
+	  </header><!-- End Header -->
+	<!-- //header -->
         
-    </div>
-     <!-- //banner-text -->
+    
+    
      
 	<!--services-->
-    <div class="agileits-services py-md-5 py-4">
+    <div class="agileits-services py-md-5 py-4" >
         <div class="container py-lg-5">
             <div class="text-center wthree-title pb-sm-5 pb-3">
-                <h3 class="tittle-w3ls pb-4">LGPD</h3>
-                <p class="tit mx-auto">Lei Geral de Proteção de Dados</p>
+                <h3 class="tittle-w3ls pb-4" style="padding-top: 5rem !important;">LGPD</h3>
+                <p class="text-center tit mx-auto">Lei Geral de Proteção de Dados</p>
             </div>
             <div class="agileits-services-row row mt-lg-5 no-gutters">
                 <div class="col-lg-4 col-md-6">
                     <div class="agileits-services-grids">
-                        <span class="fas fa-check"></span>
+                        <i class="bi bi-check-circle-fill" style="font-size: 20px;color: #090063;"></i>
 						<h4 class="my-2">Diagnóstico Inicial
-                            <span></span>
+                           
                         </h4>
                         <p>Analise sem compromisso do estágio de maturidade atual da empresa no tratamento de dados pessoais.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="agileits-services-grids">
-                        <span class="fas fa-check"></span>
+                        <i class="bi bi-check-circle-fill" style="font-size: 20px;color: #090063;"></i>
 						<h4 class="my-2">Mapemamento de processos
-                            <span></span>
+                            
                         </h4>
                         <p>Levantamento de todos os processos que tratam dados pessoais. Seus devidos enquadramentos em relação a finalidade e base legais. 
                             Definições de retenção e descarte de informações pessoais.
@@ -111,36 +146,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="agileits-services-grids">
-                        <span class="fas fa-check"></span>
+                        <i class="bi bi-check-circle-fill" style="font-size: 20px;color: #090063;"></i>
 						<h4 class="my-2">Assessements
-                            <span></span>
+                            
                         </h4>
                         <p>Contrução de todoso os documentos necessários para comprovar a adequação da empresa à LGPD.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="agileits-services-grids">
-                        <span class="fas fa-check"></span>
+                        <i class="bi bi-check-circle-fill" style="font-size: 20px;color: #090063;"></i>
 						<h4 class="my-2">DPIA
-                            <span></span>
+                            
                         </h4>
                         <p>Relatório de impactos e gestão de riscos de incidentes no tratamento de dados pessoais.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="agileits-services-grids">
-                        <span class="fas fa-check"></span>
+                        <i class="bi bi-check-circle-fill" style="font-size: 20px;color: #090063;"></i>
 						<h4 class="my-2">Contratos
-                            <span></span>
+                           
                         </h4>
                         <p>Apoio jurídico na revisão de contratos com clientes, fornecedores e colaboradores da empresa.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="agileits-services-grids">
-                        <span class="fas fa-check"></span>
+                        <i class="bi bi-check-circle-fill" style="font-size: 20px;color: #090063;"></i>
 						<h4 class="my-2">Governança de Dados
-                            <span></span>
+                           
                         </h4>
                         <p>Gestão da segurança de informações é um processo contínuo que abrange mais do que dados pessoais. Apoio na construção 
                             de piliticas de gestão da tecnoilogia da informação.
@@ -152,11 +187,103 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!-- //services-->
 
-	<div class="copyright py-3">
-		<p class="copy-right text-center ">&copy; 2020 | Design by
-			<a href="http://unigex.com.br/"> UNIGEX </a> | <a href="policy.html"> Política de Privacidade </a>  
-		</p>
-	</div>
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <!-- <div class="footer-newsletter"> -->
+      <!-- <div class="container"> -->
+        <!-- <div class="row justify-content-center"> -->
+          <!-- <div class="col-lg-12 text-center">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          </div> -->
+          <!-- <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-6 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="">
+
+            </a>
+            <p>26 anos contribuindo seu sucesso <br>
+                Implementamos sistemas de gestão que ajudam a sua empresa a alcançar o sucesso!.</p>
+            <div class="social-links mt-3">
+              <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
+              <a href="https://www.facebook.com/unigexsolucoes/" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/unigexsolucoes/" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/unigex-solucoes-integradas-de-gestao/about/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#hero">Início</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#about">Sobre</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#services">Serviços</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Termos e serviços</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="policy.html">Política de privacidade</a></li>
+            </ul>
+          </div>
+
+          <!-- <div class="col-lg-2 col-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div> -->
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contatos </h4>
+            <p>
+              <p>Rua Cel. Antônio Botelho de Souza, 27 - Sala 9 - Centro, <br>Maranguape - CE, 61940-005 <br><br>
+              <strong>Fone:</strong> +55 85 9863-0052<br>
+              <strong>Email:</strong> helpdesk@unigex.com.br<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Unigex</span></strong>.
+        Todos os direitos reservados
+      </div>
+      <div class="credits">
+        Designed by <a href="http://unigex.com.br/">Unigex</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 <!-- js -->
     <script src="js/jquery-2.2.3.min.js"></script>
@@ -200,6 +327,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
+    
 </body>
 
 </html>
