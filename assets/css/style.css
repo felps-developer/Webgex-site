@@ -37,15 +37,29 @@ h6 {
   font-family: "Nunito", sans-serif;
 }
 header .container-fluid .logoDetalhes{
-  height: 15vh;
-  width: 22vw;
+  height: 5vh;
+  width: 9vw;
  
-  
 }
 header .container-fluid .logoDetalhes  img{
   height: 100%;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  header .container-fluid .logoDetalhes   {
+    height: 8vh;
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1100px) {
+  header .container-fluid .logoDetalhes{
+    height: 8vh;
+    width: 25vw;
+  }
+}
+
 header .container-fluid nav ul li a:hover{
   text-decoration: underline;
 }
