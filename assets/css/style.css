@@ -60,9 +60,9 @@ header .container-fluid .logoDetalhes  img{
   }
 }
 
-header .container-fluid nav ul li a:hover{
+/* header .container-fluid nav ul li a:hover{
   text-decoration: underline;
-}
+} */
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
