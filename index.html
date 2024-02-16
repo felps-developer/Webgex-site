@@ -40,8 +40,9 @@
   <link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
 
 
-  <!-- Gestão de cokkeis -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
+  <!-- Gestão de cokies -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css">
 
   <!-- Star chat TIFLUX VERIFICAR TOKEN -->
   <script>  var organization_token = '0d981fcf883001fc94c13816450f8c295ae5d600'; var icon_color = 'null'; var init_minimal = 'true'; var show_chat_icon = 'false'; var script = document.createElement('script'); script.type = 'text/javascript'; script.src = 'https://public-assets.tiflux.com/chat_widget.js?organization_token=' + organization_token; document.head.appendChild(script); </script>
@@ -54,21 +55,21 @@
 
 <body>
 
-  <!--googleoff: all-->
+
+<!--googleoff: all-->
   <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc"
     class="cc-window cc-floating cc-type-info cc-theme-classic cc-bottom cc-left cc-color-override--1360619034 "
-    style="">
+    >
     <span id="cookieconsent:desc" class="cc-message">Nosso site utiliza cookies para
       melhorar a experiência do usuário. Não coletamos e nem armazenamos informações pessoais dos visitantes. <a
         aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="policy.html"
         rel="noopener noreferrer nofollow" target="_blank">Politica de privacidade</a></span>
-    <div class="cc-compliance"><a id="cc-dismiss" aria-label="dismiss cookie message" role="button" tabindex="0"
+    <div class="cc-compliance text-center" style="margin-left: 100px;"><a id="cc-dismiss" aria-label="dismiss cookie message" role="button" tabindex="0"
         class="cc-btn cc-dismiss">Vamos lá</a></div>
   </div>
+<!--googleon: all-->
 
-  <!--googleon: all-->
 
-  
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 
   <script>
@@ -91,17 +92,52 @@
         "href": "policy.html"
       }
     });
-    </script>
+  </script>
 
-    <script>
-      document.getElementById('cc-dismiss').addEventListener('click', function () {
-        // Adicionar um novo estilo para esconder o banner de privacidade
+
+  <script>
+    // Função para verificar a presença da chave no localStorage e ajustar a visibilidade do botão
+    function verificarEAtualizarBotao() {
+      var chave = "cookies";
+      var valor = "777";
+
+      // Verificar se a chave existe e tem o valor correto
+      if (localStorage.getItem(chave) && localStorage.getItem(chave) === valor) {
+        // Esconder o botão
         var style = document.createElement('style');
         style.innerHTML = '.cc-window { display: none !important; }';
         document.head.appendChild(style);
-      });
-    </script>
-    
+      } else {
+        // Mostrar o botão
+        var style = document.createElement('style');
+        style.innerHTML = '.cc-window { display: block !important; }';
+        document.head.appendChild(style);
+      }
+    }
+
+    // Chamar a função para verificar a chave no localStorage ao carregar a página
+    verificarEAtualizarBotao();
+
+    // Adicionar um ouvinte para o evento de clique no botão
+    document.getElementById('cc-dismiss').addEventListener('click', function () {
+      var chave = "cookies";
+      var valor = "777";
+
+      // Verificar se a chave já existe no localStorage
+      if (!localStorage.getItem(chave) || localStorage.getItem(chave) !== valor) {
+        // Se não existir ou o valor for diferente, salvar no localStorage
+        localStorage.setItem(chave, valor);
+        // alert("Chave e valor foram salvos no Local Storage!");
+      } 
+
+      // Verificar novamente a chave no localStorage e ajustar a visibilidade do botão
+      verificarEAtualizarBotao();
+    });
+  </script>
+
+
+
+
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q7PWNV" height="0" width="0"
@@ -1328,8 +1364,8 @@
           </div>
           <div class="col-lg-6">
             <div class="price-button mt-md-3" align="center"> <a class="btn text-uppercase"
-                href="https://central.tiflux.com.br/externals/tickets/#/new/a69a5f82e87075e3bb6eb039c84a312b73afdbe2">Abrir
-                um ticket</a> </div>
+                href="https://app.tiflux.com/r/externals/tickets/new/a69a5f82e87075e3bb6eb039c84a312b73afdbe2">Fale
+                Conosco</a> </div>
             <div class="row contact_information">
               <p id="explica"> Certifique-se que apenas fornece as informações necessárias ao
                 tratamento da sua solicitação. Não envie dados que possam ser
@@ -1472,8 +1508,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"
+    style="margin-bottom: 50px ; background-color: brown;"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
