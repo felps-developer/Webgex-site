@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Webgex - Solução que funciona</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon-16x16.png">
+
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Webgex, ERP, CRM, PDV, API, DFI, Bussines Inteligence, BI" />
+    <!-- //Meta tag Keywords -->
+
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <!-- Bootstrap-Core-CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/sobre.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/slider.css" type="text/css" media="all" />
+
+    <!-- Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link
+        href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
+    <!-- //Fonts -->
+
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+            <div class="logoDetalhes">
+                <a href="index.html" class="">
+                    <img src="assets/img/Logo.png" alt="Logo da empresa" class="img-fluid">
+                    <!-- <span>FlexStart</span> -->
+                </a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="index.html#hero">Início</a></li>
+
+                    <li><a class="nav-link scrollto" href="index.html#services">Funcionalidades</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#segment">Verticais</a></li>
+                    <li><a class="nav-link scrollto" href="#pricing">Preço</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="#team">Time</a></li> -->
+                    <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
+
+
+                    <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+				<ul>
+				  <li><a href="#">Drop Down 1</a></li>
+				  <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+					<ul>
+					  <li><a href="#">Deep Drop Down 1</a></li>
+					  <li><a href="#">Deep Drop Down 2</a></li>
+					  <li><a href="#">Deep Drop Down 3</a></li>
+					  <li><a href="#">Deep Drop Down 4</a></li>
+					  <li><a href="#">Deep Drop Down 5</a></li>
+					</ul>
+				  </li>
+				  <li><a href="#">Drop Down 2</a></li>
+				  <li><a href="#">Drop Down 3</a></li>
+				  <li><a href="#">Drop Down 4</a></li>
+				</ul>
+			  </li> -->
+
+                    <!-- <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down"></i></a>
+				<ul>
+				  <li>
+					<a href="#">Column 1 link 1</a>
+					<a href="#">Column 1 link 2</a>
+					<a href="#">Column 1 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 2 link 1</a>
+					<a href="#">Column 2 link 2</a>
+					<a href="#">Column 3 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 3 link 1</a>
+					<a href="#">Column 3 link 2</a>
+					<a href="#">Column 3 link 3</a>
+				  </li>
+				  <li>
+					<a href="#">Column 4 link 1</a>
+					<a href="#">Column 4 link 2</a>
+					<a href="#">Column 4 link 3</a>
+				  </li>
+				</ul>
+			  </li> -->
+
+
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a class="nav-link scrollto" href="sobre.html">Quem somos</a></li>
+                    <li><a class="nav-link scrollto" href="index.html#contact">Contato</a></li>
+                    <li><a class="getstarted scrollto" href="https://app.webgex.com.br/">Acesse ERP</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    <section class="services py-5" id="services">
+        <div class="container d-flex justify-content-center align-items-center vh-100 mt-5">
+            <div>
+                <h1 class="text-center">Formulário de Proposta Comercial</h1>
+                <form id="propostaForm" class="needs-validation" novalidate onsubmit="calcularProposta(event)">
+                    <!-- action="mail.php" method="post" -->
+                    <div class="form-group mt-5">
+                        <label for="numUsuarios">Número de Usuários:</label>
+                        <input type="number" class="form-control" id="numUsuarios" placeholder="Digite o número de usuários" required>
+                        <div class="invalid-feedback">
+                            Este campo é obrigatório.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numPdvs">Número de PDVs:</label>
+                        <input type="number" class="form-control" id="numPdvs" placeholder="Digite o número de PDVs" required>
+                        <div class="invalid-feedback">
+                            Este campo é obrigatório.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numPacotes">Número de Pacotes de Imagens:</label>
+                        <input type="number" class="form-control" id="numPacotes" placeholder="Digite o número de pacotes" required>
+                        <div class="invalid-feedback">
+                            Este campo é obrigatório.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="numPaineis">Número de Painéis Inteligentes:</label>
+                        <input type="number" class="form-control" id="numPaineis" placeholder="Digite o número de painéis" required>
+                        <div class="invalid-feedback">
+                            Este campo é obrigatório.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cobrancaInteligente" data-toggle="tooltip" data-placement="right"
+                            title="Custo adicional de R$500 para utilizar a cobrança inteligente">Usará Cobrança
+                            Inteligente:
+                        </label>
+                        <select class="form-control" id="cobrancaInteligente">
+                            <option value="nao">Não</option>
+                            <option value="sim">Sim</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="integracaoWhatsapp" data-toggle="tooltip" data-placement="right"
+                            title="Custo adicional de R$300 para integração com WhatsApp">Deseja Integração com
+                            WhatsApp:
+                        </label>
+                        <select class="form-control" id="integracaoWhatsapp">
+                            <option value="nao">Não</option>
+                            <option value="sim">Sim</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="conciliacaoBancaria" data-toggle="tooltip" data-placement="right"
+                            title="Custo adicional de R$200 para realizar a conciliação bancária">Fará Conciliação
+                            Bancária:
+                        </label>
+                        <select class="form-control" id="conciliacaoBancaria">
+                            <option value="nao">Não</option>
+                            <option value="sim">Sim</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Campo "Total da Proposta" escondido inicialmente -->
+                    <div class="form-group" id="totalContainer" style="display: none;">
+                        <label for="totalProposta">Total da Proposta:</label>
+                        <input type="text" class="form-control" id="totalProposta" readonly>
+                    </div>
+    
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary mt-3">Calcular Proposta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Função de validação do Bootstrap
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    
+        function calcularProposta(event) {
+            // Prevenir envio do formulário se inválido
+            if (!document.getElementById('propostaForm').checkValidity()) {
+                return;
+            }
+    
+            // Prevenir envio do formulário
+            event.preventDefault();
+    
+            // Definir valores iniciais
+            let total = 2000; // Valor base da proposta
+    
+            // Capturar os valores dos selects
+            const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
+            const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
+            const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
+    
+            // Adicionar custos adicionais com base nas seleções
+            if (cobrancaInteligente === 'sim') {
+                total += 500;
+            }
+            if (integracaoWhatsapp === 'sim') {
+                total += 300;
+            }
+            if (conciliacaoBancaria === 'sim') {
+                total += 200;
+            }
+    
+            // Atualizar o valor do campo Total da Proposta
+            document.getElementById('totalProposta').value = `R$${total}`;
+    
+            // Mostrar o campo Total da Proposta
+            document.getElementById('totalContainer').style.display = 'block';
+        }
+    </script>
+    
+    
+
+</body>
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <!-- <div class="footer-newsletter"> -->
+    <!-- <div class="container"> -->
+    <!-- <div class="row justify-content-center"> -->
+    <!-- <div class="col-lg-12 text-center">
+					<h4>Our Newsletter</h4>
+					<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+				  </div> -->
+    <!-- <div class="col-lg-6">
+					<form action="" method="post">
+					  <input type="email" name="email"><input type="submit" value="Subscribe">
+					</form>
+				  </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <img src="assets/img/Logo.png" alt="">
+
+                    </a>
+                    <p>26 anos contribuindo seu sucesso <br>
+                        Implementamos sistemas de gestão que ajudam a sua empresa a alcançar o sucesso!.</p>
+                    <div class="social-links mt-3">
+                        <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
+                        <a href="https://www.facebook.com/unigexsolucoes/" class="facebook"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/unigexsolucoes/" class="instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/unigex-solucoes-integradas-de-gestao/about/"
+                            class="linkedin"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-6 footer-links">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#hero">Início</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#about">Sobre</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#services">Serviços</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Termos e serviços</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="policy.html">Política de privacidade</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- <div class="col-lg-2 col-6 footer-links">
+					<h4>Our Services</h4>
+					<ul>
+					  <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+					  <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+					  <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+					  <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+					  <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+					</ul>
+				  </div> -->
+
+                <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                    <h4>Contatos </h4>
+                    <p>
+                    <p>R. Tibúrcio Cavalcante, 1958 <br> Aldeota, Fortaleza - CE, 60125-100 <br><br>
+                        <strong>Fone:</strong> +55 85 9863-0052<br>
+                        <strong>Email:</strong> helpdesk@unigex.com.br<br>
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Unigex</span></strong>.
+            Todos os direitos reservados
+        </div>
+        <div class="credits">
+            Designed by <a href="http://unigex.com.br/">Unigex</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
