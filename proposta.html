@@ -32,6 +32,41 @@
         rel="stylesheet">
     <!-- //Fonts -->
 
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            /* Position above the tooltip */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            /* Hide by default */
+            transition: opacity 0.3s;
+            /* Smooth transition */
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+            /* Show the tooltip */
+        }
+    </style>
+
 </head>
 
 <body>
@@ -117,31 +152,60 @@
             <div>
                 <h1 class="text-center">Formulário de Proposta Comercial</h1>
                 <form id="propostaForm" class="needs-validation" novalidate onsubmit="calcularProposta(event)">
-                    <!-- action="mail.php" method="post" -->
-                    <div class="form-group mt-5">
-                        <label for="numUsuarios">Número de Usuários:</label>
-                        <input type="number" class="form-control" id="numUsuarios" placeholder="Digite o número de usuários" required>
+                    <!-- action="mail.php" method="post" -->                    
+                    <div class="form-group mt-3">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome"
+                            placeholder="Digite o seu nome" required data-toggle="tooltip"
+                            data-placement="right" title="">
+                        <div class="invalid-feedback">
+                            Este campo é obrigatório.
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email"
+                            placeholder="Digite o seu email" required data-toggle="tooltip"
+                            data-placement="right" title="">
+                        <div class="invalid-feedback">
+                            Este campo é obrigatório.
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="telefone">Telefone</label>
+                        <input type="text" class="form-control" id="telefone"
+                            placeholder="Digite o número de usuários" required data-toggle="tooltip"
+                            data-placement="right" title="">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="numPdvs">Número de PDVs:</label>
-                        <input type="number" class="form-control" id="numPdvs" placeholder="Digite o número de PDVs" required>
+                        <input type="number" class="form-control" id="numPdvs" placeholder="Digite o número de PDVs"
+                            required data-toggle="tooltip" data-placement="right"
+                            title="PDV (Ponto de Venda) refere-se ao equipamento de caixa da empresa. Adicione o número de PDVs necessários para o seu negócio.">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="numPacotes">Número de Pacotes de Imagens:</label>
-                        <input type="number" class="form-control" id="numPacotes" placeholder="Digite o número de pacotes" required>
+                        <input type="number" class="form-control" id="numPacotes"
+                            placeholder="Digite o número de pacotes" required data-toggle="tooltip"
+                            data-placement="right"
+                            title="Se a empresa optar por anexar documentos ou fotos, como catálogos digitais ou integração com sites de e-commerce, haverá uma cobrança com base no espaço utilizado. Cada pacote de imagens oferece 50GB de armazenamento.">
+
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="numPaineis">Número de Painéis Inteligentes:</label>
-                        <input type="number" class="form-control" id="numPaineis" placeholder="Digite o número de painéis" required>
+                        <input type="number" class="form-control" id="numPaineis"
+                            placeholder="Digite o número de painéis" required data-toggle="tooltip"
+                            data-placement="right"
+                            title="O sistema WEBGEX oferece uma quantidade limitada de painéis (dashboards) gratuitos. Caso precise de painéis personalizados para o seu negócio, será cobrado um valor adicional para o desenvolvimento, armazenamento e processamento.">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
@@ -151,6 +215,10 @@
                             title="Custo adicional de R$500 para utilizar a cobrança inteligente">Usará Cobrança
                             Inteligente:
                         </label>
+                        <span data-toggle="tooltip" data-placement="right"
+                            title="O sistema WEBGEX oferece uma quantidade limitada de painéis (dashboards) gratuitos. Caso precise de painéis personalizados para o seu negócio, será cobrado um valor adicional para o desenvolvimento, armazenamento e processamento.">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
                         <select class="form-control" id="cobrancaInteligente">
                             <option value="nao">Não</option>
                             <option value="sim">Sim</option>
@@ -161,6 +229,10 @@
                             title="Custo adicional de R$300 para integração com WhatsApp">Deseja Integração com
                             WhatsApp:
                         </label>
+                        <span data-toggle="tooltip" data-placement="right"
+                            title="A integração com o WhatsApp é um serviço opcional de mensagens que pode ser configurado conforme sua necessidade. Ele possui um custo de manutenção mensal, sem limite de mensagens.">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
                         <select class="form-control" id="integracaoWhatsapp">
                             <option value="nao">Não</option>
                             <option value="sim">Sim</option>
@@ -171,18 +243,22 @@
                             title="Custo adicional de R$200 para realizar a conciliação bancária">Fará Conciliação
                             Bancária:
                         </label>
+                        <span data-toggle="tooltip" data-placement="right"
+                            title="A conciliação de cartões de crédito é uma integração com serviços de terceiros, que facilita a identificação de recebíveis e o registro automático das taxas no sistema WEBGEX. Ao optar por este serviço, você autoriza o compartilhamento do seu contato com a empresa parceira que realizará a configuração.">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
                         <select class="form-control" id="conciliacaoBancaria">
                             <option value="nao">Não</option>
                             <option value="sim">Sim</option>
                         </select>
                     </div>
-                    
+
                     <!-- Campo "Total da Proposta" escondido inicialmente -->
                     <div class="form-group" id="totalContainer" style="display: none;">
                         <label for="totalProposta">Total da Proposta:</label>
                         <input type="text" class="form-control" id="totalProposta" readonly>
                     </div>
-    
+
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary mt-3">Calcular Proposta</button>
                     </div>
@@ -190,20 +266,20 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+
     <script>
         // Função de validação do Bootstrap
-        (function() {
+        (function () {
             'use strict';
-            window.addEventListener('load', function() {
+            window.addEventListener('load', function () {
                 var forms = document.getElementsByClassName('needs-validation');
-                Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
+                Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
                             event.preventDefault();
                             event.stopPropagation();
@@ -213,24 +289,28 @@
                 });
             }, false);
         })();
-    
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
         function calcularProposta(event) {
             // Prevenir envio do formulário se inválido
             if (!document.getElementById('propostaForm').checkValidity()) {
                 return;
             }
-    
+
             // Prevenir envio do formulário
             event.preventDefault();
-    
+
             // Definir valores iniciais
             let total = 2000; // Valor base da proposta
-    
+
             // Capturar os valores dos selects
             const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
             const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
             const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
-    
+
             // Adicionar custos adicionais com base nas seleções
             if (cobrancaInteligente === 'sim') {
                 total += 500;
@@ -241,16 +321,16 @@
             if (conciliacaoBancaria === 'sim') {
                 total += 200;
             }
-    
+
             // Atualizar o valor do campo Total da Proposta
             document.getElementById('totalProposta').value = `R$${total}`;
-    
+
             // Mostrar o campo Total da Proposta
             document.getElementById('totalContainer').style.display = 'block';
         }
     </script>
-    
-    
+
+
 
 </body>
 

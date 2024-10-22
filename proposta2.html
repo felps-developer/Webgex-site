@@ -1,0 +1,94 @@
+# Commercial Proposal Form
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Proposal Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position above the tooltip */
+            left: 50%;
+            margin-left: -60px;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Commercial Proposal Form</h1>
+<form id="proposalForm">
+    <label for="users">Number of Users:</label>
+    <input type="number" id="users" value="1" readonly>
+    <span class="tooltip">?
+        <span class="tooltiptext">Os  usuários são as pessoas que utilizarão o sistema WEBGEX.
+            Para dimensionar o número de usuários, considere as seguintes perguntas: <br>
+            Existem processos
+            em que um usuário não pode ter acesso ao que outro faz? Se sim, adicione um usuário para
+            cada separação necessária. <br>
+            Existem usuários que utilizarão o sistema simultaneamente, ou
+            seja, ao mesmo tempo? Se sim, adicione um usuário para cada uso simultâneo.</span>
+    </span>
+    <br><br>
+
+    <label for="bankReconciliation">Bank Reconciliation:</label>
+    <input type="number" id="bankReconciliation" value="1" readonly>
+    <span class="tooltip">?
+        <span class="tooltiptext">Monthly bank reconciliation service</span>
+    </span>
+    <br><br>
+
+    <label for="customPanels">Number of Custom Panels:</label>
+    <input type="number" id="customPanels" value="1" readonly>
+    <span class="tooltip">?
+        <span class="tooltiptext">Custom panels for your dashboard</span>
+    </span>
+    <br><br>
+
+    <label for="imageStorage">Number of Image Storage Packages:</label>
+    <input type="number" id="imageStorage" value="1" readonly>
+    <span class="tooltip">?
+        <span class="tooltiptext">Storage packages for images</span>
+    </span>
+    <br><br>
+
+    <label for="smartBilling">Smart Billing:</label>
+    <input type="number" id="smartBilling" value="1" readonly>
+    <span class="tooltip">?
+        <span class="tooltiptext">Automated billing service</span>
+    </span>
+    <br><br>
+
+    <button type="button" onclick="generateProposal()">Generate Proposal</button>
+</form>
+
+<script>
+    function generateProposal() {
+        // Call API to register opportunity in CRM
+        // Generate PDF proposal
+        alert("Proposal generated and sent to email.");
+    }
+</script>
+
+</body>
+</html>
