@@ -33,6 +33,12 @@
     <!-- //Fonts -->
 
     <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+
         .tooltip {
             position: relative;
             display: inline-block;
@@ -66,6 +72,10 @@
             /* Show the tooltip */
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
 
 </head>
 
@@ -152,49 +162,56 @@
             <div>
                 <h1 class="text-center">Formulário de Proposta Comercial</h1>
                 <form id="propostaForm" class="needs-validation" novalidate onsubmit="calcularProposta(event)">
-                    <!-- action="mail.php" method="post" -->                    
+                    <!-- action="mail.php" method="post" -->
                     <div class="form-group mt-3">
                         <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome"
-                            placeholder="Digite o seu nome" required data-toggle="tooltip"
-                            data-placement="right" title="">
+                        <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome e sobrenome"
+                            required data-toggle="tooltip" data-placement="right" title="">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
                     </div>
                     <div class="form-group ">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email"
-                            placeholder="Digite o seu email" required data-toggle="tooltip"
-                            data-placement="right" title="">
+                        <input type="text" class="form-control" id="email" placeholder="Digite o seu email" required
+                            data-toggle="tooltip" data-placement="right" title="">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
+                        <div class="error" id="email-error">Por favor, insira um e-mail válido.</div>
+
                     </div>
                     <div class="form-group ">
                         <label for="telefone">Telefone</label>
                         <input type="text" class="form-control" id="telefone"
-                            placeholder="Digite o número de usuários" required data-toggle="tooltip"
-                            data-placement="right" title="">
+                            placeholder="Digite o seu número de telefone (XX) XXXXX-XXXX" required data-toggle="tooltip"
+                            data-placement="right">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
+                        <div class="error" id="telefone-error">Por favor, insira um número de telefone válido.</div>
                     </div>
                     <div class="form-group">
                         <label for="numPdvs">Número de PDVs:</label>
-                        <input type="number" class="form-control" id="numPdvs" placeholder="Digite o número de PDVs"
-                            required data-toggle="tooltip" data-placement="right"
+                        <span data-toggle="tooltip" data-placement="right"
                             title="PDV (Ponto de Venda) refere-se ao equipamento de caixa da empresa. Adicione o número de PDVs necessários para o seu negócio.">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
+                        <input type="number" class="form-control" id="numPdvs" placeholder="Digite o número de PDVs"
+                            required data-toggle="tooltip" data-placement="right">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="numPacotes">Número de Pacotes de Imagens:</label>
+                        <span data-toggle="tooltip" data-placement="right"
+                            title="Se a empresa optar por anexar documentos ou fotos, como catálogos digitais ou integração com sites de e-commerce, haverá uma cobrança com base no espaço utilizado. Cada pacote de imagens oferece 50GB de armazenamento.">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
                         <input type="number" class="form-control" id="numPacotes"
                             placeholder="Digite o número de pacotes" required data-toggle="tooltip"
-                            data-placement="right"
-                            title="Se a empresa optar por anexar documentos ou fotos, como catálogos digitais ou integração com sites de e-commerce, haverá uma cobrança com base no espaço utilizado. Cada pacote de imagens oferece 50GB de armazenamento.">
+                            data-placement="right">
 
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
@@ -202,10 +219,13 @@
                     </div>
                     <div class="form-group">
                         <label for="numPaineis">Número de Painéis Inteligentes:</label>
+                        <span data-toggle="tooltip" data-placement="right"
+                            title="O sistema WEBGEX oferece uma quantidade limitada de painéis (dashboards) gratuitos. Caso precise de painéis personalizados para o seu negócio, será cobrado um valor adicional para o desenvolvimento, armazenamento e processamento.">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
                         <input type="number" class="form-control" id="numPaineis"
                             placeholder="Digite o número de painéis" required data-toggle="tooltip"
-                            data-placement="right"
-                            title="O sistema WEBGEX oferece uma quantidade limitada de painéis (dashboards) gratuitos. Caso precise de painéis personalizados para o seu negócio, será cobrado um valor adicional para o desenvolvimento, armazenamento e processamento.">
+                            data-placement="right">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
@@ -261,6 +281,7 @@
 
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary mt-3">Calcular Proposta</button>
+                        <button type="button" class="btn btn-success mt-3 ml-3" onclick="gerarPDF()">Gerar PDF</button>
                     </div>
                 </form>
             </div>
@@ -268,11 +289,16 @@
     </section>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+
+        $(document).ready(function () {
+            $('#telefone').mask('(00) 00000-0000');
+        });
+
         // Função de validação do Bootstrap
         (function () {
             'use strict';
@@ -294,7 +320,34 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
 
+        // Função de validação
+        function validateForm() {
+            let isValid = true;
+
+            // Limpar mensagens de erro
+            $('.error').hide();
+
+            // Validação do e-mail
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                $('#telefone-error').show();
+                isValid = false;
+            }
+
+            // Validação do telefone
+            const telefone = document.getElementById('telefone').value;
+            const telefonePattern = /^\(\d{2}\) \d{5}-\d{4}$/;  // (99) 99999-9999
+            if (!telefonePattern.test(telefone)) {
+                $('#email-error').show();
+                isValid = false;
+            }
+            return isValid;
+        }
+
         function calcularProposta(event) {
+
+
             // Prevenir envio do formulário se inválido
             if (!document.getElementById('propostaForm').checkValidity()) {
                 return;
@@ -303,30 +356,70 @@
             // Prevenir envio do formulário
             event.preventDefault();
 
-            // Definir valores iniciais
-            let total = 2000; // Valor base da proposta
+            if (validateForm()) {
 
-            // Capturar os valores dos selects
-            const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
-            const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
-            const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
 
-            // Adicionar custos adicionais com base nas seleções
-            if (cobrancaInteligente === 'sim') {
-                total += 500;
+
+                // Definir valores iniciais
+                let total = 2000; // Valor base da proposta
+
+                // Capturar os valores dos selects
+                const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
+                const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
+                const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
+
+                // Adicionar custos adicionais com base nas seleções
+                if (cobrancaInteligente === 'sim') {
+                    total += 500;
+                }
+                if (integracaoWhatsapp === 'sim') {
+                    total += 300;
+                }
+                if (conciliacaoBancaria === 'sim') {
+                    total += 200;
+                }
+
+                // Atualizar o valor do campo Total da Proposta
+                document.getElementById('totalProposta').value = `R$${total}`;
+
+                // Mostrar o campo Total da Proposta
+                document.getElementById('totalContainer').style.display = 'block';
             }
-            if (integracaoWhatsapp === 'sim') {
-                total += 300;
-            }
-            if (conciliacaoBancaria === 'sim') {
-                total += 200;
-            }
+        }
 
-            // Atualizar o valor do campo Total da Proposta
-            document.getElementById('totalProposta').value = `R$${total}`;
+        function gerarPDF() {
+            if (validateForm()) {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
 
-            // Mostrar o campo Total da Proposta
-            document.getElementById('totalContainer').style.display = 'block';
+                // Capturar os valores do formulário
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const telefone = document.getElementById('telefone').value;
+                const numPdvs = document.getElementById('numPdvs').value;
+                const numPacotes = document.getElementById('numPacotes').value;
+                const numPaineis = document.getElementById('numPaineis').value;
+                const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
+                const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
+                const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
+                const totalProposta = document.getElementById('totalProposta').value;
+
+                // Adicionar conteúdo ao PDF
+                doc.text("Proposta Comercial", 20, 20);
+                doc.text(`Nome: ${nome}`, 20, 30);
+                doc.text(`Email: ${email}`, 20, 40);
+                doc.text(`Telefone: ${telefone}`, 20, 50);
+                doc.text(`Número de PDVs: ${numPdvs}`, 20, 60);
+                doc.text(`Número de Pacotes de Imagens: ${numPacotes}`, 20, 70);
+                doc.text(`Número de Painéis Inteligentes: ${numPaineis}`, 20, 80);
+                doc.text(`Usará Cobrança Inteligente: ${cobrancaInteligente}`, 20, 90);
+                doc.text(`Integração com WhatsApp: ${integracaoWhatsapp}`, 20, 100);
+                doc.text(`Conciliação Bancária: ${conciliacaoBancaria}`, 20, 110);
+                doc.text(`Total da Proposta: ${totalProposta}`, 20, 120);
+
+                // Salvar o PDF
+                doc.save("Proposta_Comercial.pdf");
+            }
         }
     </script>
 
