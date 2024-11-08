@@ -73,10 +73,10 @@
         }
 
         #container-pdf {
-            display: none;
+            
             /* Inicialmente escondido */
             width: 100%;
-            max-width: 50%;
+            max-width: 100%;
             /* No desktop, ocupa até 50% da largura */
             margin-left: 20px;
             /* Adiciona espaço entre o formulário e o iframe */
@@ -87,9 +87,9 @@
             /* Largura 100% para ocupar o espaço disponível */
             height: 100%;
             /* Altura do iframe 100% do contêiner */
-            min-height: 400px;
+            min-height: 600px;
             /* Altura mínima para o iframe */
-            border: none;
+            
             /* Remover borda do iframe */
         }
 
@@ -267,6 +267,18 @@
                         <div class="error" id="telefone-error">Por favor, insira um número de telefone válido.</div>
                     </div>
                     <div class="form-group">
+                        <label for="numUsu">Número de Usuários:</label>
+                        <span data-toggle="tooltip" data-placement="right"
+                            title=" Adicione o número de usuários necessários para utilizar o sistema.">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
+                        <input type="number" class="form-control" id="numUsu" placeholder="Digite o número de Usuários"
+                            required data-toggle="tooltip" data-placement="right" oninput="calcularProposta()">
+                        <div class="invalid-feedback">
+                            Este campo é obrigatório.
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="numPdvs">Número de PDVs:</label>
                         <span data-toggle="tooltip" data-placement="right"
                             title="PDV (Ponto de Venda) refere-se ao equipamento de caixa da empresa. Adicione o número de PDVs necessários para o seu negócio.">
@@ -356,14 +368,14 @@
 
                     <div class="d-flex justify-content-center">
                         <!-- <button type="submit" class="btn btn-primary mt-3">Calcular Proposta</button> -->
-                        <button type="button" class="btn btn-success mt-3 ml-3" onclick="gerarPDF()">Gerar PDF</button>
+                        <button type="button" class="btn btn-success mt-3 ml-3" onclick="gerarPDF()">Atualizar</button>
                     </div>
                 </form>
 
             </div>
-            <div id="container-pdf" style="display: none; flex: 1; max-width: 50%;">
+            <div id="container-pdf" style="flex: 1; ">
                 <h2>Visualização do PDF</h2>
-                <iframe id="pdfPreview" width="100%" height="600px"></iframe>
+                <iframe id="pdfPreview" width="100%" height="800px"></iframe>
             </div>
 
 
@@ -444,6 +456,8 @@
             let total = 2000; // Valor base da proposta
 
             // Capturar os valores dos selects
+            
+            const numUsu = document.getElementById('numUsu').value;
             const numPdvs = document.getElementById('numPdvs').value;
             const numPacotes = document.getElementById('numPacotes').value;
             const numPaineis = document.getElementById('numPaineis').value;
@@ -452,17 +466,20 @@
             const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
 
             // Adicionar custos adicionais com base nas seleções
+            if (numUsu > 0) {
+                total += 175 * numUsu;
+            }
             if (numPdvs > 0) {
-                total += 100 * numPdvs;
+                total += 175 * numPdvs;
             }
             if (numPacotes > 0) {
                 total += 150 * numPacotes;
             }
             if (numPaineis > 0) {
-                total += 50 * numPaineis;
+                total += 25 * numPaineis;
             }
             if (cobrancaInteligente === 'sim') {
-                total += 500;
+                total += 100;
             }
             if (integracaoWhatsapp === 'sim') {
                 total += 300;
@@ -485,6 +502,7 @@
                 const nome = document.getElementById('nome').value;
                 const email = document.getElementById('email').value;
                 const telefone = document.getElementById('telefone').value;
+                const numUsu = document.getElementById('numUsu').value;
                 const numPdvs = document.getElementById('numPdvs').value;
                 const numPacotes = document.getElementById('numPacotes').value;
                 const numPaineis = document.getElementById('numPaineis').value;
@@ -498,13 +516,14 @@
                 doc.text(`Nome: ${nome}`, 20, 30);
                 doc.text(`Email: ${email}`, 20, 40);
                 doc.text(`Telefone: ${telefone}`, 20, 50);
-                doc.text(`Número de PDVs: ${numPdvs}`, 20, 60);
-                doc.text(`Número de Pacotes de Imagens: ${numPacotes}`, 20, 70);
-                doc.text(`Número de Painéis Inteligentes: ${numPaineis}`, 20, 80);
-                doc.text(`Usará Cobrança Inteligente: ${cobrancaInteligente}`, 20, 90);
-                doc.text(`Integração com WhatsApp: ${integracaoWhatsapp}`, 20, 100);
-                doc.text(`Conciliação Bancária: ${conciliacaoBancaria}`, 20, 110);
-                doc.text(`Total da Proposta: ${totalProposta}`, 20, 120);
+                doc.text(`Número de Usuários: ${numUsu}`, 20, 60);
+                doc.text(`Número de PDVs: ${numPdvs}`, 20, 70);
+                doc.text(`Número de Pacotes de Imagens: ${numPacotes}`, 20, 80);
+                doc.text(`Número de Painéis Inteligentes: ${numPaineis}`, 20, 90);
+                doc.text(`Usará Cobrança Inteligente: ${cobrancaInteligente}`, 20, 100);
+                doc.text(`Integração com WhatsApp: ${integracaoWhatsapp}`, 20, 110);
+                doc.text(`Conciliação Bancária: ${conciliacaoBancaria}`, 20, 120);
+                doc.text(`Total da Proposta: ${totalProposta}`, 20, 130);
 
                 // Gerar o PDF como Blob
                 const pdfBlob = doc.output('blob');
