@@ -33,17 +33,18 @@
     <!-- //Fonts -->
 
     <style>
+        /* Ajuste geral para textos de erro */
         .error {
             color: red;
             font-size: 0.9em;
             display: none;
         }
 
+        /* Tooltip customizado */
         .tooltip {
             position: relative;
             display: inline-block;
             cursor: pointer;
-
         }
 
         .tooltip .tooltiptext {
@@ -57,72 +58,53 @@
             position: absolute;
             z-index: 1;
             bottom: 125%;
-            /* Position above the tooltip */
             left: 50%;
             margin-left: -60px;
             opacity: 0;
-            /* Hide by default */
             transition: opacity 0.3s;
-            /* Smooth transition */
         }
 
         .tooltip:hover .tooltiptext {
             visibility: visible;
             opacity: 1;
-            /* Show the tooltip */
         }
 
+        /* Ajustes para o contêiner de PDF */
         #container-pdf {
-            
-            /* Inicialmente escondido */
             width: 100%;
-            max-width: 100%;
-            /* No desktop, ocupa até 50% da largura */
-            margin-left: 20px;
-            /* Adiciona espaço entre o formulário e o iframe */
+            max-width: 700px;
+            margin: 20px auto;
+            margin-left: 50px;
+            margin-bottom: 350px;
         }
 
         #pdfPreview {
             width: 100%;
-            /* Largura 100% para ocupar o espaço disponível */
-            height: 100%;
-            /* Altura do iframe 100% do contêiner */
-            min-height: 600px;
-            /* Altura mínima para o iframe */
-            
-            /* Remover borda do iframe */
+            height: 700px;
         }
 
-        /* Estilo do modal */
+        /* Estilos para o modal */
         .modal {
             display: none;
-            /* Ocultar modal por padrão */
             position: fixed;
-            /* Fixa o modal na tela */
             z-index: 1000;
-            /* Fica em cima de outros elementos */
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            /* Fundo semi-transparente */
         }
 
-        /* Conteúdo do modal */
         .modal-content {
             background-color: #fff;
             margin: 10% auto;
             padding: 20px;
-            width: 80%;
-            /* Ajusta a largura para telas pequenas */
+            width: 90%;
             max-width: 600px;
-            /* Largura máxima */
             border-radius: 10px;
             position: relative;
         }
 
-        /* Estilo do botão de fechar */
         .close {
             position: absolute;
             top: 10px;
@@ -134,16 +116,46 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
+
+            /* Esconde o iframe de visualização em dispositivos móveis */
+            #container-pdf {
+                display: none;
+            }
+
+            /* Ajusta o modal para ocupar mais da tela em dispositivos móveis */
             .modal-content {
                 width: 90%;
-                /* No celular, a largura do modal será 90% da tela */
                 height: 80%;
-                /* Ocupa mais altura da tela */
             }
 
             #pdfPreview {
                 min-height: 400px;
-                /* Ajusta a altura mínima do iframe para celulares */
+            }
+
+            .d-flex {
+                display: flex;
+
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.5em;
+                text-align: center;
+            }
+
+            /* Espaçamento e ajuste para checkboxes */
+            .form-group {
+                padding: 10px;
+                width: 100%;
+            }
+
+            #formContainer {
+                width: 90%;
             }
         }
     </style>
@@ -245,6 +257,7 @@
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
+
                     </div>
                     <div class="form-group ">
                         <label for="email">Email</label>
@@ -273,7 +286,7 @@
                             <i class="bi bi-info-circle"></i>
                         </span>
                         <input type="number" class="form-control" id="numUsu" placeholder="Digite o número de Usuários"
-                            required data-toggle="tooltip" data-placement="right" oninput="calcularProposta()">
+                            required data-toggle="tooltip" data-placement="right" oninput="calcularProposta()" min="1">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
@@ -285,7 +298,7 @@
                             <i class="bi bi-info-circle"></i>
                         </span>
                         <input type="number" class="form-control" id="numPdvs" placeholder="Digite o número de PDVs"
-                            required data-toggle="tooltip" data-placement="right" oninput="calcularProposta()">
+                            required data-toggle="tooltip" data-placement="right" oninput="calcularProposta()" min="0">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
@@ -298,7 +311,7 @@
                         </span>
                         <input type="number" class="form-control" id="numPacotes"
                             placeholder="Digite o número de pacotes" required data-toggle="tooltip"
-                            data-placement="right" oninput="calcularProposta()">
+                            data-placement="right" oninput="calcularProposta()" min="0">
 
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
@@ -312,24 +325,31 @@
                         </span>
                         <input type="number" class="form-control" id="numPaineis"
                             placeholder="Digite o número de painéis" required data-toggle="tooltip"
-                            data-placement="right" oninput="calcularProposta()">
+                            data-placement="right" oninput="calcularProposta()" min="0">
                         <div class="invalid-feedback">
                             Este campo é obrigatório.
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="cobrancaInteligente" data-toggle="tooltip" data-placement="right"
-                            title="Custo adicional de R$500 para utilizar a cobrança inteligente">Usará Cobrança
+                            title="Custo adicional de R$100 para utilizar a cobrança inteligente">Usará Cobrança
                             Inteligente:
                         </label>
                         <span data-toggle="tooltip" data-placement="right"
                             title="A cobrança inteligente facilita o processo de geração de boletos, integrando diretamente o sistema WEBGEX com as instituições bancárias. O boleto é automaticamente registrado no banco e, ao ser pago, é quitado no sistema, eliminando a necessidade de arquivos de remessa e retorno.">
                             <i class="bi bi-info-circle"></i>
                         </span>
-                        <select class="form-control" id="cobrancaInteligente" onchange="calcularProposta()">
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
-                        </select>
+                        <div class="container-cnpj d-flex  ">
+                            <select class="form-control" id="cobrancaInteligente" style="width: 80px;"
+                                onchange="validarCnpj()">
+                                <option value="nao">Não</option>
+                                <option value="sim">Sim</option>
+                            </select>
+                            <input type="number" class="form-control" id="numCnpj" placeholder="Digite números de CNPJ"
+                                required data-toggle="tooltip" data-placement="right" oninput="calcularProposta()"
+                                min="1" disabled>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="integracaoWhatsapp" data-toggle="tooltip" data-placement="right"
@@ -366,16 +386,46 @@
                         <input type="text" class="form-control" id="totalProposta" readonly>
                     </div>
 
+                    <!-- Adiciona o checkbox de consentimento -->
+                    <div class="d-flex form-group mt-3">
+                        <div style="display: flex; align-items: center;">
+                            <input type="checkbox" id="lgpdConsent" required>
+                            <label for="lgpdConsent" onclick="document.getElementById('lgpdConsent').click()"
+                                style="margin-left: 5px;">
+                                Eu concordo com os <a href="link_para_termos_de_privacidade.html" target="_blank">termos
+                                    de
+                                    privacidade</a> e autorizo o uso dos meus dados de acordo com a LGPD.
+                            </label>
+                        </div>
+                        <div class="error" id="lgpd-error">Por favor, confirme os termos de privacidade .</div>
+                        <div class="invalid-feedback">
+                            Você deve concordar com os termos de privacidade para continuar.
+                        </div>
+                    </div>
+
+                    <div class="d-flex form-group mt-3">
+                        <div style="display: flex; align-items: center;">
+                            <input type="checkbox" id="lgpdPromoConsent">
+                            <label for="lgpdPromoConsent" onclick="document.getElementById('lgpdPromoConsent').click()"
+                                style="margin-left: 5px;">
+                                Eu concordo em receber promoções e novidades da empresa no meu e-mail.
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="d-flex justify-content-center">
                         <!-- <button type="submit" class="btn btn-primary mt-3">Calcular Proposta</button> -->
-                        <button type="button" class="btn btn-success mt-3 ml-3" onclick="gerarPDF()">Atualizar</button>
+                        <button class="btn btn-success" onclick="gerarPDF(event)">Atualizar</button>
+
                     </div>
                 </form>
 
             </div>
-            <div id="container-pdf" style="flex: 1; ">
-                <h2>Visualização do PDF</h2>
-                <iframe id="pdfPreview" width="100%" height="800px"></iframe>
+
+
+            <div id="container-pdf" style="">
+                <h2 class="text-center">Visualização do PDF</h2>
+                <iframe id="pdfPreview"></iframe>
             </div>
 
 
@@ -399,6 +449,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 
     <script>
+
         document.getElementById('totalProposta').value = `R$0,00`
         $(document).ready(function () {
             $('#telefone').mask('(00) 00000-0000');
@@ -439,6 +490,12 @@
                 $('#telefone-error').show();
                 isValid = false;
             }
+            const lgpdConsent = document.getElementById('lgpdConsent').checked;
+            const lgpdPromoConsent = document.getElementById('lgpdPromoConsent').checked;
+            if (!lgpdConsent) {
+                $('#lgpd-error').show();
+                isValid = false;
+            }
 
             // Validação do telefone
             const telefone = document.getElementById('telefone').value;
@@ -453,24 +510,35 @@
         function calcularProposta() {
 
             // Definir valores iniciais
-            let total = 2000; // Valor base da proposta
+            let total = 0; // Valor base da proposta
 
             // Capturar os valores dos selects
-            
+
             const numUsu = document.getElementById('numUsu').value;
             const numPdvs = document.getElementById('numPdvs').value;
             const numPacotes = document.getElementById('numPacotes').value;
             const numPaineis = document.getElementById('numPaineis').value;
             const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
+            const numCnpj = document.getElementById('numCnpj').value;
             const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
             const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
+
+            const itens = []
 
             // Adicionar custos adicionais com base nas seleções
             if (numUsu > 0) {
                 total += 175 * numUsu;
+                itens.push({
+                    id: "S000002",
+                    qtd: parseInt(numUsu)
+                })
             }
             if (numPdvs > 0) {
                 total += 175 * numPdvs;
+                itens.push({
+                    id: "S000009",
+                    qtd: parseInt(numPdvs)
+                })
             }
             if (numPacotes > 0) {
                 total += 150 * numPacotes;
@@ -479,7 +547,7 @@
                 total += 25 * numPaineis;
             }
             if (cobrancaInteligente === 'sim') {
-                total += 100;
+                total += 100 * numCnpj;
             }
             if (integracaoWhatsapp === 'sim') {
                 total += 300;
@@ -490,59 +558,180 @@
 
             // Atualizar o valor do campo Total da Proposta
             document.getElementById('totalProposta').value = `R$${total}`;
-
+            return itens
         }
-        // Definir a função gerarPDF fora do DOMContentLoaded
-        async function gerarPDF() {
-            if (validateForm()) {
-                const { jsPDF } = window.jspdf;
-                const doc = new jsPDF();
 
-                // Capturar os valores do formulário
-                const nome = document.getElementById('nome').value;
-                const email = document.getElementById('email').value;
-                const telefone = document.getElementById('telefone').value;
-                const numUsu = document.getElementById('numUsu').value;
-                const numPdvs = document.getElementById('numPdvs').value;
-                const numPacotes = document.getElementById('numPacotes').value;
-                const numPaineis = document.getElementById('numPaineis').value;
-                const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
-                const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
-                const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
-                const totalProposta = document.getElementById('totalProposta').value;
+        let isGenerating = false;
+        async function gerarPDF(event) {
+            
+            // Verifica se já está em execução
+            if (isGenerating) return;
 
-                // Adicionar conteúdo ao PDF
-                doc.text("Proposta Comercial", 20, 20);
-                doc.text(`Nome: ${nome}`, 20, 30);
-                doc.text(`Email: ${email}`, 20, 40);
-                doc.text(`Telefone: ${telefone}`, 20, 50);
-                doc.text(`Número de Usuários: ${numUsu}`, 20, 60);
-                doc.text(`Número de PDVs: ${numPdvs}`, 20, 70);
-                doc.text(`Número de Pacotes de Imagens: ${numPacotes}`, 20, 80);
-                doc.text(`Número de Painéis Inteligentes: ${numPaineis}`, 20, 90);
-                doc.text(`Usará Cobrança Inteligente: ${cobrancaInteligente}`, 20, 100);
-                doc.text(`Integração com WhatsApp: ${integracaoWhatsapp}`, 20, 110);
-                doc.text(`Conciliação Bancária: ${conciliacaoBancaria}`, 20, 120);
-                doc.text(`Total da Proposta: ${totalProposta}`, 20, 130);
+            // Seta a flag como verdadeira para evitar duplicidade
+            isGenerating = true;
 
-                // Gerar o PDF como Blob
-                const pdfBlob = doc.output('blob');
-                console.log(pdfBlob);
+            // Chama a função para gerar o token e, em seguida, envia a proposta
+            try {
+                if (validateForm()) {
+                    itens =  calcularProposta();
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
 
-                if (window.innerWidth <= 768) {  // Verifica se a tela é um celular
-                    const pdfURL = URL.createObjectURL(pdfBlob);
-                    const iframe = document.getElementById('pdfPreview2');
-                    iframe.src = pdfURL;
-                    document.getElementById('pdfModal').style.display = "block"; // Exibe o modal
-                } else {
-                    // Para telas maiores, exibe o PDF no outro iframe fora do modal
-                    const pdfURL = URL.createObjectURL(pdfBlob);
-                    const iframe = document.getElementById('pdfPreview');
-                    iframe.src = pdfURL;
-                    document.getElementById('container-pdf').style.display = 'block';
+                    // Capturar os valores do formulário
+                    const nome = document.getElementById('nome').value;
+                    const email = document.getElementById('email').value;
+                    const telefone = document.getElementById('telefone').value;
+                    const numUsu = document.getElementById('numUsu').value;
+                    const numPdvs = document.getElementById('numPdvs').value;
+                    const numPacotes = document.getElementById('numPacotes').value;
+                    const numPaineis = document.getElementById('numPaineis').value;
+                    const cobrancaInteligente = document.getElementById('cobrancaInteligente').value;
+                    const numCnpj = document.getElementById('numCnpj').value;
+                    const integracaoWhatsapp = document.getElementById('integracaoWhatsapp').value;
+                    const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
+                    const totalProposta = document.getElementById('totalProposta').value;
+
+
+                    // Adicionar conteúdo ao PDF
+                    doc.text("Proposta Comercial", 20, 20);
+                    doc.text(`Nome: ${nome}`, 20, 30);
+                    doc.text(`Email: ${email}`, 20, 40);
+                    doc.text(`Telefone: ${telefone}`, 20, 50);
+                    doc.text(`Número de Usuários: ${numUsu}`, 20, 60);
+                    doc.text(`Número de PDVs: ${numPdvs}`, 20, 70);
+                    doc.text(`Número de Pacotes de Imagens: ${numPacotes}`, 20, 80);
+                    doc.text(`Número de Painéis Inteligentes: ${numPaineis}`, 20, 90);
+                    doc.text(`Usará Cobrança Inteligente: ${cobrancaInteligente}`, 20, 100);
+                    if (cobrancaInteligente === 'sim') {
+                        doc.text(`e Quantidade de Cnpj: ${numCnpj}`, 102, 100);
+                    }
+                    doc.text(`Integração com WhatsApp: ${integracaoWhatsapp}`, 20, 110);
+                    doc.text(`Conciliação Bancária: ${conciliacaoBancaria}`, 20, 120);
+                    doc.text(`Total da Proposta: ${totalProposta}`, 20, 130);
+
+                    // Gerar o PDF como Blob
+                    const pdfBlob = doc.output('blob');
+                    console.log(pdfBlob);
+
+                    // Exibição do PDF em dispositivos móveis ou desktop
+                    if (window.innerWidth <= 768) {  // Verifica se a tela é um celular
+                        const pdfURL = URL.createObjectURL(pdfBlob);
+                        const iframe = document.getElementById('pdfPreview2');
+                        iframe.src = pdfURL;
+                        document.getElementById('pdfModal').style.display = "block"; // Exibe o modal
+                    } else {
+                        // Para telas maiores, exibe o PDF no outro iframe fora do modal
+                        const pdfURL = URL.createObjectURL(pdfBlob);
+                        const iframe = document.getElementById('pdfPreview');
+                        iframe.src = pdfURL;
+                        document.getElementById('container-pdf').style.display = 'block';
+                    }
+
+
+                    const wtoken = await gerarToken();
+                    if (!wtoken) throw new Error("Token não gerado");
+
+                    // Prepara os dados do formulário
+                    const body = {
+                        nome,
+                        email,
+                        telefone,
+                        itens
+                    };
+
+                    // URL da API para envio da proposta
+                    const baseUrl = "https://webgexapi-v2-stg.for-01.fks.services";
+                    const params = `codigoUnidade=10001&codigoConsultor=206&canalVenda=79`
+                    const wurl = `${baseUrl}/erp-prospeccoes?${params}`; // ajuste conforme o caminho da sua API
+                    // Envia a requisição POST com o token no header
+                    const response = await fetch(wurl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `Bearer ${wtoken}`,
+                        },
+                        body: JSON.stringify(body),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Erro na requisição: ${response.statusText} +  detalhes: ${response.detail}`);
+                    }
+
+                    const data = await response.json();
+                    console.log("Success:", data);
+                    // Você pode adicionar um alerta ou outra lógica para confirmar o sucesso
+
                 }
+            } catch (error) {
+                console.error("Erro ao gerar PDF ou enviar dados:", error);
+            } finally {
+                isGenerating = false;
             }
         }
+
+
+
+        // Função para gerar o token
+        async function gerarToken() {
+            const baseUrl = "https://webgexapi-v2-stg.for-01.fks.services";
+            const tokenUrl = `${baseUrl}/oauth/token`;
+            const USERNAME = "integracao@clidev.com.br";
+            const PASSWORD = "xpto";
+            const CLIENT_ID = "Webgex@pdv@CDEV";
+            const CLIENT_SECRET = "!VEDC@vdp@xegbeW#";
+            const GRANT_TYPE = "password";
+
+            // Gerar o token corretamente com as credenciais de autenticação
+            const credentials = `${CLIENT_ID}:${CLIENT_SECRET}`;
+            const encodedCredentials = btoa(credentials); // Codificar em base64
+
+            try {
+                const response = await fetch(tokenUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Authorization": `Basic ${encodedCredentials}`, // Basic Auth no header
+                    },
+                    body: new URLSearchParams({
+                        username: USERNAME,
+                        password: PASSWORD,
+                        grant_type: GRANT_TYPE,
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Erro ao gerar token: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+
+                
+                return data.access_token; // Retorna o token
+            } catch (error) {
+                console.error("Erro ao obter o token:", error);
+            }
+        }
+
+
+
+
+        function validarCnpj() {
+            const cobrancaInteligente = document.getElementById("cobrancaInteligente").value;
+            const numCnpj = document.getElementById("numCnpj");
+
+            if (cobrancaInteligente === "sim") {
+                // Habilitar o campo e torná-lo obrigatório
+                numCnpj.disabled = false;
+                numCnpj.setAttribute("required", "true");
+            } else {
+                // Desabilitar o campo e remover a obrigatoriedade
+                numCnpj.disabled = true;
+                numCnpj.removeAttribute("required");
+                numCnpj.value = "";  // Limpar o valor do campo quando desabilitado
+            }
+        }
+
+
 
         // Função para fechar o modal
         function fecharModal() {
@@ -550,13 +739,19 @@
             modal.style.display = "none";  // Esconde o modal
         }
 
-        // Agora você pode adicionar o evento de clique do botão
         document.addEventListener("DOMContentLoaded", function () {
             const gerarPdfButton = document.querySelector(".btn-success");
+            validarCnpj();
             if (gerarPdfButton) {
-                gerarPdfButton.addEventListener("click", gerarPDF);
+                gerarPdfButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    gerarPDF();
+                });
             }
         });
+
+
+
 
     </script>
 
