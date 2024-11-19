@@ -3,7 +3,7 @@
 
 <head>
     <title>Webgex - Solução que funciona</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon-16x16.png">
 
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -529,15 +529,25 @@
             if (numUsu > 0) {
                 total += 175 * numUsu;
                 itens.push({
-                    id: "S000002",
-                    qtd: parseInt(numUsu)
+                    idProduto: "S000002",                                
+                    quantidade: parseInt(numUsu),
+                    sequencia: 1,
+                    valorUnitario: 0.0,
+                    percentualValorDesconto: 0.0,
+                    valorDesconto: 0.0,
+                    valorTotal: 0.0
                 })
             }
             if (numPdvs > 0) {
                 total += 175 * numPdvs;
-                itens.push({
-                    id: "S000009",
-                    qtd: parseInt(numPdvs)
+                itens.push({                  
+                    idProduto: "S000009",                                
+                    quantidade: parseInt(numPdvs),
+                    sequencia: 1,
+                    valorUnitario: 0.0,
+                    percentualValorDesconto: 0.0,
+                    valorDesconto: 0.0,
+                    valorTotal: 0.0
                 })
             }
             if (numPacotes > 0) {
@@ -632,17 +642,30 @@
                     if (!wtoken) throw new Error("Token não gerado");
 
                     // Prepara os dados do formulário
-                    const body = {
-                        nome,
-                        email,
-                        telefone,
+                    const body = {                     
+                                               	
+                        pedidoCliente: "",
+                        codigoVendedor: 206,
+                        situacao: "E0",
+                        valor: 0.0,
+                        dataAbertura: "2024-11-19",
+                        horaAbertura: "00:00:00",
+                        dataFechamento:"2024-11-25",
+                        horaFechamento: "00:00:00",
+                        cliente:{
+                            nome,
+                            email,
+                            telefone,
+                            endereco: {}
+                        },	
                         itens
+
                     };
 
                     // URL da API para envio da proposta
                     const baseUrl = "https://webgexapi-v2-stg.for-01.fks.services";
-                    const params = `codigoUnidade=10001&codigoConsultor=206&canalVenda=79`
-                    const wurl = `${baseUrl}/erp-prospeccoes?${params}`; // ajuste conforme o caminho da sua API
+                    const params = `codigoUnidade=10001&canalVenda=79`
+                    const wurl = `${baseUrl}/erp-oportunidades?${params}`; // ajuste conforme o caminho da sua API
                     // Envia a requisição POST com o token no header
                     const response = await fetch(wurl, {
                         method: "POST",
