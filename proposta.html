@@ -529,51 +529,83 @@
             if (numUsu > 0) {
                 total += 175 * numUsu;
                 itens.push({
-                    idProduto: "S000002",                                
+                    idProduto: "S000002",
                     quantidade: parseInt(numUsu),
-                    sequencia: 1,
                     valorUnitario: 0.0,
                     percentualValorDesconto: 0.0,
                     valorDesconto: 0.0,
-                    valorTotal: 0.0
+                    valorTotal: 175 * numUsu
                 })
             }
             if (numPdvs > 0) {
                 total += 175 * numPdvs;
-                itens.push({                  
-                    idProduto: "S000009",                                
+                itens.push({
+                    idProduto: "S000007",
                     quantidade: parseInt(numPdvs),
-                    sequencia: 1,
                     valorUnitario: 0.0,
                     percentualValorDesconto: 0.0,
                     valorDesconto: 0.0,
-                    valorTotal: 0.0
+                    valorTotal: 175 * numPdvs
                 })
             }
             if (numPacotes > 0) {
                 total += 150 * numPacotes;
+                itens.push({
+                    idProduto: "S000013",
+                    quantidade: parseInt(numPacotes),
+                    valorUnitario: 0.0,
+                    percentualValorDesconto: 0.0,
+                    valorDesconto: 0.0,
+                    valorTotal: 150 * numPacotes
+                })
             }
             if (numPaineis > 0) {
                 total += 25 * numPaineis;
+                itens.push({
+                    idProduto: "S000009",
+                    quantidade: parseInt(numPaineis),
+                    valorUnitario: 0.0,
+                    percentualValorDesconto: 0.0,
+                    valorDesconto: 0.0,
+                    valorTotal: 25 * numPaineis
+                })
             }
             if (cobrancaInteligente === 'sim') {
                 total += 100 * numCnpj;
+                itens.push({
+                    idProduto: "S000012",
+                    quantidade: parseInt(numCnpj),
+                    valorUnitario: 0.0,
+                    percentualValorDesconto: 0.0,
+                    valorDesconto: 0.0,
+                    valorTotal: 100 * numCnpj
+                })
             }
             if (integracaoWhatsapp === 'sim') {
                 total += 300;
             }
             if (conciliacaoBancaria === 'sim') {
                 total += 200;
+                itens.push({
+                    idProduto: "S000014",
+                    quantidade: 1,
+                    valorUnitario: 0.0,
+                    percentualValorDesconto: 0.0,
+                    valorDesconto: 0.0,
+                    valorTotal: 200.0
+                })
             }
 
             // Atualizar o valor do campo Total da Proposta
             document.getElementById('totalProposta').value = `R$${total}`;
-            return itens
+            return { itens, total }
         }
+
+        const { jsPDF } = window.jspdf;
 
         let isGenerating = false;
         async function gerarPDF(event) {
-            
+
             // Verifica se já está em execução
             if (isGenerating) return;
 
@@ -583,8 +615,7 @@
             // Chama a função para gerar o token e, em seguida, envia a proposta
             try {
                 if (validateForm()) {
-                    itens =  calcularProposta();
-                    const { jsPDF } = window.jspdf;
+                    const proposta = calcularProposta();
                     const doc = new jsPDF();
 
                     // Capturar os valores do formulário
@@ -601,23 +632,110 @@
                     const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
                     const totalProposta = document.getElementById('totalProposta').value;
 
+                    // Adicionar logo
+                    const logoImg = new Image();
+                    logoImg.src = '/assets/img/ugxnova_logo.jpg'; // Substitua pelo caminho correto da logo
+                    await new Promise((resolve) => {
+                        logoImg.onload = () => {
+                            doc.addImage(logoImg, 'PNG', 80, 10, 50, 20); // Centraliza a logo no topo
+                            resolve();
+                        };
+                    });
 
-                    // Adicionar conteúdo ao PDF
-                    doc.text("Proposta Comercial", 20, 20);
-                    doc.text(`Nome: ${nome}`, 20, 30);
-                    doc.text(`Email: ${email}`, 20, 40);
-                    doc.text(`Telefone: ${telefone}`, 20, 50);
-                    doc.text(`Número de Usuários: ${numUsu}`, 20, 60);
-                    doc.text(`Número de PDVs: ${numPdvs}`, 20, 70);
-                    doc.text(`Número de Pacotes de Imagens: ${numPacotes}`, 20, 80);
-                    doc.text(`Número de Painéis Inteligentes: ${numPaineis}`, 20, 90);
-                    doc.text(`Usará Cobrança Inteligente: ${cobrancaInteligente}`, 20, 100);
-                    if (cobrancaInteligente === 'sim') {
-                        doc.text(`e Quantidade de Cnpj: ${numCnpj}`, 102, 100);
+                    // Título principal
+                    doc.setFont("helvetica", "bold");
+                    doc.setFontSize(16);
+                    doc.text("Proposta Comercial", 105, 40, { align: "center" });
+
+                    // Introdução
+                    doc.setFont("helvetica", "normal");
+                    doc.setFontSize(12);
+                    doc.text("A UNIGEX é uma empresa especializada em desenvolver e implementar sistemas integrados de gestão para empresas,com o propósito de criar soluções sólidas, eficientes e flexíveis para os clientes.", 20, 60, { maxWidth: 170 });
+                    // doc.text("com o propósito de criar soluções sólidas, eficientes e flexíveis para os clientes.", 20, 68, { maxWidth: 170 });
+
+                    doc.setFont("helvetica", "bold");
+                    doc.text("Nossa missão:", 20, 82);
+
+                    doc.setFont("helvetica", "normal");
+                    doc.text("Contribuir com o sucesso dos nossos clientes.", 20, 90);
+
+                    // Adicionar equipe
+                    doc.setFont("helvetica", "bold");
+                    doc.text("A UNIGEX possui um time multidisciplinar que inclui:", 20, 105);
+
+                    doc.setFont("helvetica", "normal");
+                    const equipe = [
+                        "- Analistas de Negócio",
+                        "- Consultores de Implantação e Treinamentos",
+                        "- Desenvolvedores",
+                        "- Analistas de Suporte",
+                    ];
+
+                    equipe.forEach((item, index) => {
+                        doc.text(item, 20, 115 + index * 7);
+                    });
+
+                    // Escopo Padrão
+                    doc.setFont("helvetica", "bold");
+                    doc.text("Escopo Padrão:", 20, 150);
+
+                    doc.setFont("helvetica", "normal");
+                    const escopo = [
+                        "1. CRM",
+                        "2. Vendas",
+                        "3. Financeiro",
+                        "4. Estoque",
+                        "5. Compras",
+                        "6. Fiscal",
+                        "7. Contábil, incluindo DRE",
+                    ];
+
+                    escopo.forEach((item, index) => {
+                        doc.text(item, 20, 160 + index * 7);
+                    });
+
+                    // Serviços adicionais
+                    doc.setFont("helvetica", "bold");
+                    doc.text("Serviços Adicionais:", 20, 210);
+
+                    doc.setFont("helvetica", "normal");
+                    if (cobrancaInteligente) {
+                        const servicos = [
+                            `- Aluguel do sistema: R$ ${numUsu * 175}`,
+                            `- Implantação do sistema: R$ 7000,00`,
+                            `- PDV: R$ ${numPdvs * 150}`,
+                            `- Armazenamento em nuvem: R$ ${150 * numPacotes}`,
+                            `- Cobrança inteligente: R$ ${numCnpj * 25}`,
+                            `- Conciliação BOAVISTA: Diretamente com o fornecedor do serviço`,
+                        ];
+                        servicos.forEach((item, index) => {
+                            doc.text(item, 20, 220 + index * 7);
+                        });
+                    } else {
+                        const servicos = [
+                            `- Aluguel do sistema: R$ ${numUsu * 175}`,
+                            `- Implantação do sistema: R$ 7000,00`,
+                            `- PDV: R$ ${numPdvs * 150}`,
+                            `- Armazenamento em nuvem: R$ ${150 * numPacotes}`,
+                            `- Cobrança inteligente: Nenhum`,
+                            `- Conciliação BOAVISTA: Diretamente com o fornecedor do serviço`,
+                        ];
+                        servicos.forEach((item, index) => {
+                            doc.text(item, 20, 220 + index * 7);
+                        });
                     }
-                    doc.text(`Integração com WhatsApp: ${integracaoWhatsapp}`, 20, 110);
-                    doc.text(`Conciliação Bancária: ${conciliacaoBancaria}`, 20, 120);
-                    doc.text(`Total da Proposta: ${totalProposta}`, 20, 130);
+
+
+
+
+                    // Total da Proposta
+                    doc.setFont("helvetica", "bold");
+                    doc.text(`Total da Proposta: ${Number(proposta.total) + 7000}`, 20, 270);
+
+                    // Rodapé
+                    doc.setFont("helvetica", "italic");
+                    doc.setFontSize(10);
+                    doc.text("http://www.webgex.com.br", 105, 290, { align: "center" });
 
                     // Gerar o PDF como Blob
                     const pdfBlob = doc.output('blob');
@@ -638,51 +756,53 @@
                     }
 
 
-                    const wtoken = await gerarToken();
+                    // const wtoken = await gerarToken();
                     if (!wtoken) throw new Error("Token não gerado");
-
+                    console.log(proposta.itens)
                     // Prepara os dados do formulário
-                    const body = {                     
-                                               	
+                    const body = {
+
                         pedidoCliente: "",
-                        codigoVendedor: 206,
+                        codigoVendedor: 72,
                         situacao: "E0",
-                        valor: 0.0,
+                        tipo: "PV",
+                        valor: proposta.total,
                         dataAbertura: "2024-11-19",
                         horaAbertura: "00:00:00",
-                        dataFechamento:"2024-11-25",
+                        dataFechamento: "2024-11-25",
                         horaFechamento: "00:00:00",
-                        cliente:{
+                        cliente: {
                             nome,
                             email,
                             telefone,
                             endereco: {}
-                        },	
-                        itens
+                        },
+                        itens: proposta.itens
 
                     };
 
-                    // URL da API para envio da proposta
-                    const baseUrl = "https://webgexapi-v2-stg.for-01.fks.services";
-                    const params = `codigoUnidade=10001&canalVenda=79`
-                    const wurl = `${baseUrl}/erp-oportunidades?${params}`; // ajuste conforme o caminho da sua API
-                    // Envia a requisição POST com o token no header
-                    const response = await fetch(wurl, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            Authorization: `Bearer ${wtoken}`,
-                        },
-                        body: JSON.stringify(body),
-                    });
+                    // // URL da API para envio da proposta
+                    // const baseUrl = "https://api-v2.webgex.com.br";
+                    // const params = `codigoUnidade=10001`
+                    // const wurl = `${baseUrl}/erp-oportunidades?${params}`; // ajuste conforme o caminho da sua API
+                    // const wtoken = "1OAXRCClIdHODuDSErAd1RXZBap2mvCpaTaA9tdtlsI"
+                    // // Envia a requisição POST com o token no header
+                    // const response = await fetch(wurl, {
+                    //     method: "POST",
+                    //     headers: {
+                    //         "Content-Type": "application/json",
+                    //         "WGX-API-KEY": `${wtoken}`,
+                    //     },
+                    //     body: JSON.stringify(body),
+                    // });
 
-                    if (!response.ok) {
-                        throw new Error(`Erro na requisição: ${response.statusText} +  detalhes: ${response.detail}`);
-                    }
+                    // if (!response.ok) {
+                    //     throw new Error(`Erro na requisição: ${response.statusText} +  detalhes: ${response.detail}`);
+                    // }
 
-                    const data = await response.json();
-                    console.log("Success:", data);
-                    // Você pode adicionar um alerta ou outra lógica para confirmar o sucesso
+                    // const data = await response.json();
+                    // console.log("Success:", data);
+                    // // Você pode adicionar um alerta ou outra lógica para confirmar o sucesso
 
                 }
             } catch (error) {
@@ -694,46 +814,49 @@
 
 
 
+
+
+
         // Função para gerar o token
-        async function gerarToken() {
-            const baseUrl = "https://webgexapi-v2-stg.for-01.fks.services";
-            const tokenUrl = `${baseUrl}/oauth/token`;
-            const USERNAME = "integracao@clidev.com.br";
-            const PASSWORD = "xpto";
-            const CLIENT_ID = "Webgex@pdv@CDEV";
-            const CLIENT_SECRET = "!VEDC@vdp@xegbeW#";
-            const GRANT_TYPE = "password";
+        // async function gerarToken() {
+        //     const baseUrl = "https://webgexapi-v2-stg.for-01.fks.services";
+        //     const tokenUrl = `${baseUrl}/oauth/token`;
+        //     const USERNAME = "integracao@clidev.com.br";
+        //     const PASSWORD = "xpto";
+        //     const CLIENT_ID = "Webgex@pdv@CDEV";
+        //     const CLIENT_SECRET = "!VEDC@vdp@xegbeW#";
+        //     const GRANT_TYPE = "password";
 
-            // Gerar o token corretamente com as credenciais de autenticação
-            const credentials = `${CLIENT_ID}:${CLIENT_SECRET}`;
-            const encodedCredentials = btoa(credentials); // Codificar em base64
+        //     // Gerar o token corretamente com as credenciais de autenticação
+        //     const credentials = `${CLIENT_ID}:${CLIENT_SECRET}`;
+        //     const encodedCredentials = btoa(credentials); // Codificar em base64
 
-            try {
-                const response = await fetch(tokenUrl, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                        "Authorization": `Basic ${encodedCredentials}`, // Basic Auth no header
-                    },
-                    body: new URLSearchParams({
-                        username: USERNAME,
-                        password: PASSWORD,
-                        grant_type: GRANT_TYPE,
-                    }),
-                });
+        //     try {
+        //         const response = await fetch(tokenUrl, {
+        //             method: "POST",
+        //             headers: {
+        //                 "Content-Type": "application/x-www-form-urlencoded",
+        //                 "Authorization": `Basic ${encodedCredentials}`, // Basic Auth no header
+        //             },
+        //             body: new URLSearchParams({
+        //                 username: USERNAME,
+        //                 password: PASSWORD,
+        //                 grant_type: GRANT_TYPE,
+        //             }),
+        //         });
 
-                if (!response.ok) {
-                    throw new Error(`Erro ao gerar token: ${response.statusText}`);
-                }
+        //         if (!response.ok) {
+        //             throw new Error(`Erro ao gerar token: ${response.statusText}`);
+        //         }
 
-                const data = await response.json();
+        //         const data = await response.json();
 
-                
-                return data.access_token; // Retorna o token
-            } catch (error) {
-                console.error("Erro ao obter o token:", error);
-            }
-        }
+
+        //         return data.access_token; // Retorna o token
+        //     } catch (error) {
+        //         console.error("Erro ao obter o token:", error);
+        //     }
+        // }
 
 
 
