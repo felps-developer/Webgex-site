@@ -447,6 +447,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="terser.min.js"></script>
 
     <script>
 
@@ -529,7 +530,7 @@
             if (numUsu > 0) {
                 total += 175 * numUsu;
                 itens.push({
-                    idProduto: "S000002",
+                    idProduto: "S000001",
                     quantidade: parseInt(numUsu),
                     valorUnitario: 0.0,
                     percentualValorDesconto: 0.0,
@@ -583,6 +584,14 @@
             }
             if (integracaoWhatsapp === 'sim') {
                 total += 300;
+                itens.push({
+                    idProduto: "S000015",
+                    quantidade: 1,
+                    valorUnitario: 0.0,
+                    percentualValorDesconto: 0.0,
+                    valorDesconto: 0.0,
+                    valorTotal: 300
+                })
             }
             if (conciliacaoBancaria === 'sim') {
                 total += 200;
@@ -632,9 +641,9 @@
                     const conciliacaoBancaria = document.getElementById('conciliacaoBancaria').value;
                     const totalProposta = document.getElementById('totalProposta').value;
 
-                    // Adicionar logo
+                    // Adicionar logo no topo
                     const logoImg = new Image();
-                    logoImg.src = '/assets/img/ugxnova_logo.jpg'; // Substitua pelo caminho correto da logo
+                    logoImg.src = 'assets/img/Logo.png'; // Substitua pelo caminho correto da logo
                     await new Promise((resolve) => {
                         logoImg.onload = () => {
                             doc.addImage(logoImg, 'PNG', 80, 10, 50, 20); // Centraliza a logo no topo
@@ -645,97 +654,122 @@
                     // Título principal
                     doc.setFont("helvetica", "bold");
                     doc.setFontSize(16);
-                    doc.text("Proposta Comercial", 105, 40, { align: "center" });
+                    doc.text("Transforme sua Gestão Empresarial com a UNIGEX", 105, 40, { align: "center" });
 
                     // Introdução
                     doc.setFont("helvetica", "normal");
                     doc.setFontSize(12);
-                    doc.text("A UNIGEX é uma empresa especializada em desenvolver e implementar sistemas integrados de gestão para empresas,com o propósito de criar soluções sólidas, eficientes e flexíveis para os clientes.", 20, 60, { maxWidth: 170 });
-                    // doc.text("com o propósito de criar soluções sólidas, eficientes e flexíveis para os clientes.", 20, 68, { maxWidth: 170 });
+                    doc.text("Prezado empresário,", 20, 50);
+                    const introducao =
+                        "Você está pronto para levar sua empresa ao próximo nível?A UNIGEX traz uma solução completa de ERP que vai revolucionar a forma como você gerencia seu negócio.";
 
+                    doc.text(doc.splitTextToSize(introducao, 170), 20, 55);
+
+                    // Por que escolher a UNIGEX?
                     doc.setFont("helvetica", "bold");
-                    doc.text("Nossa missão:", 20, 82);
+                    doc.setFontSize(14);
+                    doc.text("Por que escolher a UNIGEX?", 20, 70);
 
                     doc.setFont("helvetica", "normal");
-                    doc.text("Contribuir com o sucesso dos nossos clientes.", 20, 90);
+                    const textoUnigex = `Somos especialistas em desenvolver e implementar sistemas integrados de gestão que transformam desafios em oportunidades de crescimento. Nossa equipe multidisciplinar de elite inclui analistas de negócio, consultores especializados, desenvolvedores e profissionais de suporte, todos dedicados ao seu sucesso.`;
+                    doc.text(doc.splitTextToSize(textoUnigex, 170), 20, 80);
 
-                    // Adicionar equipe
+                    // Solução Completa
                     doc.setFont("helvetica", "bold");
-                    doc.text("A UNIGEX possui um time multidisciplinar que inclui:", 20, 105);
+                    doc.setFontSize(14);
+                    doc.text("Solução Completa para sua Empresa:", 20, 120);
 
-                    doc.setFont("helvetica", "normal");
-                    const equipe = [
-                        "- Analistas de Negócio",
-                        "- Consultores de Implantação e Treinamentos",
-                        "- Desenvolvedores",
-                        "- Analistas de Suporte",
+                    const modulos = [
+                        "• CRM: Gestão completa do relacionamento com clientes",
+                        "• Vendas: Controle total do seu pipeline comercial",
+                        "• Financeiro: Gestão precisa das suas finanças",
+                        "• Estoque: Controle eficiente dos seus produtos",
+                        "• Compras: Otimização do seu processo de aquisição",
+                        "• Fiscal: Conformidade total com as obrigações fiscais",
+                        "• Contábil: Visão clara da sua saúde financeira, incluindo DRE"
                     ];
-
-                    equipe.forEach((item, index) => {
-                        doc.text(item, 20, 115 + index * 7);
+                    modulos.forEach((item, index) => {
+                        doc.text(item, 20, 130 + index * 7);
                     });
 
-                    // Escopo Padrão
+
+                    // Título para nova página
                     doc.setFont("helvetica", "bold");
-                    doc.text("Escopo Padrão:", 20, 150);
-
+                    doc.setFontSize(14);
+                    doc.text("Investimento Mensal:", 20, 180);
+                    console.log(cobrancaInteligente);
                     doc.setFont("helvetica", "normal");
-                    const escopo = [
-                        "1. CRM",
-                        "2. Vendas",
-                        "3. Financeiro",
-                        "4. Estoque",
-                        "5. Compras",
-                        "6. Fiscal",
-                        "7. Contábil, incluindo DRE",
-                    ];
-
-                    escopo.forEach((item, index) => {
-                        doc.text(item, 20, 160 + index * 7);
-                    });
-
-                    // Serviços adicionais
-                    doc.setFont("helvetica", "bold");
-                    doc.text("Serviços Adicionais:", 20, 210);
-
-                    doc.setFont("helvetica", "normal");
-                    if (cobrancaInteligente) {
+                    if (cobrancaInteligente == 'sim') {
                         const servicos = [
-                            `- Aluguel do sistema: R$ ${numUsu * 175}`,
-                            `- Implantação do sistema: R$ 7000,00`,
-                            `- PDV: R$ ${numPdvs * 150}`,
-                            `- Armazenamento em nuvem: R$ ${150 * numPacotes}`,
-                            `- Cobrança inteligente: R$ ${numCnpj * 25}`,
-                            `- Conciliação BOAVISTA: Diretamente com o fornecedor do serviço`,
+                            "- Sistema ERP: R$ 175,00 por usuário",
+                            "- PDV: R$ 150,00 por máquina",
+                            "- Armazenamento em Nuvem: R$ 150,00 por pacotes de 50Gb",
+                            "- Cobrança Inteligente: R$150,00 por CNPJ",
+                            "- Conciliação BOAVISTA: Parceria direta com fornecedor"
                         ];
                         servicos.forEach((item, index) => {
-                            doc.text(item, 20, 220 + index * 7);
+                            doc.text(item, 20, 190 + index * 7);
                         });
-                    } else {
+                    } if (cobrancaInteligente == 'nao') {
                         const servicos = [
-                            `- Aluguel do sistema: R$ ${numUsu * 175}`,
-                            `- Implantação do sistema: R$ 7000,00`,
-                            `- PDV: R$ ${numPdvs * 150}`,
-                            `- Armazenamento em nuvem: R$ ${150 * numPacotes}`,
-                            `- Cobrança inteligente: Nenhum`,
-                            `- Conciliação BOAVISTA: Diretamente com o fornecedor do serviço`,
+                            "- Sistema ERP: R$ 175,00 por usuário",
+                            "- PDV: R$ 150,00 por máquina",
+                            "- Armazenamento em Nuvem: R$ 150,00 por pacotes de 50Gb",
+                            "- Cobrança Inteligente: nenhum",
+                            "- Conciliação BOAVISTA: Parceria direta com fornecedor"
                         ];
                         servicos.forEach((item, index) => {
-                            doc.text(item, 20, 220 + index * 7);
+                            doc.text(item, 20, 190 + index * 7);
                         });
                     }
 
 
-
-
-                    // Total da Proposta
                     doc.setFont("helvetica", "bold");
-                    doc.text(`Total da Proposta: ${Number(proposta.total) + 7000}`, 20, 270);
+                    doc.text(`Investimento Total: R$ ${Number(proposta.total)}/mês`, 20, 230);
 
-                    // Rodapé
-                    doc.setFont("helvetica", "italic");
-                    doc.setFontSize(10);
-                    doc.text("http://www.webgex.com.br", 105, 290, { align: "center" });
+                    // Implantação Personalizada
+                    doc.setFontSize(14);
+                    doc.text("Implantação Personalizada:", 20, 240);
+
+
+                    doc.setFont("helvetica", "normal");
+                    const textoImplantacao = `O valor da implantação é personalizado de acordo com suas necessidades específicas de treinamento, garantindo que sua equipe aproveite ao máximo todas as funcionalidades do sistema.`;
+                    doc.text(doc.splitTextToSize(textoImplantacao, 170), 20, 250);
+
+                    // Adicionar nova página para informações financeiras
+                    doc.addPage();
+
+                    // Contato
+                    doc.setFont("helvetica", "bold");
+                    doc.setFontSize(14);
+                    doc.text("Dúvidas? Estamos aqui para ajudar!", 20, 20);
+
+                    doc.setFont("helvetica", "normal");
+
+                    const textoContato = "Entre em contato conosco para um diagnóstico gratuito do seu negócio e descubra como podemos impulsionar seus resultados. Nossa equipe está pronta para esclarecer todas as suas dúvidas e apresentar a solução ideal para sua empresa.";
+                    doc.text(doc.splitTextToSize(textoImplantacao, 170), 20, 30);
+
+
+
+                    // Adiciona os ícones com textos
+                    const contatos = [
+                        " •  +55 85 99863-0052", // Ícone de telefone
+                        " •  helpdesk@unigex.com.br", // Ícone de email
+                        " •  www.webgex.com.br" // Ícone de link
+                    ];
+                    contatos.forEach((item, index) => {
+                        doc.text(item, 20, 60 + index * 7); // Adiciona cada linha no PDF
+                    });
+
+                    // Logo no rodapé
+                    const logoImgRodape = new Image();
+                    logoImgRodape.src = '/assets/img/ugxnova_logo.jpg'; // Substitua pelo caminho correto da logo
+                    await new Promise((resolve) => {
+                        logoImgRodape.onload = () => {
+                            doc.addImage(logoImgRodape, 'PNG', 160, 100, 40, 20);
+                            resolve();
+                        };
+                    });
 
                     // Gerar o PDF como Blob
                     const pdfBlob = doc.output('blob');
@@ -755,7 +789,10 @@
                         document.getElementById('container-pdf').style.display = 'block';
                     }
 
-
+                    // Embaralha o token para dificultar a leitura direta
+                    const encryptedToken = "Iltstda9tTaCpvm2paBZRXdArESDuDOHIldICCRXA1O".split("").reverse().join("");
+                    // Decodifica o token apenas quando necessário
+                    const wtoken = encryptedToken.split("").reverse().join("");
                     // const wtoken = await gerarToken();
                     if (!wtoken) throw new Error("Token não gerado");
                     console.log(proposta.itens)
@@ -781,28 +818,28 @@
 
                     };
 
-                    // // URL da API para envio da proposta
-                    // const baseUrl = "https://api-v2.webgex.com.br";
-                    // const params = `codigoUnidade=10001`
-                    // const wurl = `${baseUrl}/erp-oportunidades?${params}`; // ajuste conforme o caminho da sua API
-                    // const wtoken = "1OAXRCClIdHODuDSErAd1RXZBap2mvCpaTaA9tdtlsI"
-                    // // Envia a requisição POST com o token no header
-                    // const response = await fetch(wurl, {
-                    //     method: "POST",
-                    //     headers: {
-                    //         "Content-Type": "application/json",
-                    //         "WGX-API-KEY": `${wtoken}`,
-                    //     },
-                    //     body: JSON.stringify(body),
-                    // });
+                    // URL da API para envio da proposta
+                    const baseUrl = "https://api-v2.webgex.com.br";
+                    const params = `codigoUnidade=10001`
+                    const wurl = `${baseUrl}/erp-oportunidades?${params}`; // ajuste conforme o caminho da sua API
+                    
+                    // Envia a requisição POST com o token no header
+                    const response = await fetch(wurl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "WGX-API-KEY": `${wtoken}`,
+                        },
+                        body: JSON.stringify(body),
+                    });
 
-                    // if (!response.ok) {
-                    //     throw new Error(`Erro na requisição: ${response.statusText} +  detalhes: ${response.detail}`);
-                    // }
+                    if (!response.ok) {
+                        throw new Error(`Erro na requisição: ${response.statusText} +  detalhes: ${response.detail}`);
+                    }
 
-                    // const data = await response.json();
-                    // console.log("Success:", data);
-                    // // Você pode adicionar um alerta ou outra lógica para confirmar o sucesso
+                    const data = await response.json();
+                    console.log("Success:", data);
+                    // Você pode adicionar um alerta ou outra lógica para confirmar o sucesso
 
                 }
             } catch (error) {
