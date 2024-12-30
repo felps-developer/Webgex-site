@@ -789,13 +789,10 @@
                         document.getElementById('container-pdf').style.display = 'block';
                     }
 
-                    // Embaralha o token para dificultar a leitura direta
-                    const encryptedToken = "Iltstda9tTaCpvm2paBZRXdArESDuDOHIldICCRXA1O".split("").reverse().join("");
-                    // Decodifica o token apenas quando necessário
-                    const wtoken = encryptedToken.split("").reverse().join("");
-                    // const wtoken = await gerarToken();
-                    if (!wtoken) throw new Error("Token não gerado");
-                    console.log(proposta.itens)
+                    
+                    // // const wtoken = await gerarToken();
+                    // if (!wtoken) throw new Error("Token não gerado");
+                    // console.log(proposta.itens)
                     // Prepara os dados do formulário
                     const body = {
 
@@ -822,7 +819,7 @@
                     const baseUrl = "https://api-v2.webgex.com.br";
                     const params = `codigoUnidade=10001`
                     const wurl = `${baseUrl}/erp-oportunidades?${params}`; // ajuste conforme o caminho da sua API
-                    
+                    const wtoken = "1OAXRCClIdHODuDSErAd1RXZBap2mvCpaTaA9tdtlsI"
                     // Envia a requisição POST com o token no header
                     const response = await fetch(wurl, {
                         method: "POST",
