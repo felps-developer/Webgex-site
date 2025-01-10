@@ -488,7 +488,7 @@
             const email = document.getElementById('email').value;
             const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
             if (!emailPattern.test(email)) {
-                $('#telefone-error').show();
+                $('#email-error').show();
                 isValid = false;
             }
             const lgpdConsent = document.getElementById('lgpdConsent').checked;
@@ -502,7 +502,7 @@
             const telefone = document.getElementById('telefone').value;
             const telefonePattern = /^\(\d{2}\) \d{5}-\d{4}$/;  // (99) 99999-9999
             if (!telefonePattern.test(telefone)) {
-                $('#email-error').show();
+                $('#telefone-error').show();
                 isValid = false;
             }
             return isValid;
