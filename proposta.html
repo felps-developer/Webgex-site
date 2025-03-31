@@ -159,11 +159,10 @@
             }
         }
     </style>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-
-
 </head>
 
 <body>
@@ -790,21 +789,29 @@
                     }
 
                     
-                    // // const wtoken = await gerarToken();
-                    // if (!wtoken) throw new Error("Token não gerado");
-                    // console.log(proposta.itens)
+                    const dataAtual = new Date();
+                    const ano = dataAtual.getFullYear();
+                    const mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+                    const dia = String(dataAtual.getDate()).padStart(2, '0');
+
+                    const dataFormatada = `${ano}-${mes}-${dia}`;
+                    console.log(dataFormatada); // Exemplo de saída: 2025-02-25
+                    
                     // Prepara os dados do formulário
-                    const body = {
+                    const propostaData = {
 
                         pedidoCliente: "",
-                        codigoVendedor: 72,
+                        codigoVendedor: 51,
                         situacao: "E0",
                         tipo: "PV",
+                        codigoLotacao: 11,
+                        campanhaMarketing: 1,
                         valor: proposta.total,
-                        dataAbertura: "2024-11-19",
+                        dataAbertura: dataFormatada,
                         horaAbertura: "00:00:00",
-                        dataFechamento: "2024-11-25",
+                        dataFechamento: "9999-12-31",
                         horaFechamento: "00:00:00",
+                        codigoUnidade: "10001",
                         cliente: {
                             nome,
                             email,
@@ -814,31 +821,28 @@
                         itens: proposta.itens
 
                     };
+                
+                    const wurl = `https://api-v2.webgex.com.br/erp-oportunidades`;
+                    const wtoken = 'GxwNmHX2CI49Agtut-NksRWcpY9OCadCuTVF_SQqOS0';
 
-                    // URL da API para envio da proposta
-                    const baseUrl = "https://api-v2.webgex.com.br";
-                    const params = `codigoUnidade=10001`
-                    const wurl = `${baseUrl}/erp-oportunidades?${params}`; // ajuste conforme o caminho da sua API
-                    const wtoken = "GxwNmHX2CI49Agtut-NksRWcpY9OCadCuTVF_SQqOS0"
-                    
-                    // Envia a requisição POST com o token no header
                     const response = await fetch(wurl, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
                             "WGX-API-KEY": `${wtoken}`,
                         },
-                        body: JSON.stringify(body),
+                        body: JSON.stringify(propostaData),
                     });
 
-                    if (!response.ok) {
-                        throw new Error(`Erro na requisição: ${response.statusText} +  detalhes: ${response.detail}`);
+                    if(!response.ok) {
+                        throw new Error(`Erro na requisição ${response.statusText}`);
                     }
 
                     const data = await response.json();
                     console.log("Success:", data);
-                    // Você pode adicionar um alerta ou outra lógica para confirmar o sucesso
+                    return data;
 
+                    console.log('Resposta de API:', response);
                 }
             } catch (error) {
                 console.error("Erro ao gerar PDF ou enviar dados:", error);
@@ -846,54 +850,6 @@
                 isGenerating = false;
             }
         }
-
-
-
-
-
-
-        // Função para gerar o token
-        // async function gerarToken() {
-        //     const baseUrl = "https://webgexapi-v2-stg.for-01.fks.services";
-        //     const tokenUrl = `${baseUrl}/oauth/token`;
-        //     const USERNAME = "integracao@clidev.com.br";
-        //     const PASSWORD = "xpto";
-        //     const CLIENT_ID = "Webgex@pdv@CDEV";
-        //     const CLIENT_SECRET = "!VEDC@vdp@xegbeW#";
-        //     const GRANT_TYPE = "password";
-
-        //     // Gerar o token corretamente com as credenciais de autenticação
-        //     const credentials = `${CLIENT_ID}:${CLIENT_SECRET}`;
-        //     const encodedCredentials = btoa(credentials); // Codificar em base64
-
-        //     try {
-        //         const response = await fetch(tokenUrl, {
-        //             method: "POST",
-        //             headers: {
-        //                 "Content-Type": "application/x-www-form-urlencoded",
-        //                 "Authorization": `Basic ${encodedCredentials}`, // Basic Auth no header
-        //             },
-        //             body: new URLSearchParams({
-        //                 username: USERNAME,
-        //                 password: PASSWORD,
-        //                 grant_type: GRANT_TYPE,
-        //             }),
-        //         });
-
-        //         if (!response.ok) {
-        //             throw new Error(`Erro ao gerar token: ${response.statusText}`);
-        //         }
-
-        //         const data = await response.json();
-
-
-        //         return data.access_token; // Retorna o token
-        //     } catch (error) {
-        //         console.error("Erro ao obter o token:", error);
-        //     }
-        // }
-
-
 
 
         function validarCnpj() {
