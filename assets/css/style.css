@@ -2489,3 +2489,21 @@ section {
   padding-top: 10rem !important;
 }
 /* end BI */
+
+/* nova estrutura */
+.stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.stat-item {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+.stat-item span {
+  font-size: 1.5em;
+  color: #3498db;
+}
