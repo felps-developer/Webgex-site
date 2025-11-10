@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBGEX para Centros Automotivos - O Fim do Caos na Oficina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --dark-blue: #0A192F;
+            --accent-blue: #007BFF;
+            --light-gray: #F8F9FA;
+            --text-color: #343A40;
+            --white: #FFFFFF;
+            --success-green: #28a745;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--white); color: var(--text-color); }
+        .container { max-width: 1100px; margin: auto; padding: 0 2rem; }
+
+        /* --- ALTERAÇÃO: Novo Top Bar para a Logo --- */
+        .top-bar {
+            background-color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .top-bar .logo { max-height: 40px; }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1579751343603-f3c647c0c1de?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem auto; opacity: 0.9; }
+        .cta-button { background-color: var(--accent-blue); color: var(--white); padding: 1rem 2.5rem; font-size: 1.2rem; font-weight: 700; text-decoration: none; border-radius: 5px; transition: transform 0.2s, background-color 0.2s; display: inline-block; }
+        .cta-button:hover { background-color: #0056b3; transform: translateY(-3px); }
+        .cta-button .arrow { margin-left: 10px; }
+        .cta-subtext { font-size: 0.9rem; margin-top: 1rem; opacity: 0.8; }
+
+        /* --- Problem Section --- */
+        .section { padding: 6rem 0; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark-blue); }
+        .section-subtitle { text-align: center; font-size: 1.2rem; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .pain-card { background: var(--light-gray); padding: 2rem; border-radius: 8px; text-align: center; border-left: 5px solid var(--accent-blue); }
+        .pain-card i { font-size: 3rem; color: var(--accent-blue); margin-bottom: 1rem; }
+        .pain-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--dark-blue); margin-bottom: 0.5rem; }
+
+        /* --- Solution Section --- */
+        .solution { background-color: var(--dark-blue); color: var(--white); }
+        .solution h2, .solution p { color: var(--white); }
+        .solution-content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
+        .solution-content img { width: 100%; border-radius: 8px; }
+        .benefits-list li { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+        .benefits-list i { color: var(--success-green); font-size: 1.5rem; margin-right: 1rem; }
+
+        /* --- Social Proof Section --- */
+        .testimonial { background: var(--light-gray); padding: 3rem; border-radius: 8px; text-align: center; max-width: 800px; margin: 4rem auto 0 auto; }
+        .testimonial blockquote { font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem; }
+        .testimonial cite { font-weight: 700; font-style: normal; color: var(--dark-blue); }
+
+        /* --- Final CTA Section --- */
+        .final-cta { background: var(--light-gray); text-align: center; }
+        
+        /* --- Footer --- */
+        .footer { background: var(--dark-blue); color: var(--white); text-align: center; padding: 2rem 0; }
+        
+        @media(max-width: 992px) {
+            .pain-grid { grid-template-columns: repeat(2, 1fr); }
+            .solution-content { grid-template-columns: 1fr; }
+        }
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .pain-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ALTERAÇÃO: NOVO HEADER COM FAIXA BRANCA -->
+    <header class="top-bar">
+        <div class="container">
+            <img src="assets/img/Logo.png" alt="WEBGEX Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sua oficina está com o freio de mão puxado pela desorganização?</h1>
+            <p>Descubra os vazamentos de lucro que planilhas e anotações escondem e veja como ter o controle total do seu negócio automotivo.</p>
+            <a href="maturidade.html" class="cta-button">
+                Receber Diagnóstico Gratuito <span class="arrow">→</span>
+            </a>
+            <p class="cta-subtext">Ferramenta online, rápida e 100% gratuita.</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- PROBLEM SECTION -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Isso parece familiar?</h2>
+                <p class="section-subtitle">Se você se identifica com algum destes desafios, saiba que não está sozinho. São os problemas mais comuns que travam o crescimento de centros automotivos.</p>
+                <!-- ALTERAÇÃO: Adicionados mais 2 cards para simetria -->
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <i class="bi bi-search"></i>
+                        <h3>Orçamento Lento</h3>
+                        <p>Perder vendas porque demora para cotar uma peça que não tem em estoque.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-box-seam"></i>
+                        <h3>Estoque Fantasma</h3>
+                        <p>Dinheiro parado em peças que não giram ou "somem" sem registro.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-clipboard-x"></i>
+                        <h3>Caos nas Ordens de Serviço</h3>
+                        <p>Controle em papéis que se perdem, gerando retrabalho e atrasos.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-graph-down-arrow"></i>
+                        <h3>Lucro que Evapora</h3>
+                        <p>A oficina vive cheia, mas no fim do mês você não sabe para onde foi o dinheiro.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-calculator-fill"></i>
+                        <h3>Comissão que Dá Dor de Cabeça</h3>
+                        <p>Gastar horas em planilhas para calcular pagamentos, arriscando erros e desmotivando a equipe.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-stopwatch-fill"></i>
+                        <h3>Processo de Compra Lento</h3>
+                        <p>O atendente para tudo para ligar para fornecedores enquanto o cliente espera, atrasando toda a operação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION SECTION -->
+        <section class="section solution">
+            <div class="container">
+                <div class="solution-content">
+                    <div>
+                        <h2 class="section-title" style="text-align: left;">Chega de "apagar incêndios". <br>É hora de ter um Painel de Controle.</h2>
+                        <p>O ERP WEBGEX foi desenhado para a realidade do setor automotivo. Ele centraliza toda a sua operação, transformando o caos em um fluxo de trabalho inteligente e lucrativo.</p>
+                        <ul class="benefits-list" style="list-style: none; padding: 0;">
+                            <li><i class="bi bi-check-circle-fill"></i><div><strong>Agilidade no Balcão:</strong> Crie Ordens de Serviço digitais, consulte histórico pela placa e acione seu comprador com a Cotação Emergencial em segundos.</div></li>
+                            <li><i class="bi bi-check-circle-fill"></i><div><strong>Controle Financeiro Real:</strong> Saiba o lucro de cada O.S., integre a emissão de notas (NFS-e e NF-e) e tenha um DRE atualizado em tempo real.</div></li>
+                            <li><i class="bi bi-check-circle-fill"></i><div><strong>Equipe Motivada:</strong> Automatize qualquer regra de comissionamento (por mecânico, peça ou serviço) e acabe com as planilhas manuais.</div></li>
+                        </ul>
+                    </div>
+                    <!-- ALTERAÇÃO: Recomendação de Imagem Específica -->
+                    <img src="assets/img/os-automitivo.jpg" alt="Dashboard do sistema WEBGEX">
+                </div>
+                
+                <div class="testimonial">
+                    <i class="bi bi-quote" style="font-size: 3rem; color: var(--accent-blue);"></i>
+                    
+                    <!-- CORREÇÃO: Adicionado style="color: var(--text-color);" para garantir a visibilidade do texto -->
+                    <blockquote style="color: var(--text-color);">
+                        "A UNIGEX, com seus sistemas, suporte, lógica de marca, segurança e adaptabilidade tecnológica, atendeu plenamente nossas necessidades, conferindo credibilidade. Como cliente, recomendo para empresas do setor automotivo."
+                    </blockquote>
+                    
+                    <!-- CORREÇÃO: Adicionado style="color: var(--dark-blue);" para garantir a visibilidade da citação -->
+                    <cite style="color: var(--dark-blue);">– Beto's Car</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="section final-cta">
+            <div class="container">
+                <h2 class="section-title">Sua gestão está "batendo pino". Nós temos a ferramenta certa.</h2>
+                <p class="section-subtitle">Antes de pensar em software, você precisa de um diagnóstico. Nossa ferramenta gratuita de 20 perguntas vai te mostrar, em 5 minutos, os pontos exatos onde sua oficina está perdendo dinheiro e eficiência.</p>
+                <a href="maturidade.html" class="cta-button">
+                    Descobrir Meus Gargalos Agora <span class="arrow">→</span>
+                </a>
+                <p class="cta-subtext">Receba seu nível de maturidade e um plano de ação imediato.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 UNIGEX Tecnologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
