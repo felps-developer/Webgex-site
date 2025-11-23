@@ -37,12 +37,11 @@
   // **IMPORTANTE: Configure seu SMTP aqui para envio em produção**
   // Substitua com suas credenciais reais de SMTP para evitar que os emails caiam no spam.
   $contact->smtp = array(
-    'host' => 'smtp.unigex.com.br',
-    'username' => 'mmiranda@unigex.com.br', // Atualizado aqui também
-    'password' => 'mnmn6767%',
+    'host' => 'mtp3.xmailer.com.br',
+    'username' => 'smtp@webgex.com.br', // Atualizado aqui também
+    'password' => 'zWsRl8R412',
     'port' => '587' // ou 465
   );
-
 
   // --- Corpo da Mensagem ---
   // Organiza os dados para o e-mail interno
