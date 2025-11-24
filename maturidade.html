@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>UNIGEX - Diagnóstico de Maturidade de Gestão</title>
   
-  <!-- Bootstrap CSS (via CDN para garantir funcionamento) -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon-16x16.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #f6f9ff;
-    }
-    .header-simple {
-        background-color: #fff;
-        padding: 15px 0;
-        border-bottom: 1px solid #e6e9ee;
-    }
-    .header-simple img {
-        max-height: 40px;
-    }
+    body { font-family: 'Poppins', sans-serif; background-color: #f6f9ff; }
+    .header-simple { background-color: #fff; padding: 15px 0; border-bottom: 1px solid #e6e9ee; }
+    .header-simple img { max-height: 40px; }
     #maturity-quiz .quiz-section { display: none; }
     #maturity-quiz .quiz-section.active { display: block; }
     .question { margin-bottom: 2rem; background-color: #fff; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #4154f1; }
-    .question p { font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem; color: #012970; }
-    .question .form-check label { cursor: pointer; }
+    .question p { font-weight: 600; font-size: 1.1rem; color: #012970; }
     .navigation-buttons { display: flex; justify-content: space-between; margin-top: 2rem; }
     #results-container { display: none; padding: 2.5rem; background-color: #fff; border-radius: 10px; text-align: center; border-top: 5px solid #4154f1;}
     .result-level { display: none; }
@@ -43,13 +27,7 @@
 </head>
 
 <body>
-  <header class="header-simple">
-    <div class="container">
-      <a href="index.html">
-        <img src="assets/img/Logo.png" alt="Logo Unigex">
-      </a>
-    </div>
-  </header>
+  <header class="header-simple"><div class="container"><a href="index.html"><img src="assets/img/Logo.png" alt="Logo Unigex"></a></div></header>
 
   <main>
     <section class="py-5" id="maturity-section">
@@ -71,72 +49,46 @@
           </div>
 
           <div id="results-container">
-              <!-- O conteúdo dos resultados será inserido aqui -->
+              <!-- O conteúdo dos resultados será inserido aqui dinamicamente -->
           </div>
       </div>
     </section>
   </main>
 
-  <footer class="text-center py-4">
-    <div class="container">
-        <p class="text-muted">&copy; Copyright <strong><span>Unigex</span></strong>. Todos os direitos reservados</p>
-    </div>
-  </footer>
+  <footer class="text-center py-4"><div class="container"><p class="text-muted">&copy; Copyright <strong><span>Unigex</span></strong>. Todos os direitos reservados</p></div></footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
         const questions = [
-            // Área 1: Gestão Financeira e Faturamento
             { area: "Gestão Financeira e Faturamento", text: "Como você controla seu fluxo de caixa (contas a pagar e receber)?", options: [{ text: "Na memória, anotações em papel ou extrato bancário.", value: 0 }, { text: "Em uma ou várias planilhas.", value: 1 }, { text: "Utilizo um software financeiro que não se integra às outras áreas.", value: 2 }] },
             { area: "Gestão Financeira e Faturamento", text: "Quão confiante você está de que sua empresa está 100% em conformidade com as obrigações fiscais (SPED, emissão de NFe/NFSe, etc.)?", options: [{ text: "É uma preocupação constante, dependo 100% do contador e o processo é manual.", value: 0 }, { text: "Temos um processo, mas é separado e exige conferência manual.", value: 1 }, { text: "Nosso sistema gera a maioria dos arquivos e relatórios fiscais de forma automatizada.", value: 2 }] },
             { area: "Gestão Financeira e Faturamento", text: "Você consegue gerar um DRE (Demonstrativo de Resultados) para saber o lucro real do seu negócio?", options: [{ text: "Não sei o que é ou só vejo o que o contador envia anualmente.", value: 0 }, { text: "Consigo montar um cruzando dados de planilhas, mas leva tempo.", value: 1 }, { text: "Sim, meu sistema gera um DRE gerencial com poucos cliques.", value: 2 }] },
             { area: "Gestão Financeira e Faturamento", text: "Seu processo de emissão de notas fiscais é integrado à venda/ordem de serviço?", options: [{ text: "Não, redigitamos todos os dados no sistema do governo.", value: 0 }, { text: "Não, usamos um emissor de notas separado e importamos/digitamos os dados.", value: 1 }, { text: "Sim, a nota é gerada automaticamente a partir da venda.", value: 2 }] },
-            // Área 2: Processos Comerciais e Relacionamento com Cliente (CRM)
             { area: "Processos Comerciais e Relacionamento com Cliente (CRM)", text: "As informações dos seus clientes (histórico, contatos, preferências) estão centralizadas em um único lugar?", options: [{ text: "Não, estão espalhadas entre WhatsApp, e-mails e anotações.", value: 0 }, { text: "Temos uma planilha principal de clientes.", value: 1 }, { text: "Sim, utilizamos um sistema de CRM ou um cadastro integrado.", value: 2 }] },
             { area: "Processos Comerciais e Relacionamento com Cliente (CRM)", text: "Como sua equipe acompanha as oportunidades de negócio (propostas enviadas, follow-ups)?", options: [{ text: "Cada vendedor controla o seu, na agenda ou na memória.", value: 0 }, { text: "Usamos uma planilha compartilhada ou um quadro de tarefas (Trello, etc.).", value: 1 }, { text: "Temos um funil de vendas dentro de um sistema (CRM).", value: 2 }] },
             { area: "Processos Comerciais e Relacionamento com Cliente (CRM)", text: "Para converter um orçamento em venda, qual o nível de retrabalho?", options: [{ text: "Alto. Precisamos redigitar tudo em outro lugar (planilha de controle, O.S., etc.).", value: 0 }, { text: "Médio. Copiamos e colamos as informações entre sistemas/planilhas.", value: 1 }, { text: "Mínimo. Convertemos o orçamento em venda com um clique dentro do sistema.", value: 2 }] },
-            // Área 3: Operações e Eficiência de Processos
             { area: "Operações e Eficiência de Processos", text: "Quando um dado precisa ser alterado (ex: preço de um produto), em quantos lugares diferentes sua equipe precisa atualizá-lo manualmente?", options: [{ text: "Em vários lugares (planilha de preço, sistema de orçamento, sistema de caixa...).", value: 0 }, { text: "Em dois ou três lugares principais.", value: 1 }, { text: "Em um único lugar. O sistema atualiza o resto automaticamente.", value: 2 }] },
             { area: "Operações e Eficiência de Processos", text: "Quantas horas por semana sua equipe gasta em tarefas manuais repetitivas (redigitar pedidos, conferir estoque, gerar relatórios)?", options: [{ text: "Mais de 10 horas. Vivemos \"apagando incêndios\".", value: 0 }, { text: "Entre 3 e 10 horas. É um gargalo conhecido.", value: 1 }, { text: "Menos de 3 horas. A maioria dos processos é automatizada.", value: 2 }] },
             { area: "Operações e Eficiência de Processos", text: "A baixa de um item no estoque após a venda é...", options: [{ text: "Feita manualmente no final do dia ou da semana.", value: 0 }, { text: "Feita manualmente no sistema a cada venda.", value: 1 }, { text: "100% automática e integrada ao sistema de vendas/PDV.", value: 2 }] },
             { area: "Operações e Eficiência de Processos", text: "Se você precisasse de um relatório de \"produtos mais vendidos do último trimestre\", quanto tempo levaria?", options: [{ text: "Dias, ou talvez nem conseguiria a informação com precisão.", value: 0 }, { text: "Algumas horas, cruzando dados de planilhas.", value: 1 }, { text: "Alguns minutos ou cliques no meu sistema.", value: 2 }] },
             { area: "Operações e Eficiência de Processos", text: "Os processos na sua empresa são bem definidos ou dependem muito do \"jeito de fazer\" de cada funcionário?", options: [{ text: "Dependem muito de cada pessoa. Se um funcionário-chave sai, a operação sofre.", value: 0 }, { text: "Temos alguns processos escritos, mas a execução varia bastante.", value: 1 }, { text: "Os processos são claros e o sistema nos ajuda a mantê-los padronizados.", value: 2 }] },
-            // Área 4: Integração de Dados e Visão Estratégica
             { area: "Integração de Dados e Visão Estratégica", text: "Você diria que os departamentos da sua empresa (Vendas, Financeiro, Estoque) operam em \"silos\" de informação?", options: [{ text: "Sim, totalmente. Uma área raramente sabe o que a outra está fazendo em tempo real.", value: 0 }, { text: "Em parte. Trocamos informações por e-mail ou reuniões, mas não é integrado.", value: 1 }, { text: "Não, todos compartilham informações a partir de uma única plataforma central.", value: 2 }] },
             { area: "Integração de Dados e Visão Estratégica", text: "Sua empresa possui uma \"única fonte da verdade\" para os dados?", options: [{ text: "Não, temos múltiplas planilhas e a verdade às vezes depende de quem atualizou por último.", value: 0 }, { text: "Tentamos ter, mas sempre há divergências entre sistemas ou planilhas.", value: 1 }, { text: "Sim, nosso sistema de gestão central é a nossa fonte da verdade.", value: 2 }] },
             { area: "Integração de Dados e Visão Estratégica", text: "Como você mede a produtividade da sua equipe?", options: [{ text: "Pela percepção geral e pelo resultado final do faturamento.", value: 0 }, { text: "Através de relatórios manuais ou planilhas preenchidas pela equipe.", value: 1 }, { text: "O sistema gera dashboards e relatórios automáticos de desempenho por pessoa ou equipe.", value: 2 }] },
             { area: "Integração de Dados e Visão Estratégica", text: "Suas decisões de compra e investimento são baseadas em quê?", options: [{ text: "Principalmente na intuição e na necessidade imediata.", value: 0 }, { text: "Em análises de planilhas e projeções que montamos.", value: 1 }, { text: "Em relatórios e dados gerados em tempo real pelo nosso sistema de gestão.", value: 2 }] },
-            // Área 5: Mentalidade para o Crescimento
             { area: "Mentalidade para o Crescimento", text: "Qual o seu principal objetivo de negócio para os próximos 12 meses?", options: [{ text: "Organizar o caos atual para parar de perder dinheiro.", value: 0 }, { text: "Estruturar a operação para conseguir crescer de forma sustentável.", value: 1 }, { text: "Otimizar processos para aumentar a margem de lucro e escalar.", value: 2 }] },
             { area: "Mentalidade para o Crescimento", text: "Para você, investir em tecnologia de gestão é:", options: [{ text: "Um custo que tento evitar ao máximo.", value: 0 }, { text: "Uma necessidade, mas tenho dificuldade em justificar o investimento (ROI).", value: 1 }, { text: "Um investimento estratégico com retorno claro sobre o crescimento.", value: 2 }] },
             { area: "Mentalidade para o Crescimento", text: "Você já tentou usar algum software de gestão no passado? Qual foi a experiência?", options: [{ text: "Não, nunca tentei.", value: 0 }, { text: "Sim, mas era muito complexo, caro ou o suporte era ruim.", value: 1 }, { text: "Sim, usamos algumas ferramentas simples atualmente.", value: 2 }] },
             { area: "Mentalidade para o Crescimento", text: "Qual seu cargo/função na empresa?", options: [{ text: "Sócio / Proprietário.", value: 2 }, { text: "Gerente (Financeiro, de Operações, etc.).", value: 1 }, { text: "Analista / Coordenador / Outro.", value: 0 }] },
         ];
 
+        // --- LÓGICA DE NAVEGAÇÃO (RESTAURADA DA VERSÃO ESTÁVEL) ---
         const quizForm = document.getElementById('quiz-form');
         const sections = {};
-        questions.forEach((q, index) => {
-            if (!sections[q.area]) { sections[q.area] = []; }
-            sections[q.area].push({ question: q, index: index });
-        });
-
+        questions.forEach((q, index) => { if (!sections[q.area]) { sections[q.area] = []; } sections[q.area].push({ question: q, index: index }); });
         const sectionKeys = Object.keys(sections);
-        sectionKeys.forEach((area, i) => {
-            const sectionDiv = document.createElement('div');
-            sectionDiv.className = 'quiz-section';
-            sectionDiv.id = `section-${i + 1}`;
-            let sectionHTML = `<h3 class="mb-4 text-center text-primary">Área ${i + 1}/${sectionKeys.length}: ${area}</h3>`;
-            sections[area].forEach(({ question, index }) => {
-                sectionHTML += `<div class="question"><p>${index + 1}. ${question.text}</p>`;
-                question.options.forEach((option, optIndex) => {
-                    sectionHTML += `<div class="form-check"><input class="form-check-input" type="radio" name="q${index}" id="q${index}o${optIndex}" value="${option.value}" data-text="${option.text.replace(/"/g, '&quot;')}" required><label class="form-check-label" for="q${index}o${optIndex}">${option.text}</label></div>`;
-                });
-                sectionHTML += `</div>`;
-            });
-            sectionDiv.innerHTML = sectionHTML;
-            quizForm.appendChild(sectionDiv);
-        });
-
+        sectionKeys.forEach((area, i) => { const sectionDiv = document.createElement('div'); sectionDiv.className = 'quiz-section'; sectionDiv.id = `section-${i + 1}`; let sectionHTML = `<h3 class="mb-4 text-center text-primary">Área ${i + 1}/${sectionKeys.length}: ${area}</h3>`; sections[area].forEach(({ question, index }) => { sectionHTML += `<div class="question"><p>${index + 1}. ${question.text}</p>`; question.options.forEach((option, optIndex) => { sectionHTML += `<div class="form-check"><input class="form-check-input" type="radio" name="q${index}" id="q${index}o${optIndex}" value="${option.value}" data-text="${option.text.replace(/"/g, '&quot;')}" required><label class="form-check-label" for="q${index}o${optIndex}">${option.text}</label></div>`; }); sectionHTML += `</div>`; }); sectionDiv.innerHTML = sectionHTML; quizForm.appendChild(sectionDiv); });
+        
         let currentSection = 0;
         const quizSections = document.querySelectorAll('.quiz-section');
         const prevBtn = document.getElementById('prev-btn');
@@ -159,20 +111,11 @@
             for (const name of questionNames) {
                 if (!quizForm.querySelector(`input[name="${name}"]:checked`)) { allAnswered = false; break; }
             }
-            if (allAnswered) {
-                currentSection++;
-                showSection(currentSection);
-                window.scrollTo(0, document.getElementById('maturity-section').offsetTop);
-            } else {
-                alert('Por favor, responda a todas as perguntas antes de continuar.');
-            }
+            if (allAnswered) { currentSection++; showSection(currentSection); window.scrollTo(0, document.getElementById('maturity-section').offsetTop); } 
+            else { alert('Por favor, responda a todas as perguntas antes de continuar.'); }
         });
 
-        prevBtn.addEventListener('click', () => {
-            currentSection--;
-            showSection(currentSection);
-            window.scrollTo(0, document.getElementById('maturity-section').offsetTop);
-        });
+        prevBtn.addEventListener('click', () => { currentSection--; showSection(currentSection); window.scrollTo(0, document.getElementById('maturity-section').offsetTop); });
         
         submitBtn.addEventListener('click', function () {
             const lastSectionQuestions = quizSections[quizSections.length-1].querySelectorAll('input[type="radio"]');
@@ -181,10 +124,8 @@
             for (const name of questionNames) {
                 if (!quizForm.querySelector(`input[name="${name}"]:checked`)) { allAnswered = false; break; }
             }
-            if (!allAnswered) {
-                alert('Por favor, responda a todas as perguntas antes de continuar.');
-                return;
-            }
+            if (!allAnswered) { alert('Por favor, responda a todas as perguntas.'); return; }
+            
             let totalScore = 0;
             for (let i = 0; i < questions.length; i++) {
                 const checked = quizForm.querySelector(`input[name="q${i}"]:checked`);
@@ -201,7 +142,7 @@
                 <div id="initial-stage" class="result-level"><span class="badge bg-danger mb-3">Nível de Maturidade: ESTÁGIO INICIAL</span><h2>"Herói Sobrevivente"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Sua empresa opera na base da garra, do esforço individual e do controle manual. Você é um herói por fazer tudo funcionar, mas essa dependência de processos manuais e de "apagar incêndios" está limitando seu potencial de crescimento e consumindo sua energia e lucro.</p><p><strong>Orientação Estratégica:</strong> O foco principal deve ser em padronizar processos simples. A implementação de um ERP completo agora pode ser um passo muito grande. Comece organizando UMA área crítica. A UNIGEX pode ajudar com uma consultoria inicial para mapear seus processos e preparar sua empresa para o crescimento.</p></div>
                 <div id="growth-stage" class="result-level"><span class="badge bg-warning text-dark mb-3">Nível de Maturidade: ESTÁGIO DE CRESCIMENTO</span><h2>"Prisioneiro das Planilhas"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Você é o nosso candidato ideal! Sua empresa já utiliza ferramentas como planilhas e sistemas separados, mas atingiu o limite. Elas não se conversam, geram retrabalho e não fornecem uma "única fonte da verdade". A falta de integração é o verdadeiro freio de mão que impede seu negócio de acelerar.</p><p><strong>Orientação Estratégica:</strong> Este é o momento perfeito para dar o salto para um sistema de gestão integrado como o ERP WEBGEX. Ele vai unificar seu financeiro, vendas, estoque e fiscal, eliminando as planilhas e te dando a visão 360º que você precisa para escalar com segurança. <br><strong>Próximo Passo: Agendar uma demonstração do WEBGEX.</strong></p></div>
                 <div id="optimization-stage" class="result-level"><span class="badge bg-success mb-3">Nível de Maturidade: ESTÁGIO DE OTIMIZAÇÃO</span><h2>"Buscando a Sinergia"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Parabéns, sua gestão já é avançada. Seu desafio não é mais o caos, mas sim a ineficiência gerada pela falta de uma integração perfeita entre seus sistemas, que pode estar escondendo oportunidades de otimização e dificultando análises estratégicas.</p><p><strong>Orientação Estratégica:</strong> Para você, a conversa é sobre otimização de alto nível, Business Intelligence e ROI. O WEBGEX se posiciona como a plataforma central para unificar seu ecossistema tecnológico, fornecendo dados mais precisos e relatórios de controladoria instantâneos. <br><strong>Próximo Passo: Agendar uma análise de integração com nossos especialistas.</strong></p></div>
-                <hr class="my-4"><div class="form-check text-start"><input class="form-check-input" type="checkbox" id="send-email-checkbox"><label class="form-check-label" for="send-email-checkbox">Sim, desejo receber o diagnóstico completo por e-mail.</label></div><p class="text-start text-muted small mt-1">Ao marcar esta opção, você concorda que, em conformidade com a LGPD, seus dados e respostas também serão compartilhados com a equipe da UNIGEX para possível contato.</p><div id="email-form-section"><div class="row"><div class="col-md-6 mb-3"><label for="prospect-email" class="form-label">Seu melhor e-mail: *</label><input type="email" class="form-control" id="prospect-email" placeholder="nome@empresa.com.br" required></div><div class="col-md-6 mb-3"><label for="prospect-phone" class="form-label">Seu telefone (com DDD): *</label><input type="tel" class="form-control" id="prospect-phone" placeholder="(XX) XXXXX-XXXX" required></div></div><button id="send-email-btn" type="button" class="btn btn-success"><span class="loading" style="display: none;">Enviando...</span><span class="sent-message" style="display: none;">Enviado com Sucesso!</span><span class="error-message" style="display: none;">Erro no envio. Tente novamente.</span><span class="button-text">Enviar Resultado</span></button></div>`;
+                <hr class="my-4"><div class="form-check text-start"><input class="form-check-input" type="checkbox" id="send-email-checkbox"><label class="form-check-label" for="send-email-checkbox">Sim, desejo receber o diagnóstico completo por e-mail.</label></div><p class="text-start text-muted small mt-1">Ao marcar esta opção, você concorda que seus dados e respostas serão compartilhados com a equipe da UNIGEX para possível contato.</p><div id="email-form-section"><div class="row"><div class="col-md-6 mb-3"><label for="prospect-email" class="form-label">Seu melhor e-mail: *</label><input type="email" class="form-control" id="prospect-email" placeholder="nome@empresa.com.br" required></div><div class="col-md-6 mb-3"><label for="prospect-phone" class="form-label">Seu telefone (com DDD): *</label><input type="tel" class="form-control" id="prospect-phone" placeholder="(XX) XXXXX-XXXX" required></div></div><button id="send-email-btn" type="button" class="btn btn-success"><span class="loading" style="display: none;">Enviando...</span><span class="sent-message" style="display: none;">Enviado com Sucesso! Redirecionando...</span><span class="error-message" style="display: none;">Erro no envio. Tente novamente.</span><span class="button-text">Enviar Resultado</span></button></div>`;
             
             document.querySelectorAll('.result-level').forEach(el => el.classList.remove('active'));
             if (score <= 13) { document.getElementById('initial-stage').classList.add('active'); } 
@@ -209,20 +150,20 @@
             else { document.getElementById('optimization-stage').classList.add('active'); }
             window.scrollTo(0, document.getElementById('maturity-section').offsetTop);
             
-            // Re-adiciona os event listeners para o formulário de email que foi recriado
             setupEmailForm();
         }
         
         function setupEmailForm() {
             const emailCheckbox = document.getElementById('send-email-checkbox');
             const emailFormSection = document.getElementById('email-form-section');
-            emailCheckbox.addEventListener('change', function() {
-                emailFormSection.style.display = this.checked ? 'block' : 'none';
-            });
+            emailCheckbox.addEventListener('change', function() { emailFormSection.style.display = this.checked ? 'block' : 'none'; });
+            
             const sendEmailBtn = document.getElementById('send-email-btn');
-            const emailInput = document.getElementById('prospect-email');
-            const phoneInput = document.getElementById('prospect-phone');
+            
             sendEmailBtn.addEventListener('click', function() {
+                const emailInput = document.getElementById('prospect-email');
+                const phoneInput = document.getElementById('prospect-phone');
+
                 if (!emailInput.value || !emailInput.value.includes('@') || phoneInput.value.length < 10) {
                     alert('Por favor, preencha o e-mail e um telefone válido (com DDD). Ambos são obrigatórios.');
                     return;
@@ -231,37 +172,39 @@
                 const buttonText = sendEmailBtn.querySelector('.button-text');
                 const errorMessage = sendEmailBtn.querySelector('.error-message');
                 const sentMessage = sendEmailBtn.querySelector('.sent-message');
-                if (loading) loading.style.display = 'block';
-                if (buttonText) buttonText.style.display = 'none';
+                loading.style.display = 'block';
+                buttonText.style.display = 'none';
                 sendEmailBtn.disabled = true;
+
                 let formData = new FormData();
                 formData.append('email', emailInput.value);
                 formData.append('phone', phoneInput.value);
                 formData.append('message', buildEmailContent());
                 
-                fetch('forms/maturidade.php', { method: 'POST', body: formData })
-                .then(response => response.ok ? response.text() : Promise.reject('Erro no servidor.'))
+                // ALTERAÇÃO FINAL: Aponta para o serviço funcional no Google Cloud Run
+                fetch('https://unigex-email-241464300074.southamerica-east1.run.app', { method: 'POST', body: formData })
+                .then(response => {
+                    if (response.ok) { return response.text(); } 
+                    else { return response.text().then(text => { throw new Error(text || 'Erro no servidor.') }); }
+                })
                 .then(data => {
-                    if (loading) loading.style.display = 'none';
-                    if (data.trim() == 'OK') { 
-                        if (sentMessage) sentMessage.style.display = 'block'; 
-                    } 
-                    else {
-                        if (errorMessage) errorMessage.style.display = 'block';
+                    if (data.trim() == 'OK') {
+                        loading.style.display = 'none';
+                        sentMessage.style.display = 'block';
+                        // NOVO: Redirecionamento após 3 segundos
                         setTimeout(() => {
-                            if (errorMessage) errorMessage.style.display = 'none';
-                            if (buttonText) buttonText.style.display = 'block';
-                            sendEmailBtn.disabled = false;
-                        }, 5000);
-                    }
+                            window.location.href = 'https://www.webgex.com.br/';
+                        }, 3000);
+                    } else { throw new Error(data); }
                 })
                 .catch((error) => {
-                    if (loading) loading.style.display = 'none';
-                    if (errorMessage) errorMessage.style.display = 'block';
                     console.error('Error:', error);
-                     setTimeout(() => {
-                        if (errorMessage) errorMessage.style.display = 'none';
-                        if (buttonText) buttonText.style.display = 'block';
+                    alert('Ocorreu um erro ao enviar o e-mail: ' + error.message);
+                    loading.style.display = 'none';
+                    errorMessage.style.display = 'block';
+                    setTimeout(() => {
+                        errorMessage.style.display = 'none';
+                        buttonText.style.display = 'block';
                         sendEmailBtn.disabled = false;
                     }, 5000);
                 });
@@ -269,33 +212,29 @@
         }
 
         function buildEmailContent() {
-            let content = "Olá!\n\nObrigado por realizar nosso Diagnóstico de Maturidade de Gestão. Abaixo estão suas respostas e seu resultado:\n\n";
-            content += `DADOS FORNECIDOS:\nEmail: document.getElementById('prospect-email').value\nTelefone: document.getElementById('prospect-phone').value\n\n`;
-            content += "--- SUAS RESPOSTAS ---\n\n";
             let totalScore = 0;
+            let answersHTML = '';
             questions.forEach((q, index) => {
                 const checkedOption = quizForm.querySelector(`input[name="q${index}"]:checked`);
                 const answerText = checkedOption ? checkedOption.getAttribute('data-text') : 'Não respondida';
-                content += `Pergunta ${index + 1}: ${q.text}\n`;
-                content += `Sua Resposta: ${answerText}\n\n`;
+                answersHTML += `<div style="margin-bottom: 15px;"><p style="margin: 0; margin-bottom: 5px; font-weight: bold; color: #012970;">Pergunta ${index + 1}: ${q.text}</p><p style="margin: 0; font-style: italic; color: #5a5a5a;">Sua Resposta: ${answerText}</p></div>`;
                 if(checkedOption) totalScore += parseInt(checkedOption.value);
             });
-            content += "---\nRESULTADO FINAL\n---\n";
-            content += `Sua Pontuação: ${totalScore} de 40.\n\n`;
-            let resultText = '';
-            if (totalScore <= 13) { resultText = document.getElementById('initial-stage').innerText; } 
-            else if (totalScore <= 27) { resultText = document.getElementById('growth-stage').innerText; } 
-            else { resultText = document.getElementById('optimization-stage').innerText; }
-            content += resultText;
-            content += "\n\n--- \nEste é um e-mail automático. Por favor, não responda a esta mensagem.\n---\n\n";
-            content += "Atenciosamente,\nEquipe UNIGEX.";
-            return content;
+
+            let resultContainer;
+            if (totalScore <= 13) { resultContainer = document.getElementById('initial-stage').cloneNode(true); } 
+            else if (totalScore <= 27) { resultContainer = document.getElementById('growth-stage').cloneNode(true); } 
+            else { resultContainer = document.getElementById('optimization-stage').cloneNode(true); }
+            resultContainer.classList.remove('active');
+            
+            const email = document.getElementById('prospect-email').value;
+            const phone = document.getElementById('prospect-phone').value;
+
+            return `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;"><div style="background-color: #012970; color: white; padding: 20px; text-align: center;"><img src="https://www.webgex.com.br/assets/img/Logo.png" alt="Logo UNIGEX" style="max-height: 40px; margin-bottom: 10px;"><h1 style="margin: 0; font-size: 24px;">Diagnóstico de Maturidade de Gestão</h1></div><div style="padding: 25px;"><p style="font-size: 16px;">Olá!</p><p style="font-size: 16px;">Obrigado por realizar nosso diagnóstico. Este é um passo importante para otimizar a gestão do seu negócio.</p><hr style="border: 0; border-top: 1px solid #eee;"><h2 style="color: #012970; font-size: 20px; border-bottom: 2px solid #4154f1; padding-bottom: 5px;">Seu Resultado:</h2><div style="background-color: #f6f9ff; padding: 20px; border-radius: 5px; text-align: center;">${resultContainer.innerHTML}</div><hr style="margin: 25px 0;"><h2 style="color: #012970; font-size: 20px; border-bottom: 2px solid #4154f1; padding-bottom: 5px;">Suas Respostas:</h2>${answersHTML}<hr style="margin: 25px 0;"><h2 style="color: #012970; font-size: 20px;">Dados Fornecidos:</h2><p style="font-size: 16px;"><strong>E-mail:</strong> ${email}</p><p style="font-size: 16px;"><strong>Telefone:</strong> ${phone}</p></div><div style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #6c757d;"><p style="margin: 0;">Atenciosamente,<br>Equipe UNIGEX</p><p style="margin-top: 15px; font-style: italic;">Este é um e-mail automático. Por favor, não responda a esta mensagem.</p></div></div>`;
         }
 
         showSection(0);
     });
   </script>
-
 </body>
-
 </html>
