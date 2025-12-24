@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBGEX para Lojas de Móveis e Decoração - Venda Mais com Menos Esforço</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --dark-blue: #0A192F;
+            --accent-blue: #007BFF;
+            --light-gray: #F8F9FA;
+            --text-color: #343A40;
+            --white: #FFFFFF;
+            --success-green: #28a745;
+        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--white); color: var(--text-color); }
+        .container { max-width: 1100px; margin: auto; padding: 0 2rem; }
+
+        .top-bar {
+            background-color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .top-bar .logo { max-height: 40px; }
+
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            color: var(--white);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 2rem auto; opacity: 0.9; }
+        .cta-button { background-color: var(--accent-blue); color: var(--white); padding: 1rem 2.5rem; font-size: 1.2rem; font-weight: 700; text-decoration: none; border-radius: 5px; transition: transform 0.2s, background-color 0.2s; display: inline-block; }
+        .cta-button:hover { background-color: #0056b3; transform: translateY(-3px); }
+        .cta-button .arrow { margin-left: 10px; }
+        .cta-subtext { font-size: 0.9rem; margin-top: 1rem; opacity: 0.8; }
+
+        .section { padding: 6rem 0; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark-blue); }
+        .section-subtitle { text-align: center; font-size: 1.2rem; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        
+        /* CORREÇÃO APLICADA AQUI */
+        .pain-grid { 
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* FORÇA 4 COLUNAS EM TELAS GRANDES */
+            gap: 1.5rem; 
+        }
+
+        .pain-card { 
+            background: var(--light-gray); 
+            padding: 2rem; 
+            border-radius: 8px; 
+            text-align: center; 
+            border-left: 5px solid var(--accent-blue);
+            display: flex;
+            flex-direction: column;
+        }
+        .pain-card i { font-size: 3rem; color: var(--accent-blue); margin-bottom: 1rem; }
+        .pain-card h3 { font-size: 1.25rem; font-weight: 600; color: var(--dark-blue); margin-bottom: 0.5rem; }
+        .pain-card p { flex-grow: 1; }
+
+        .solution { background-color: var(--dark-blue); color: var(--white); }
+        .solution h2, .solution p { color: var(--white); }
+        .solution-content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; }
+        .solution-content img { width: 100%; border-radius: 8px; }
+        .benefits-list li { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+        .benefits-list i { color: var(--success-green); font-size: 1.5rem; margin-right: 1rem; }
+
+        .testimonial { background: var(--light-gray); padding: 3rem; border-radius: 8px; text-align: center; max-width: 800px; margin: 4rem auto 0 auto; }
+        .testimonial blockquote { font-size: 1.2rem; font-style: italic; margin-bottom: 1.5rem; color: var(--text-color); }
+        .testimonial cite { font-weight: 700; font-style: normal; color: var(--dark-blue); }
+
+        .final-cta { background: var(--light-gray); text-align: center; }
+        
+        .footer { background: var(--dark-blue); color: var(--white); text-align: center; padding: 2rem 0; }
+        
+        /* Media queries para responsividade */
+        @media(max-width: 992px) {
+            .pain-grid { grid-template-columns: repeat(2, 1fr); } /* 2 COLUNAS EM TABLETS */
+            .solution-content { grid-template-columns: 1fr; }
+        }
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .pain-grid { grid-template-columns: 1fr; } /* 1 COLUNA EM CELULARES */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="container">
+            <img src="assets/img/Logo.png" alt="WEBGEX Logo" class="logo">
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sua loja de móveis é incrível, mas a gestão por trás é um caos?</h1>
+            <p>Venda mais, organize seu estoque e simplifique suas entregas. Descubra como um painel de controle único pode transformar sua operação.</p>
+            <a href="maturidade.html" class="cta-button">
+                Receber Diagnóstico Gratuito <span class="arrow">→</span>
+            </a>
+            <p class="cta-subtext">Ferramenta online, rápida e 100% gratuita para lojistas.</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- PROBLEM SECTION -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">O pesadelo por trás de uma vitrine bonita</h2>
+                <p class="section-subtitle">Muitos lojistas de móveis e decoração enfrentam os mesmos desafios silenciosos que consomem o tempo, o lucro e a paciência.</p>
+                
+                <div class="pain-grid">
+                    <div class="pain-card">
+                        <i class="bi bi-boxes"></i>
+                        <h3>Estoque Complexo</h3>
+                        <p>Gerenciar variações de cor, acabamento, tecidos e múltiplos fornecedores em planilhas é a receita para o erro.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-receipt"></i>
+                        <h3>Orçamentos Manuais</h3>
+                        <p>Perder tempo montando orçamentos detalhados enquanto o cliente espera, arriscando perder a venda para um concorrente mais ágil.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-truck"></i>
+                        <h3>Entregas Desorganizadas</h3>
+                        <p>Problemas na comunicação entre vendas, estoque e logística que resultam em entregas erradas e clientes insatisfeitos.</p>
+                    </div>
+                    <div class="pain-card">
+                        <i class="bi bi-headset"></i>
+                        <h3>Pós-venda Complicado</h3>
+                        <p>Dificuldade para controlar garantias, trocas e o processo de RMA (Retorno de Mercadoria Avariada) com os fabricantes.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SOLUTION SECTION -->
+        <section class="section solution">
+            <div class="container">
+                <div class="solution-content">
+                    <div>
+                        <h2 class="section-title" style="text-align: left;">Simplifique. Organize. Cresça.</h2>
+                        <p>O ERP WEBGEX centraliza toda a sua loja em um único painel de controle, feito para quem vende móveis e decoração.</p>
+                        <ul class="benefits-list" style="list-style: none; padding: 0;">
+                            <li><i class="bi bi-check-circle-fill"></i><div><strong>Estoque sem Erros:</strong> Controle variações, gerencie produtos sob encomenda e até mesmo o estoque de terceiros (consignado) em tempo real.</div></li>
+                            <li><i class="bi bi-check-circle-fill"></i><div><strong>Vendas Profissionais:</strong> Crie orçamentos e pedidos completos em minutos, consulte o histórico do cliente e agilize o atendimento.</div></li>
+                            <li><i class="bi bi-check-circle-fill"></i><div><strong>Logística e Pós-venda Confiáveis:</strong> Organize a agenda de entregas e tenha um fluxo claro para gerenciar garantias e RMA, fidelizando seus clientes.</div></li>
+                        </ul>
+                    </div>
+                    <img src="assets/img/moveis-decoracoes.png" alt="Dashboard do sistema WEBGEX mostrando a gestão de uma loja de móveis.">
+                </div>
+                
+                <div class="testimonial">
+                    <i class="bi bi-quote" style="font-size: 3rem; color: var(--accent-blue);"></i>
+                    <blockquote style="color: var(--text-color);">"A capacidade da UNIGEX em adaptar-se e atender com maestria à diversidade das empresas é um ponto-chave. A solução de backoffice proporciona uma abordagem personalizada e eficiente para atender às diversas necessidades, desde a ponta do cliente até a logística e compras."</blockquote>
+                    <cite style="color: var(--dark-blue);">– Ibyte (Varejo de grande porte)</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="section final-cta">
+            <div class="container">
+                <h2 class="section-title">Sua loja tem potencial para muito mais.</h2>
+                <p class="section-subtitle">Antes de qualquer coisa, você precisa de clareza. Nosso diagnóstico gratuito vai te mostrar, em 5 minutos, os pontos exatos onde sua gestão está impedindo sua loja de crescer e lucrar mais.</p>
+                <a href="maturidade.html" class="cta-button">
+                    Fazer Meu Diagnóstico Gratuito <span class="arrow">→</span>
+                </a>
+                <p class="cta-subtext">Receba seu nível de maturidade e um plano de ação imediato.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 UNIGEX Tecnologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

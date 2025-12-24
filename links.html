@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIGEX | Links Importantes</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4154f1; /* Cor principal do seu template */
+            --text-color: #012970;
+            --bg-color: #f6f9ff;
+            --white: #FFFFFF;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .profile-header {
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        .profile-logo {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .profile-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .profile-subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #555;
+        }
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .link-btn {
+            display: block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .link-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: scale(1.03);
+        }
+        /* Botão de Destaque */
+        .link-btn.highlight {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        .link-btn.highlight:hover {
+            background-color: #3144d3;
+        }
+        .footer {
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="profile-header">
+            <img src="assets/img/Logo.png" alt="Logo UNIGEX" class="profile-logo">
+            <h1 class="profile-title">UNIGEX Tecnologia</h1>
+            <p class="profile-subtitle">Simplifique. Organize. Cresça.</p>
+        </header>
+
+        <ul class="link-list">
+            <li>
+                <a href="maturidade.html" class="link-btn highlight">
+                    🚀 Faça um Diagnóstico Gratuito da sua Gestão
+                </a>
+            </li>
+            <li>
+                <a href="webgex-automotivo.html" class="link-btn">
+                    🚗 Para Centros Automotivos
+                </a>
+            </li>
+            <li>
+                <a href="webgex-moveis.html" class="link-btn">
+                    🛋️ Para Lojas de Móveis e Decoração
+                </a>
+            </li>
+            <li>
+                <a href="blog.html" class="link-btn">
+                    📚 Leia nossos Artigos no Blog
+                </a>
+            </li>
+            <li>
+                <!-- ALTERAÇÃO: Número do WhatsApp inserido -->
+                <a href="https://api.whatsapp.com/send?phone=5585987238178&text=Ol%C3%A1%21+Vim+pelas+redes+sociais+e+gostaria+de+saber+mais+sobre+o+WEBGEX." target="_blank" class="link-btn">
+                    💬 Fale com um Especialista no WhatsApp
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <footer class="footer">
+        <!-- ALTERAÇÃO: Ano atualizado para 2026 -->
+        &copy; 2026 UNIGEX. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
