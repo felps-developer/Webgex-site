@@ -82,7 +82,6 @@
             { area: "Mentalidade para o Crescimento", text: "Qual seu cargo/função na empresa?", options: [{ text: "Sócio / Proprietário.", value: 2 }, { text: "Gerente (Financeiro, de Operações, etc.).", value: 1 }, { text: "Analista / Coordenador / Outro.", value: 0 }] },
         ];
 
-        // --- LÓGICA DE NAVEGAÇÃO (RESTAURADA DA VERSÃO ESTÁVEL) ---
         const quizForm = document.getElementById('quiz-form');
         const sections = {};
         questions.forEach((q, index) => { if (!sections[q.area]) { sections[q.area] = []; } sections[q.area].push({ question: q, index: index }); });
@@ -139,17 +138,23 @@
             resultsContainer.style.display = 'block';
             resultsContainer.innerHTML = `
                 <h3>Seu Diagnóstico de Maturidade de Gestão</h3><hr>
-                <div id="initial-stage" class="result-level"><span class="badge bg-danger mb-3">Nível de Maturidade: ESTÁGIO INICIAL</span><h2>"Herói Sobrevivente"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Sua empresa opera na base da garra, do esforço individual e do controle manual. Você é um herói por fazer tudo funcionar, mas essa dependência de processos manuais e de "apagar incêndios" está limitando seu potencial de crescimento e consumindo sua energia e lucro.</p><p><strong>Orientação Estratégica:</strong> O foco principal deve ser em padronizar processos simples. A implementação de um ERP completo agora pode ser um passo muito grande. Comece organizando UMA área crítica. A UNIGEX pode ajudar com uma consultoria inicial para mapear seus processos e preparar sua empresa para o crescimento.</p></div>
-                <div id="growth-stage" class="result-level"><span class="badge bg-warning text-dark mb-3">Nível de Maturidade: ESTÁGIO DE CRESCIMENTO</span><h2>"Prisioneiro das Planilhas"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Você é o nosso candidato ideal! Sua empresa já utiliza ferramentas como planilhas e sistemas separados, mas atingiu o limite. Elas não se conversam, geram retrabalho e não fornecem uma "única fonte da verdade". A falta de integração é o verdadeiro freio de mão que impede seu negócio de acelerar.</p><p><strong>Orientação Estratégica:</strong> Este é o momento perfeito para dar o salto para um sistema de gestão integrado como o ERP WEBGEX. Ele vai unificar seu financeiro, vendas, estoque e fiscal, eliminando as planilhas e te dando a visão 360º que você precisa para escalar com segurança. <br><strong>Próximo Passo: Agendar uma demonstração do WEBGEX.</strong></p></div>
-                <div id="optimization-stage" class="result-level"><span class="badge bg-success mb-3">Nível de Maturidade: ESTÁGIO DE OTIMIZAÇÃO</span><h2>"Buscando a Sinergia"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Parabéns, sua gestão já é avançada. Seu desafio não é mais o caos, mas sim a ineficiência gerada pela falta de uma integração perfeita entre seus sistemas, que pode estar escondendo oportunidades de otimização e dificultando análises estratégicas.</p><p><strong>Orientação Estratégica:</strong> Para você, a conversa é sobre otimização de alto nível, Business Intelligence e ROI. O WEBGEX se posiciona como a plataforma central para unificar seu ecossistema tecnológico, fornecendo dados mais precisos e relatórios de controladoria instantâneos. <br><strong>Próximo Passo: Agendar uma análise de integração com nossos especialistas.</strong></p></div>
-                <hr class="my-4"><div class="form-check text-start"><input class="form-check-input" type="checkbox" id="send-email-checkbox"><label class="form-check-label" for="send-email-checkbox">Sim, desejo receber o diagnóstico completo por e-mail.</label></div><p class="text-start text-muted small mt-1">Ao marcar esta opção, você concorda que seus dados e respostas serão compartilhados com a equipe da UNIGEX para possível contato.</p><div id="email-form-section"><div class="row"><div class="col-md-6 mb-3"><label for="prospect-email" class="form-label">Seu melhor e-mail: *</label><input type="email" class="form-control" id="prospect-email" placeholder="nome@empresa.com.br" required></div><div class="col-md-6 mb-3"><label for="prospect-phone" class="form-label">Seu telefone (com DDD): *</label><input type="tel" class="form-control" id="prospect-phone" placeholder="(XX) XXXXX-XXXX" required></div></div><button id="send-email-btn" type="button" class="btn btn-success"><span class="loading" style="display: none;">Enviando...</span><span class="sent-message" style="display: none;">Enviado com Sucesso! Redirecionando...</span><span class="error-message" style="display: none;">Erro no envio. Tente novamente.</span><span class="button-text">Enviar Resultado</span></button></div>`;
+                <div id="initial-stage" class="result-level"><span class="badge bg-danger mb-3">Nível de Maturidade: ESTÁGIO INICIAL</span><h2>"Herói Sobrevivente"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Sua empresa opera na base da garra e do esforço individual. Você é um herói por fazer tudo funcionar, mas a dependência de processos manuais está limitando seu lucro e escalabilidade.</p><p><strong>Orientação:</strong> Padronize processos críticos antes de automatizar tudo. A UNIGEX pode ajudar a mapear o que deve ser digitalizado primeiro para estancar a perda de tempo.</p></div>
+                <div id="growth-stage" class="result-level"><span class="badge bg-warning text-dark mb-3">Nível de Maturidade: ESTÁGIO DE CRESCIMENTO</span><h2>"Prisioneiro das Planilhas"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Você já usa ferramentas, mas elas não se conversam. O retrabalho de redigitação e a falta de uma "única fonte da verdade" são o freio de mão do seu negócio.</p><p><strong>Orientação:</strong> Este é o momento ideal para o ERP WEBGEX. Unifique financeiro, vendas e estoque para eliminar planilhas e ter visão 360º.</p></div>
+                <div id="optimization-stage" class="result-level"><span class="badge bg-success mb-3">Nível de Maturidade: ESTÁGIO DE OTIMIZAÇÃO</span><h2>"Buscando a Sinergia"</h2><p class="mt-3"><strong>Diagnóstico:</strong> Parabéns! Sua gestão é avançada. O desafio agora é a sintonia fina: usar IA e BI para prever tendências e aumentar ainda mais sua margem.</p><p><strong>Orientação:</strong> Foque em integração total e inteligência de dados. O WEBGEX pode ser o cérebro que une suas ferramentas e gera relatórios automáticos de ROI.</p></div>
+                <hr class="my-4"><div class="form-check text-start"><input class="form-check-input" type="checkbox" id="send-email-checkbox"><label class="form-check-label" for="send-email-checkbox">Sim, desejo receber o diagnóstico completo por e-mail.</label></div><div id="email-form-section"><div class="row"><div class="col-md-6 mb-3"><label for="prospect-email" class="form-label">E-mail: *</label><input type="email" class="form-control" id="prospect-email" required></div><div class="col-md-6 mb-3"><label for="prospect-phone" class="form-label">Telefone: *</label><input type="tel" class="form-control" id="prospect-phone" required></div></div><button id="send-email-btn" type="button" class="btn btn-success"><span class="loading" style="display: none;">Enviando...</span><span class="sent-message" style="display: none;">Sucesso! Redirecionando...</span><span class="button-text">Enviar Resultado</span></button></div>`;
             
             document.querySelectorAll('.result-level').forEach(el => el.classList.remove('active'));
-            if (score <= 13) { document.getElementById('initial-stage').classList.add('active'); } 
-            else if (score <= 27) { document.getElementById('growth-stage').classList.add('active'); } 
-            else { document.getElementById('optimization-stage').classList.add('active'); }
-            window.scrollTo(0, document.getElementById('maturity-section').offsetTop);
             
+            // LÓGICA DE AUDITORIA REFINADA (Máximo 40 pontos)
+            if (score <= 14) { 
+                document.getElementById('initial-stage').classList.add('active'); 
+            } else if (score <= 30) { 
+                document.getElementById('growth-stage').classList.add('active'); 
+            } else { 
+                document.getElementById('optimization-stage').classList.add('active'); 
+            }
+            
+            window.scrollTo(0, document.getElementById('maturity-section').offsetTop);
             setupEmailForm();
         }
         
@@ -159,19 +164,15 @@
             emailCheckbox.addEventListener('change', function() { emailFormSection.style.display = this.checked ? 'block' : 'none'; });
             
             const sendEmailBtn = document.getElementById('send-email-btn');
-            
             sendEmailBtn.addEventListener('click', function() {
                 const emailInput = document.getElementById('prospect-email');
                 const phoneInput = document.getElementById('prospect-phone');
-
-                if (!emailInput.value || !emailInput.value.includes('@') || phoneInput.value.length < 10) {
-                    alert('Por favor, preencha o e-mail e um telefone válido (com DDD). Ambos são obrigatórios.');
-                    return;
-                }
+                if (!emailInput.value.includes('@') || phoneInput.value.length < 10) { alert('Preencha os dados corretamente.'); return; }
+                
                 const loading = sendEmailBtn.querySelector('.loading');
                 const buttonText = sendEmailBtn.querySelector('.button-text');
-                const errorMessage = sendEmailBtn.querySelector('.error-message');
                 const sentMessage = sendEmailBtn.querySelector('.sent-message');
+                
                 loading.style.display = 'block';
                 buttonText.style.display = 'none';
                 sendEmailBtn.disabled = true;
@@ -181,32 +182,20 @@
                 formData.append('phone', phoneInput.value);
                 formData.append('message', buildEmailContent());
                 
-                // ALTERAÇÃO FINAL: Aponta para o serviço funcional no Google Cloud Run
                 fetch('https://unigex-email-241464300074.southamerica-east1.run.app', { method: 'POST', body: formData })
-                .then(response => {
-                    if (response.ok) { return response.text(); } 
-                    else { return response.text().then(text => { throw new Error(text || 'Erro no servidor.') }); }
-                })
+                .then(response => response.text())
                 .then(data => {
                     if (data.trim() == 'OK') {
                         loading.style.display = 'none';
                         sentMessage.style.display = 'block';
-                        // NOVO: Redirecionamento após 3 segundos
-                        setTimeout(() => {
-                            window.location.href = 'https://www.webgex.com.br/';
-                        }, 3000);
+                        setTimeout(() => { window.location.href = 'https://www.webgex.com.br/'; }, 3000);
                     } else { throw new Error(data); }
                 })
                 .catch((error) => {
-                    console.error('Error:', error);
-                    alert('Ocorreu um erro ao enviar o e-mail: ' + error.message);
+                    alert('Erro ao enviar. Tente novamente.');
                     loading.style.display = 'none';
-                    errorMessage.style.display = 'block';
-                    setTimeout(() => {
-                        errorMessage.style.display = 'none';
-                        buttonText.style.display = 'block';
-                        sendEmailBtn.disabled = false;
-                    }, 5000);
+                    buttonText.style.display = 'block';
+                    sendEmailBtn.disabled = false;
                 });
             });
         }
@@ -217,20 +206,10 @@
             questions.forEach((q, index) => {
                 const checkedOption = quizForm.querySelector(`input[name="q${index}"]:checked`);
                 const answerText = checkedOption ? checkedOption.getAttribute('data-text') : 'Não respondida';
-                answersHTML += `<div style="margin-bottom: 15px;"><p style="margin: 0; margin-bottom: 5px; font-weight: bold; color: #012970;">Pergunta ${index + 1}: ${q.text}</p><p style="margin: 0; font-style: italic; color: #5a5a5a;">Sua Resposta: ${answerText}</p></div>`;
+                answersHTML += `<p><strong>${q.text}</strong><br>R: ${answerText}</p>`;
                 if(checkedOption) totalScore += parseInt(checkedOption.value);
             });
-
-            let resultContainer;
-            if (totalScore <= 13) { resultContainer = document.getElementById('initial-stage').cloneNode(true); } 
-            else if (totalScore <= 27) { resultContainer = document.getElementById('growth-stage').cloneNode(true); } 
-            else { resultContainer = document.getElementById('optimization-stage').cloneNode(true); }
-            resultContainer.classList.remove('active');
-            
-            const email = document.getElementById('prospect-email').value;
-            const phone = document.getElementById('prospect-phone').value;
-
-            return `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;"><div style="background-color: #012970; color: white; padding: 20px; text-align: center;"><img src="https://www.webgex.com.br/assets/img/Logo.png" alt="Logo UNIGEX" style="max-height: 40px; margin-bottom: 10px;"><h1 style="margin: 0; font-size: 24px;">Diagnóstico de Maturidade de Gestão</h1></div><div style="padding: 25px;"><p style="font-size: 16px;">Olá!</p><p style="font-size: 16px;">Obrigado por realizar nosso diagnóstico. Este é um passo importante para otimizar a gestão do seu negócio.</p><hr style="border: 0; border-top: 1px solid #eee;"><h2 style="color: #012970; font-size: 20px; border-bottom: 2px solid #4154f1; padding-bottom: 5px;">Seu Resultado:</h2><div style="background-color: #f6f9ff; padding: 20px; border-radius: 5px; text-align: center;">${resultContainer.innerHTML}</div><hr style="margin: 25px 0;"><h2 style="color: #012970; font-size: 20px; border-bottom: 2px solid #4154f1; padding-bottom: 5px;">Suas Respostas:</h2>${answersHTML}<hr style="margin: 25px 0;"><h2 style="color: #012970; font-size: 20px;">Dados Fornecidos:</h2><p style="font-size: 16px;"><strong>E-mail:</strong> ${email}</p><p style="font-size: 16px;"><strong>Telefone:</strong> ${phone}</p></div><div style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #6c757d;"><p style="margin: 0;">Atenciosamente,<br>Equipe UNIGEX</p><p style="margin-top: 15px; font-style: italic;">Este é um e-mail automático. Por favor, não responda a esta mensagem.</p></div></div>`;
+            return `<h2>Diagnóstico Unigex</h2><p>Pontuação: ${totalScore}</p>${answersHTML}`;
         }
 
         showSection(0);
