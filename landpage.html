@@ -11,7 +11,7 @@
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
 
-    <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
   <script>
     (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-WPX79XFX');
   </script>
@@ -80,22 +80,22 @@
       background-color: #25d366; color: white; padding: 15px 35px;
       border-radius: 50px; font-weight: 700; display: inline-flex;
       align-items: center; gap: 10px; transition: 0.3s; border: none; text-decoration: none;
-      width: fit-content;
+      width: fit-content; cursor: pointer;
     }
     .btn-whatsapp-big:hover { background-color: #128c7e; color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-    /* Estilo do Novo Formulário */
+    /* Estilo do Formulário Elegante */
     .hero-form-box {
       background: #ffffff;
       padding: 25px;
       border-radius: 15px;
-      box-shadow: 0px 10px 30px rgba(65, 84, 241, 0.1);
+      box-shadow: 0px 10px 30px rgba(65, 84, 241, 0.15);
       margin: 25px 0;
       border: 1px solid #e1e5ff;
     }
     .hero-form-box .form-control, .hero-form-box .form-select {
       border: 1px solid #ced4da;
-      padding: 12px 15px;
+      padding: 10px 15px;
       font-size: 14px;
       border-radius: 8px;
     }
@@ -107,7 +107,9 @@
       font-weight: 600;
       color: #012970;
       margin-bottom: 5px;
-      font-size: 14px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
@@ -149,31 +151,31 @@
           <h1>Gestão completa do seu negócio em um só lugar</h1>
           <p>ERP online, fácil de usar e rápido de implementar — reduza custos, ganhe controle e tome decisões com mais segurança</p>
           
-          <!-- Formulário de Leads -->
+          <!-- Formulário Frame -->
           <div class="hero-form-box">
-            <form action="#" method="post">
+            <form id="formLeadsHero">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="nome">Nome</label>
-                  <input type="text" name="nome" class="form-control" id="nome" placeholder="Seu nome completo" required>
+                  <input type="text" id="nome" class="form-control" placeholder="Ex: João Silva" required>
                 </div>
                 <div class="col-md-6">
                   <label for="telefone">Telefone</label>
-                  <input type="tel" name="telefone" class="form-control" id="telefone" placeholder="(00) 00000-0000" required>
+                  <input type="tel" id="telefone" class="form-control" placeholder="(00) 00000-0000" required>
                 </div>
                 <div class="col-md-12">
                   <label for="email">E-mail</label>
-                  <input type="email" name="email" class="form-control" id="email" placeholder="email@empresa.com.br" required>
+                  <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
                 </div>
                 <div class="col-md-12">
                   <label for="segmento">Segmento de atuação</label>
-                  <select name="segmento" id="segmento" class="form-select" required>
-                    <option value="" disabled selected>Selecione seu segmento</option>
-                    <option value="Varejo">Varejo / Loja</option>
-                    <option value="Moveis">Móveis e Decoração</option>
-                    <option value="Automotivo">Automotivo / Peças</option>
-                    <option value="Servicos">Prestação de Serviços</option>
-                    <option value="Outros">Outros</option>
+                  <select id="segmento" class="form-select" required>
+                    <option value="" disabled selected>Escolha o seu setor...</option>
+                    <option value="Varejo / Loja">Varejo / Loja</option>
+                    <option value="Móveis e Decoração">Móveis e Decoração</option>
+                    <option value="Automotivo / Peças">Automotivo / Peças</option>
+                    <option value="Serviços">Prestação de Serviços</option>
+                    <option value="Indústria / Outros">Indústria / Outros</option>
                   </select>
                 </div>
               </div>
@@ -181,9 +183,9 @@
           </div>
 
           <div>
-            <a href="https://api.whatsapp.com/send?phone=5585998020016&text=Ol%C3%A1%2C%20equipe%20Webgex%21%20Visitei%20o%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.%20%28n%C3%A3o%20apague%20essa%20mensagem%20para%20ser%20atendido%29" target="_blank" class="btn-whatsapp-big">
+            <button type="button" id="btnWhatsappSubmit" class="btn-whatsapp-big">
               <i class="bi bi-whatsapp"></i> Falar com Especialista
-            </a>
+            </button>
           </div>
         </div>
         <div class="col-lg-6 hero-img" data-aos="zoom-out">
@@ -194,8 +196,7 @@
   </section>
 
   <main id="main">
-    <!-- O restante do conteúdo permanece inalterado -->
-    
+
     <!-- ======= Seção Reforma Tributária ======= -->
     <section id="tax-reform" class="tax-reform-section">
       <div class="container" data-aos="fade-up">
@@ -217,14 +218,14 @@
             <div class="tax-reform-card">
               <h4>Prontidão Tecnológica</h4>
               <p>Nossa plataforma na nuvem recebe atualizações em tempo real conforme as leis são sancionadas. Você não precisa se preocupar com atualizações manuais ou softwares defasados.</p>
-              <a href="https://api.whatsapp.com/send?phone=5585998020016&text=Ol%C3%A1%2C%20equipe%20Webgex%21%20Visitei%20o%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.%20%28n%C3%A3o%20apague%20essa%20mensagem%20para%20ser%20atendido%29" target="_blank" class="btn text-white border-white mt-3">Saber mais sobre o impacto fiscal</a>
+              <a href="#hero" class="btn text-white border-white mt-3 scrollto">Saber mais sobre o impacto fiscal</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ======= Seção Verticais (Móveis e Automotivo) ======= -->
+    <!-- ======= Seção Verticais ======= -->
     <section id="verticals" class="vertical-section">
       <div class="container" data-aos="fade-up">
         <header class="section-header">
@@ -233,7 +234,6 @@
         </header>
 
         <div class="row gy-4">
-          <!-- Móveis -->
           <div class="col-lg-6" data-aos="fade-right">
             <div class="service-box blue d-flex flex-column h-100">
               <i class="ri-home-heart-line icon"></i>
@@ -248,7 +248,6 @@
             </div>
           </div>
 
-          <!-- Automotivo -->
           <div class="col-lg-6" data-aos="fade-left">
             <div class="service-box orange d-flex flex-column h-100">
               <i class="ri-car-line icon"></i>
@@ -298,7 +297,7 @@
               </div>
             </div>
             
-            <a href="https://api.whatsapp.com/send?phone=5585998020016&text=Ol%C3%A1%2C%20equipe%20Webgex%21%20Visitei%20o%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.%20%28n%C3%A3o%20apague%20essa%20mensagem%20para%20ser%20atendido%29" target="_blank" class="btn-whatsapp-big mt-4">
+            <a href="#hero" class="btn-whatsapp-big mt-4 scrollto">
               <i class="bi bi-whatsapp"></i> Quero conhecer o PDV Webgex
             </a>
           </div>
@@ -317,7 +316,7 @@
           <p>Vamos conversar sobre o seu negócio?</p>
         </header>
         <div class="text-center">
-           <a href="https://api.whatsapp.com/send?phone=5585998020016&text=Ol%C3%A1%2C%20equipe%20Webgex%21%20Visitei%20o%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.%20%28n%C3%A3o%20apague%20essa%20mensagem%20para%20ser%20atendido%29" target="_blank" class="btn-whatsapp-big">
+           <a href="#hero" class="btn-whatsapp-big scrollto">
             <i class="bi bi-whatsapp"></i> Chamar Consultor Agora
           </a>
           <p class="mt-4">Nossa equipe responderá em poucos minutos (dentro do horário comercial).</p>
@@ -336,8 +335,8 @@
     </div>
   </footer>
 
-  <!-- Botão Flutuante WhatsApp -->
-  <a href="https://api.whatsapp.com/send?phone=5585998020016&text=Ol%C3%A1%2C%20equipe%20Webgex%21%20Visitei%20o%20site%20e%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.%20%28n%C3%A3o%20apague%20essa%20mensagem%20para%20ser%20atendido%29" class="whatsapp-float" target="_blank">
+  <!-- Botão Flutuante WhatsApp (Link padrão) -->
+  <a href="https://api.whatsapp.com/send?phone=5585998020016&text=Olá, Webgex! Gostaria de suporte." class="whatsapp-float" target="_blank">
     <i class="bi bi-whatsapp"></i>
   </a>
 
@@ -349,6 +348,32 @@
   
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Script para Envio Dinâmico WhatsApp -->
+  <script>
+    document.getElementById('btnWhatsappSubmit').addEventListener('click', function() {
+      // Captura os dados do formulário
+      const nome = document.getElementById('nome').value;
+      const telefone = document.getElementById('telefone').value;
+      const email = document.getElementById('email').value;
+      const segmento = document.getElementById('segmento').value;
+
+      // Validação básica
+      if(!nome || !telefone || !email || !segmento) {
+        alert('Por favor, preencha todos os campos do formulário antes de falar com nosso especialista.');
+        return;
+      }
+
+      // Formata a mensagem
+      const texto = `Olá, equipe Webgex!\n\nAcabei de visitar o site e gostaria de um atendimento especializado.\n\n*Meus Dados:*\n- *Nome:* ${nome}\n- *Telefone:* ${telefone}\n- *E-mail:* ${email}\n- *Segmento:* ${segmento}\n\n(Não apague essa mensagem para ser atendido)`;
+      
+      const textoEncoded = encodeURIComponent(texto);
+      const numeroWhats = "5585998020016";
+      
+      // Abre o link do WhatsApp
+      window.open(`https://api.whatsapp.com/send?phone=${numeroWhats}&text=${textoEncoded}`, '_blank');
+    });
+  </script>
 
 </body>
 </html>
