@@ -4,139 +4,92 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>Webgex - Gestão completa do seu negócio em um só lugar</title>
-  <meta content="ERP online, fácil de usar e rápido de implementar — reduza custos, ganhe controle e tome decisões com mais segurança" name="description">
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
-
-  <!-- Google Tag Manager -->
-  <script>
-    (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-WPX79XFX');
-  </script>
-  <!-- End Google Tag Manager -->
+  <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Nunito:300,400,600,700|Poppins:300,400,500,600,700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link rel="stylesheet" href="assets/css/bootstrap.css">
   <link href="assets/css/style.css" rel="stylesheet">
   
   <style>
     /* Estilos Customizados para a Landpage */
-    .tax-reform-section {
-      background: #012970;
-      color: white;
-      padding: 80px 0;
-    }
-    .tax-reform-section h2 { color: white; }
-    .tax-reform-card {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 30px;
-      border-radius: 10px;
-      height: 100%;
-    }
-
-    .vertical-section { padding: 80px 0; }
+    .hero { width: 100%; min-height: 100vh; background: #f6f9ff; padding-top: 100px; display: flex; align-items: center; }
     
-    /* Destaque para o Varejo */
-    .highlight-retail {
-      background: linear-gradient(135deg, #f6f9ff 0%, #eef2ff 100%);
-      border-top: 5px solid #4154f1;
-      padding: 100px 0;
-    }
-    .retail-badge {
-      background: #4154f1;
-      color: white;
-      padding: 5px 20px;
-      border-radius: 50px;
-      display: inline-block;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    /* WhatsApp Elements */
-    .whatsapp-float {
-      position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
-      background-color: #25d366; color: #FFF; border-radius: 50px;
-      text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999;
-      z-index: 1000; display: flex; align-items: center; justify-content: center;
-      transition: 0.3s;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); color: white; background-color: #128c7e; }
-
-    .btn-whatsapp-big {
-      background-color: #25d366; color: white; padding: 15px 35px;
-      border-radius: 50px; font-weight: 700; display: inline-flex;
-      align-items: center; gap: 10px; transition: 0.3s; border: none; text-decoration: none;
-      width: fit-content; cursor: pointer;
-    }
-    .btn-whatsapp-big:hover { background-color: #128c7e; color: white; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-    /* Estilo do Formulário Elegante */
+    /* Formulário Elegante */
     .hero-form-box {
       background: #ffffff;
-      padding: 25px;
+      padding: 30px;
       border-radius: 15px;
-      box-shadow: 0px 10px 30px rgba(65, 84, 241, 0.15);
+      box-shadow: 0px 10px 30px rgba(65, 84, 241, 0.1);
       margin: 25px 0;
       border: 1px solid #e1e5ff;
     }
-    .hero-form-box .form-control, .hero-form-box .form-select {
-      border: 1px solid #ced4da;
-      padding: 10px 15px;
-      font-size: 14px;
-      border-radius: 8px;
-    }
-    .hero-form-box .form-control:focus, .hero-form-box .form-select:focus {
-      border-color: #4154f1;
-      box-shadow: 0 0 0 0.25rem rgba(65, 84, 241, 0.1);
-    }
     .hero-form-box label {
-      font-weight: 600;
+      font-weight: 700;
       color: #012970;
-      margin-bottom: 5px;
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      display: block;
     }
+    .hero-form-box .form-control, .hero-form-box .form-select {
+      border-radius: 8px;
+      padding: 12px;
+      border: 1px solid #ced4da;
+    }
+
+    /* Botão WhatsApp */
+    .btn-whatsapp-big {
+      background-color: #25d366;
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-whatsapp-big:hover {
+      background-color: #128c7e;
+      transform: translateY(-3px);
+      color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .btn-whatsapp-big:disabled { background-color: #94d3a2; cursor: not-allowed; }
+
+    .loading-msg { display:none; margin-left: 15px; color: #4154f1; font-weight: 600; font-size: 14px; animation: blink 1s infinite; }
+    @keyframes blink { 50% { opacity: 0.5; } }
+
+    .tax-reform-section { background: #012970; color: white; padding: 80px 0; }
+    .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 1000; display: flex; align-items: center; justify-content: center; }
   </style>
 </head>
 
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPX79XFX" height="0" width="0"
-      style="display:none;visibility:hidden">
-    </iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
+  <header id="header" class="header fixed-top bg-white border-bottom">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <div class="logoDetalhes">
-        <a href="index.html"><img src="assets/img/Logo.png" alt="Webgex" class="img-fluid"></a>
-      </div>
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/Logo.png" alt="Webgex" style="max-height: 40px;">
+      </a>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="#hero">Início</a></li>
           <li><a class="nav-link scrollto" href="#tax-reform">Reforma Tributária</a></li>
-          <li><a class="nav-link scrollto" href="#verticals">Verticais</a></li>
-          <li><a class="nav-link scrollto" href="#retail">Varejo</a></li>
-          <li><a class="getstarted scrollto" href="https://erp3.webgex.com.br/" target="_blank">Acesse ERP</a></li>
+          <li><a class="getstarted" href="https://erp3.webgex.com.br/" target="_blank">Acesse ERP</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -144,51 +97,53 @@
   </header>
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
+  <section id="hero" class="hero">
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up">
-          <h1>Gestão completa do seu negócio em um só lugar</h1>
-          <p>ERP online, fácil de usar e rápido de implementar — reduza custos, ganhe controle e tome decisões com mais segurança</p>
+          <h1 style="color: #012970; font-weight: 800; font-size: 2.8rem;">Gestão completa do seu negócio em um só lugar</h1>
+          <p class="lead mt-3">ERP online preparado para a Reforma Tributária. Reduza custos, ganhe controle e tome decisões com segurança.</p>
           
           <!-- Formulário Frame -->
           <div class="hero-form-box">
-            <form id="formLeadsHero">
+            <form id="formCrmWebgex">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label for="nome">Nome</label>
-                  <input type="text" id="nome" class="form-control" placeholder="Ex: João Silva" required>
+                  <label>Nome Completo</label>
+                  <input type="text" id="nome" class="form-control" placeholder="Seu nome" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="telefone">Telefone</label>
+                  <label>WhatsApp / Celular</label>
                   <input type="tel" id="telefone" class="form-control" placeholder="(00) 00000-0000" required>
                 </div>
                 <div class="col-md-12">
-                  <label for="email">E-mail</label>
-                  <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                  <label>E-mail Corporativo</label>
+                  <input type="email" id="email" class="form-control" placeholder="contato@empresa.com.br" required>
                 </div>
                 <div class="col-md-12">
-                  <label for="segmento">Segmento de atuação</label>
-                  <select id="segmento" class="form-select" required>
-                    <option value="" disabled selected>Escolha o seu setor...</option>
-                    <option value="Varejo / Loja">Varejo / Loja</option>
-                    <option value="Móveis e Decoração">Móveis e Decoração</option>
-                    <option value="Automotivo / Peças">Automotivo / Peças</option>
-                    <option value="Serviços">Prestação de Serviços</option>
-                    <option value="Indústria / Outros">Indústria / Outros</option>
+                  <label>Segmento de Atuação</label>
+                  <select id="classe" class="form-select" required>
+                    <option value="" disabled selected>Selecione seu setor...</option>
+                    <option value="05">Móveis e Decorações</option>
+                    <option value="01">Automotivo / Peças</option>
+                    <option value="02">Prestação de serviços</option>
+                    <option value="03">Industria / Outros</option>
+                    <option value="04">Varejo / Loja</option>
                   </select>
                 </div>
               </div>
             </form>
           </div>
 
-          <div>
-            <button type="button" id="btnWhatsappSubmit" class="btn-whatsapp-big">
+          <div class="d-flex align-items-center">
+            <button type="button" id="btnEnviar" class="btn-whatsapp-big">
               <i class="bi bi-whatsapp"></i> Falar com Especialista
             </button>
+            <span id="loaderTxt" class="loading-msg">Processando dados...</span>
           </div>
         </div>
-        <div class="col-lg-6 hero-img" data-aos="zoom-out">
+
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
           <img src="assets/img/hero-img.png" class="img-fluid" alt="Webgex Gestão">
         </div>
       </div>
@@ -196,182 +151,79 @@
   </section>
 
   <main id="main">
-
-    <!-- ======= Seção Reforma Tributária ======= -->
     <section id="tax-reform" class="tax-reform-section">
-      <div class="container" data-aos="fade-up">
+      <div class="container text-center" data-aos="fade-up">
         <header class="section-header">
           <h2 class="text-white">Reforma Tributária</h2>
-          <p class="text-white">Sua empresa preparada para o novo IVA</p>
+          <p class="text-white">Sua empresa preparada para o novo IVA (IBS e CBS)</p>
         </header>
-        <div class="row gy-4">
-          <div class="col-lg-6">
-            <h3>Conformidade e Segurança</h3>
-            <p>O Webgex está à frente das mudanças fiscais. Com a transição para o novo modelo de impostos (IBS e CBS), nosso sistema automatiza o cálculo de créditos e débitos, evitando bitributação e erros manuais que podem gerar multas.</p>
-            <ul>
-              <li><i class="bi bi-check-circle-fill"></i> Motor de cálculo preparado para a transição fiscal.</li>
-              <li><i class="bi bi-check-circle-fill"></i> Geração automática de guias no novo padrão.</li>
-              <li><i class="bi bi-check-circle-fill"></i> Histórico fiscal seguro para auditorias.</li>
-            </ul>
-          </div>
-          <div class="col-lg-6">
-            <div class="tax-reform-card">
-              <h4>Prontidão Tecnológica</h4>
-              <p>Nossa plataforma na nuvem recebe atualizações em tempo real conforme as leis são sancionadas. Você não precisa se preocupar com atualizações manuais ou softwares defasados.</p>
-              <a href="#hero" class="btn text-white border-white mt-3 scrollto">Saber mais sobre o impacto fiscal</a>
-            </div>
-          </div>
-        </div>
+        <p class="mt-4">O Webgex automatiza o cálculo de créditos e débitos conforme as novas regras fiscais, garantindo conformidade e segurança para o seu negócio.</p>
       </div>
     </section>
-
-    <!-- ======= Seção Verticais ======= -->
-    <section id="verticals" class="vertical-section">
-      <div class="container" data-aos="fade-up">
-        <header class="section-header">
-          <h2>Segmentos Especializados</h2>
-          <p>Experiência de 29 anos em verticais de sucesso</p>
-        </header>
-
-        <div class="row gy-4">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="service-box blue d-flex flex-column h-100">
-              <i class="ri-home-heart-line icon"></i>
-              <h3>Móveis e Decoração</h3>
-              <p>Gerencie orçamentos complexos com variações de acabamento e integre diretamente com o setor de logística para montagens e entregas agendadas.</p>
-              <ul>
-                <li>Gestão de RMA (Garantias) simplificada.</li>
-                <li>Controle de estoque de peças sob encomenda.</li>
-                <li>Histórico de compras por ambiente e cliente.</li>
-              </ul>
-              <a href="webgex-moveis.html" class="read-more mt-auto">Ver detalhes da vertical <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="service-box orange d-flex flex-column h-100">
-              <i class="ri-car-line icon"></i>
-              <h3>Setor Automotivo</h3>
-              <p>Ordens de Serviço inteligentes, controle de estoque de peças por curva ABC e cálculo automático de comissões para mecânicos e consultores.</p>
-              <ul>
-                <li>Checklist digital de entrada de veículos.</li>
-                <li>Rastreamento por Placa e Chassis.</li>
-                <li>Cotação multi-fornecedores em segundos.</li>
-              </ul>
-              <a href="webgex-automotivo.html" class="read-more mt-auto">Ver detalhes da vertical <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Seção VAREJO (DESTAQUE) ======= -->
-    <section id="retail" class="highlight-retail">
-      <div class="container" data-aos="zoom-in">
-        <div class="row align-items-center">
-          <div class="col-lg-7">
-            <span class="retail-badge">FALANDO DE VAREJO</span>
-            <h2 style="font-size: 3rem; font-weight: 800; color: #012970;">O PDV mais rápido e estável do mercado</h2>
-            <p class="lead">Não perca vendas por lentidão no caixa. O módulo de Varejo Webgex oferece uma frente de loja intuitiva, integrada ao TEF e com conciliação bancária automática.</p>
-            
-            <div class="row mt-4">
-              <div class="col-md-6">
-                <div class="d-flex align-items-center mb-3">
-                  <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                  <span><strong>Multi-lojas:</strong> Estoque unificado.</span>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                  <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                  <span><strong>BI Nativo:</strong> Análise de lucro real.</span>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="d-flex align-items-center mb-3">
-                  <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                  <span><strong>Nuvem:</strong> Acesse de onde estiver.</span>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                  <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                  <span><strong>Promoções:</strong> Regras de desconto automáticas.</span>
-                </div>
-              </div>
-            </div>
-            
-            <a href="#hero" class="btn-whatsapp-big mt-4 scrollto">
-              <i class="bi bi-whatsapp"></i> Quero conhecer o PDV Webgex
-            </a>
-          </div>
-          <div class="col-lg-5 text-center">
-            <img src="assets/img/pricing-starter.png" class="img-fluid rounded" alt="Varejo Eficiente">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Atendimento Final ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-        <header class="section-header">
-          <h2>Atendimento Personalizado</h2>
-          <p>Vamos conversar sobre o seu negócio?</p>
-        </header>
-        <div class="text-center">
-           <a href="#hero" class="btn-whatsapp-big scrollto">
-            <i class="bi bi-whatsapp"></i> Chamar Consultor Agora
-          </a>
-          <p class="mt-4">Nossa equipe responderá em poucos minutos (dentro do horário comercial).</p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="container">
+  <footer id="footer" class="footer py-4 bg-white border-top">
+    <div class="container text-center">
       <div class="copyright">
         &copy; Copyright <strong><span>Unigex</span></strong>. Todos os direitos reservados
       </div>
     </div>
   </footer>
 
-  <!-- Botão Flutuante WhatsApp (Link padrão) -->
-  <a href="https://api.whatsapp.com/send?phone=5585998020016&text=Olá, Webgex! Gostaria de suporte." class="whatsapp-float" target="_blank">
+  <!-- Botão Flutuante -->
+  <a href="https://api.whatsapp.com/send?phone=5585998020016" class="whatsapp-float" target="_blank">
     <i class="bi bi-whatsapp"></i>
   </a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
   
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- Script para Envio Dinâmico WhatsApp -->
   <script>
-    document.getElementById('btnWhatsappSubmit').addEventListener('click', function() {
-      // Captura os dados do formulário
-      const nome = document.getElementById('nome').value;
-      const telefone = document.getElementById('telefone').value;
-      const email = document.getElementById('email').value;
-      const segmento = document.getElementById('segmento').value;
+    AOS.init();
 
-      // Validação básica
-      if(!nome || !telefone || !email || !segmento) {
-        alert('Por favor, preencha todos os campos do formulário antes de falar com nosso especialista.');
+    document.getElementById('btnEnviar').addEventListener('click', async function() {
+      const btn = this;
+      const loader = document.getElementById('loaderTxt');
+      
+      // 1. Coleta os dados
+      const dados = {
+        nome: document.getElementById('nome').value,
+        telefone: document.getElementById('telefone').value,
+        email: document.getElementById('email').value,
+        classe: document.getElementById('classe').value,
+        classeNome: document.getElementById('classe').options[document.getElementById('classe').selectedIndex].text
+      };
+
+      // 2. Validação simples
+      if(!dados.nome || !dados.telefone || !dados.email || !dados.classe) {
+        alert('Por favor, preencha todos os campos do formulário.');
         return;
       }
 
-      // Formata a mensagem
-      const texto = `Olá, equipe Webgex!\n\nAcabei de visitar o site e gostaria de um atendimento especializado.\n\n*Meus Dados:*\n- *Nome:* ${nome}\n- *Telefone:* ${telefone}\n- *E-mail:* ${email}\n- *Segmento:* ${segmento}\n\n(Não apague essa mensagem para ser atendido)`;
-      
-      const textoEncoded = encodeURIComponent(texto);
-      const numeroWhats = "5585998020016";
-      
-      // Abre o link do WhatsApp
-      window.open(`https://api.whatsapp.com/send?phone=${numeroWhats}&text=${textoEncoded}`, '_blank');
+      // 3. UI de carregamento
+      btn.disabled = true;
+      loader.style.display = 'inline-block';
+
+      try {
+        // 4. CHAMADA PARA A CLOUD FUNCTION (SUBSTITUA A URL ABAIXO)
+        const cloudFunctionUrl = 'https://webgex-crm-proxy-241464300074.southamerica-east1.run.app';
+
+        const response = await fetch(cloudFunctionUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dados)
+        });
+
+        console.log('CRM Integration attempted');
+
+      } catch (err) {
+        console.error('Erro na integração:', err);
+      } finally {
+        // 5. REDIRECIONAMENTO WHATSAPP (Sempre acontece)
+        const msg = `Olá Webgex! Me cadastrei no site.\n\n*Nome:* ${dados.nome}\n*Setor:* ${dados.classeNome}\n\nGostaria de atendimento especializado.`;
+        window.location.href = `https://api.whatsapp.com/send?phone=5585998020016&text=${encodeURIComponent(msg)}`;
+      }
     });
   </script>
 
