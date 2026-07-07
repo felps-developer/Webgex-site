@@ -988,7 +988,32 @@ export const posts: BlogPost[] = [
       "Excesso de estoque imobiliza capital; falta de estoque significa vendas perdidas. O ponto ideal só é alcançado com dados precisos.",
       "Um ERP integrado mostra o giro de cada produto, sugere pontos de reposição e evita tanto a ruptura quanto o encalhe de mercadorias.",
     ],
-  }
+  },
+{
+    slug: "como-enxergar-o-lucro-real-do-negocio-e-o-que-um-erp-integrado-pode-controlar-na-sua-operacao",
+    coverImage: "/blog/como-enxergar-o-lucro-real-do-negocio-e-o-que-um-erp-integrado-pode-controlar-na-sua-operacao.png",
+    title: "Como enxergar o lucro real do negócio e o que um ERP integrado pode controlar na sua operação",
+    excerpt:
+      "Entenda por que faturar não é lucrar e como um ERP integrado revela a real saúde financeira da sua empresa, conectando custos, margens e resultados em tempo real.",
+    category: "Gestão",
+    date: "2026-07-07",
+    readingTime: "7 min",
+    author: "Equipe Webgex",
+    content: [
+      "Muitos gestores confundem faturamento com lucro. A conta parece simples: vendeu, entrou dinheiro, a empresa está indo bem. Mas quem já fechou o mês com boas vendas e caixa apertado sabe que essa conta não fecha sozinha. O lucro real não está na nota fiscal emitida, está no que sobra depois de todos os custos, despesas, impostos e desperdícios silenciosos que a operação carrega no dia a dia.",
+      "É justamente aí que mora o maior desafio da gestão empresarial: enxergar com clareza o que realmente acontece dentro do negócio, número por número, processo por processo.",
+      "É comum uma empresa fechar o mês com a receita crescendo e, ainda assim, ter dificuldade para pagar as contas. Isso acontece porque entre a venda e o lucro existem várias camadas: custo da mercadoria, impostos, comissões, inadimplência, retrabalho, estoque parado, frete, taxas financeiras. Quando esses números estão espalhados em planilhas, sistemas soltos ou dependem da memória de quem toca a operação, o resultado real fica escondido até o fechamento do mês — e às vezes nem no fechamento ele aparece com precisão.",
+      "Um estudo da PwC mostra que a falta de integração entre setores é apontada por 73% dos gestores como um fator que compromete diretamente a produtividade e a tomada de decisões. Sem dados integrados, decisões estratégicas acabam sendo tomadas com base em intuição, e não em fatos.",
+      "Para enxergar o lucro real, é preciso olhar além da receita bruta e considerar, entre outros pontos: custos diretos da operação — mercadoria, insumos, mão de obra envolvida na entrega do produto ou serviço; despesas fixas e variáveis — aluguel, estrutura, comissões, marketing, taxas de cartão; carga tributária real — impostos que incidem sobre cada operação, muitas vezes diferentes por produto, cliente ou regime fiscal; inadimplência e prazos de recebimento — vender não é o mesmo que receber; e perdas invisíveis — estoque parado, produtos vencidos, avarias, retrabalho, erros de precificação.",
+      "Quando esses pontos não estão conectados em um único sistema, cada área enxerga apenas o seu pedaço da história. O financeiro vê o caixa, o comercial vê as vendas, o estoque vê o volume movimentado — mas ninguém vê o quadro completo. E é o quadro completo que revela o lucro real.",
+      "Um ERP integrado existe exatamente para eliminar essa fragmentação. Ao unir cadastros, financeiro, controladoria, operações, vendas e CRM em uma única base de dados, ele permite acompanhar o resultado da empresa em tempo real, e não apenas no fechamento contábil do mês.",
+      "Com um sistema como o ERP Webgex, é possível controlar, de forma conectada: fluxo de caixa e tesouraria, com visão clara de entradas, saídas e saldo projetado; custos e margens por produto, categoria ou cliente, identificando o que realmente dá lucro e o que está apenas girando estoque; regras comerciais e política de preços, evitando descontos que corroem a margem sem que ninguém perceba; controladoria, comparando o planejado com o realizado e apontando desvios antes que virem prejuízo; estoque e suprimentos, reduzindo capital parado e perdas por falta de controle; e gestão fiscal, garantindo que a carga tributária esteja corretamente apurada em cada operação.",
+      "Segundo levantamentos da Gartner, empresas que utilizam ERP para controle de estoque conseguem reduzir custos logísticos entre 15% e 30%, além de melhorar a eficiência operacional em até 20%. Já estudos da McKinsey apontam ganhos de produtividade de 20% a 30% em empresas que integram e automatizam seus processos. São números que, no fim do mês, aparecem diretamente na linha de lucro.",
+      "Gerir uma empresa apenas pela percepção de caixa é caminhar no escuro. O ERP Webgex foi construído ao longo de quase 30 anos de experiência para dar ao gestor exatamente o que falta nessa equação: visibilidade real, integrada e atualizada de cada engrenagem do negócio — do cadastro ao financeiro, da controladoria às vendas.",
+      "Quando cada módulo conversa com o outro, o lucro deixa de ser uma surpresa no fim do mês e passa a ser algo que se acompanha, se projeta e, principalmente, se controla.",
+      "Quer entender onde está o lucro real da sua empresa? Fale com a equipe Webgex e descubra como um ERP integrado pode transformar a forma como você enxerga e controla o resultado do seu negócio.",
+    ],
+  },
 ]
 
 export function getPost(slug: string) {
