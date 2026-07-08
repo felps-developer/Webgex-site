@@ -26,6 +26,17 @@ npm run build     # Build estático → /out/
 npm run preview   # Preview do build (via serve)
 ```
 
+## Deploy (Google Cloud Storage)
+
+1. **Build** o site: `npm run build`
+2. Copie **apenas o conteúdo** da pasta `out/` para a raiz do bucket (não copie a pasta `out/` em si, nem o projeto inteiro)
+3. Configure o website hosting:
+   ```bash
+   gsutil web set -m index.html -e 404.html gs://webgex-site
+   ```
+
+> ⚠️ Apenas os arquivos gerados em `out/` devem ser enviados ao bucket. Código fonte, `node_modules/` e arquivos de configuração do projeto **não** pertencem ao bucket.
+
 ## Estrutura
 
 ```
@@ -105,6 +116,23 @@ out/                      # Build estático gerado
 - **Google Cloud Function** → `POST` para leads do CRM
 - **Google Tag Manager** → Tracking e analytics
 - **WhatsApp** → `wa.me/5585998020016`
+
+## Tracking & Meta Tags (Verificação Obrigatória em Updates)
+
+### Tags Presentes
+| Tag | Localização | Status |
+|-----|-------------|--------|
+| GTM `GTM-WPX79XFX` (script + iframe) | `app/layout.tsx:100-130` | ✅ Presente |
+| `dataLayer.push` (pageType) | campanha, escopo, maturidade | ✅ Presente |
+| `Content-Security-Policy` (domínios Google) | `app/layout.tsx:87-95` | ✅ Presente |
+| `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` | `app/layout.tsx:96-98` | ✅ Presente |
+
+### Tags Ausentes (Verificar se foram removidas acidentalmente)
+| Tag | Propósito | Status |
+|-----|-----------|--------|
+| `<meta name="google-site-verification" content="..." />` | Verificação do Google Search Console | ❌ **AUSENTE** — foi removida em update anterior |
+
+> ⚠️ **Sempre verificar** após qualquer build/deploy se as meta tags de tracking acima constam no HTML gerado em `out/`. Especialmente o `google-site-verification`, que já foi removido acidentalmente uma vez.
 
 ## Funcionalidades Implementadas (v1.1)
 
