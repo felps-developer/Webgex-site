@@ -14,6 +14,30 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
 {
+    slug: "relacionamento-com-cliente-e-seguranca-da-informacao-o-que-o-seu-erp-precisa-entregar-alem-do-financeiro",
+    coverImage: "/blog/customer-relationship.png",
+    title: "Relacionamento com cliente e segurança da informação: o que o seu ERP precisa entregar além do financeiro",
+    excerpt:
+      "Quando se fala em ERP, o primeiro pensamento costuma ser financeiro: contas a pagar, contas a receber, fluxo de caixa. Mas empresas que enxergam o ERP apenas por esse ângulo deixam na mesa dois ativos igualmente estratégicos: o relacionamento com o cliente e a segurança das informações que sustentam todo o negócio.",
+    category: "Gestão",
+    date: "2026-07-13",
+    readingTime: "6 min",
+    author: "Equipe Webgex",
+    content: [
+      "Em um mercado onde a experiência do cliente decide quem fica e quem sai, e onde vazamentos de dados podem custar caro — financeira e juridicamente —, um ERP que só controla números está entregando apenas metade do que uma operação moderna precisa.",
+      "Segundo a Salesforce, 80% dos consumidores consideram a experiência que uma empresa proporciona tão importante quanto seus produtos ou serviços. Isso significa que histórico de compras, preferências, atendimentos anteriores e status de cada negociação não podem viver isolados em um caderno, no WhatsApp do vendedor ou na memória de quem atende.",
+      "É aqui que entra o CRM integrado ao ERP. Quando cadastro, vendas, financeiro e atendimento compartilham a mesma base, a empresa consegue ter visão única do cliente, com histórico completo de compras, contatos e pendências; personalizar ofertas e follow-ups, em vez de tratar todo cliente da mesma forma; identificar oportunidades de recompra e upsell, com base em dados reais de consumo; e reduzir o tempo de resposta, já que qualquer pessoa da equipe acessa o mesmo histórico, sem depender de quem \"lembra\" do cliente.",
+      "Um estudo da Harvard Business Review aponta que empresas que utilizam CRM integrado a outros sistemas de gestão aumentam em até 29% a taxa de retenção de clientes. Reter custa menos do que conquistar — e reter depende de conhecer bem quem já compra de você.",
+      "Se o relacionamento constrói a confiança do cliente, a segurança da informação é o que garante que essa confiança não seja quebrada. Dados de clientes, informações financeiras, histórico fiscal, contratos — tudo isso precisa estar protegido não apenas por obrigação legal, mas porque um vazamento compromete a reputação construída ao longo de anos em poucas horas.",
+      "Com a LGPD (Lei Geral de Proteção de Dados) em vigor, empresas de todos os portes têm responsabilidade sobre como coletam, armazenam e utilizam dados pessoais. Segundo levantamento da IBM, o custo médio global de um vazamento de dados em 2023 ultrapassou US$ 4,45 milhões, considerando prejuízos diretos, multas e perda de clientes. Para pequenas e médias empresas, um incidente desse tipo pode significar o fim da operação.",
+      "Um ERP preparado para esse cenário precisa entregar controle de acesso por usuário e perfil, garantindo que cada pessoa veja apenas o que precisa para seu trabalho; armazenamento em nuvem com backup automático, eliminando o risco de perda de dados por falha local; rastreabilidade de ações, permitindo identificar quem alterou o quê e quando; conformidade com a LGPD, com tratamento adequado de dados de clientes e colaboradores; e criptografia e proteção nas integrações, especialmente em conexões com bancos e meios de pagamento.",
+      "O ERP Webgex nasceu com a proposta de unir, em um único ambiente, tudo o que uma empresa precisa para operar com solidez: financeiro, controladoria, estoque, fiscal, CRM e segurança da informação, tudo em nuvem e integrado desde o cadastro até o pós-venda.",
+      "Isso significa que o mesmo sistema que mostra a margem de lucro de um produto também guarda o histórico de relacionamento com o cliente que comprou aquele produto — e protege esses dados com o rigor que a LGPD exige e que o mercado espera.",
+      "Cuidar do cliente e cuidar da informação não são tarefas paralelas ao financeiro: são parte da mesma engrenagem. Empresas que entendem isso saem na frente, porque constroem relação de confiança tanto com quem compra quanto com quem fiscaliza.",
+      "Quer saber como o ERP Webgex pode fortalecer o relacionamento com seus clientes e proteger os dados da sua operação? Fale com a nossa equipe e conheça as soluções integradas de CRM, gestão e segurança da informação da Webgex.",
+    ],
+  },
+{
     slug: "reforma-tributaria-conformidade-fiscal",
     coverImage: "/blog/reforma-tributaria-conformidade-fiscal.jpg",
     title: "Reforma Tributária 2026 e a Estabilidade do WEBGEX",
