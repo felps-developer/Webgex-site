@@ -90,7 +90,7 @@ export default function RootLayout({
           img-src 'self' data: https://www.google.com https://*.googleadservices.com https://*.doubleclick.net https://*.googletagmanager.com https://connect.facebook.net https://*.facebook.com;
           style-src 'self' 'unsafe-inline';
           font-src 'self';
-          connect-src 'self' https://www.google.com https://*.googleadservices.com https://*.doubleclick.net https://*.googletagmanager.com https://*.google-analytics.com https://*.run.app https://api.whatsapp.com;
+          connect-src 'self' https://www.google.com https://*.googleadservices.com https://*.doubleclick.net https://*.googletagmanager.com https://*.google-analytics.com https://webgex-crm-proxy-241464300074.southamerica-east1.run.app https://unigex-email-241464300074.southamerica-east1.run.app https://api.whatsapp.com;
           frame-src https://www.googletagmanager.com https://*.doubleclick.net;
         " />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />

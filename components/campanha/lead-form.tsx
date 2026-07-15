@@ -15,6 +15,8 @@ export function LeadForm({ segment }: { segment: string }) {
     const raw = new FormData(form)
     const data = Object.fromEntries(raw.entries()) as Record<string, string>
 
+    if (data.website?.trim()) return
+
     data.segmento = segment
     data.classe = getSegmentCode(segment)
     data.classeNome = segment
@@ -32,24 +34,32 @@ export function LeadForm({ segment }: { segment: string }) {
       className="rounded-2xl border border-border bg-card p-7"
       onSubmit={handleSubmit}
     >
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
       <h3 className="text-lg font-bold text-secondary">Fale com um especialista</h3>
       <p className="mt-1 text-sm text-muted-foreground">Preencha e entraremos em contato.</p>
       <FieldGroup className="mt-5">
         <Field>
           <FieldLabel htmlFor="lead-nome">Nome</FieldLabel>
-          <Input id="lead-nome" name="nome" required placeholder="Seu nome" />
+          <Input id="lead-nome" name="nome" required maxLength={120} placeholder="Seu nome" />
         </Field>
         <Field>
           <FieldLabel htmlFor="lead-empresa">Empresa</FieldLabel>
-          <Input id="lead-empresa" name="empresa" placeholder="Nome da empresa" />
+          <Input id="lead-empresa" name="empresa" maxLength={160} placeholder="Nome da empresa" />
         </Field>
         <Field>
           <FieldLabel htmlFor="lead-email">E-mail</FieldLabel>
-          <Input id="lead-email" name="email" type="email" required placeholder="seu@email.com.br" />
+          <Input id="lead-email" name="email" type="email" required maxLength={254} placeholder="seu@email.com.br" />
         </Field>
         <Field>
           <FieldLabel htmlFor="lead-telefone">Telefone / WhatsApp</FieldLabel>
-          <Input id="lead-telefone" name="telefone" required placeholder="(00) 00000-0000" />
+          <Input id="lead-telefone" name="telefone" required maxLength={30} placeholder="(00) 00000-0000" />
         </Field>
         <Button type="submit" size="lg" className="w-full bg-green-600 hover:bg-green-700" disabled={sending}>
           {sending ? (

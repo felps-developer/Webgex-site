@@ -14,7 +14,7 @@ import {
   USER_PRICE,
   type ScopeSelection,
 } from "@/lib/scope-builder"
-import { sendLeadToCRM, sendProposalEmail, redirectToWhatsApp, makeWhatsAppMessage } from "@/lib/form-submit"
+import { isAllowedConsultantEmail, normalizeEmail, sendLeadToCRM, sendProposalEmail, redirectToWhatsApp, makeWhatsAppMessage } from "@/lib/form-submit"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -31,6 +31,7 @@ export function ScopeBuilder() {
   const [showForm, setShowForm] = useState(false)
   const [sending, setSending] = useState(false)
   const [sent, setSent] = useState(false)
+  const [formError, setFormError] = useState("")
 
   useEffect(() => {
     const draft = loadDraft()
@@ -149,9 +150,24 @@ export function ScopeBuilder() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    if (sending) return
+
     const form = e.currentTarget
     const raw = new FormData(form)
     const data = Object.fromEntries(raw.entries()) as Record<string, string>
+    const consultantEmail = normalizeEmail(data.consultorEmail || "")
+
+    setFormError("")
+
+    if (data.website?.trim()) return
+
+    if (!isAllowedConsultantEmail(consultantEmail)) {
+      setFormError("Informe um e-mail corporativo da Unigex para o consultor ou deixe o campo em branco.")
+      return
+    }
+
+    data.email = normalizeEmail(data.email)
+    data.consultorEmail = consultantEmail
 
     const modulesSummary = estimate.modules.map((m) => m.label).join(", ")
     const breakdownSummary = estimate.breakdown
@@ -178,9 +194,9 @@ export function ScopeBuilder() {
       message: emailHtml,
     })
 
-    if (data.consultorEmail && data.consultorEmail.trim()) {
+    if (data.consultorEmail) {
       await sendProposalEmail({
-        email: data.consultorEmail.trim(),
+        email: data.consultorEmail,
         subject: `Proposta Webgex - Escopo para ${data.empresa || data.nome}`,
         message: emailHtml,
       })
@@ -517,21 +533,29 @@ export function ScopeBuilder() {
                   </Button>
                 ) : (
                   <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      className="hidden"
+                      aria-hidden="true"
+                    />
                     <Field>
                       <FieldLabel htmlFor="scope-nome">Nome</FieldLabel>
-                      <Input id="scope-nome" name="nome" required placeholder="Seu nome" />
+                      <Input id="scope-nome" name="nome" required maxLength={120} placeholder="Seu nome" />
                     </Field>
                     <Field>
                       <FieldLabel htmlFor="scope-email">E-mail</FieldLabel>
-                      <Input id="scope-email" name="email" type="email" required placeholder="seu@email.com.br" />
+                      <Input id="scope-email" name="email" type="email" required maxLength={254} placeholder="seu@email.com.br" />
                     </Field>
                     <Field>
                       <FieldLabel htmlFor="scope-telefone">WhatsApp</FieldLabel>
-                      <Input id="scope-telefone" name="telefone" required placeholder="(00) 00000-0000" />
+                      <Input id="scope-telefone" name="telefone" required maxLength={30} placeholder="(00) 00000-0000" />
                     </Field>
                     <Field>
                       <FieldLabel htmlFor="scope-empresa">Empresa</FieldLabel>
-                      <Input id="scope-empresa" name="empresa" placeholder="Nome da empresa" />
+                      <Input id="scope-empresa" name="empresa" maxLength={160} placeholder="Nome da empresa" />
                     </Field>
                     <Field>
                       <FieldLabel htmlFor="scope-segmento">Segmento</FieldLabel>
@@ -554,8 +578,13 @@ export function ScopeBuilder() {
                         <User className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
                         E-mail do consultor (opcional)
                       </FieldLabel>
-                      <Input id="scope-consultor" name="consultorEmail" type="email" placeholder="consultor@exemplo.com" />
+                      <Input id="scope-consultor" name="consultorEmail" type="email" maxLength={254} pattern="^[^@\s]+@unigex\.com\.br$" placeholder="consultor@unigex.com.br" />
                     </Field>
+                    {formError && (
+                      <p className="rounded-md border border-destructive/30 bg-destructive/10 px-3 py-2 text-sm text-destructive">
+                        {formError}
+                      </p>
+                    )}
                     <Button type="submit" size="lg" className="w-full bg-green-600 hover:bg-green-700" disabled={sending}>
                       {sending ? "Enviando..." : "Receber proposta por e-mail e WhatsApp"}
                     </Button>

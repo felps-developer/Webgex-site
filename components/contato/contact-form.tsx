@@ -27,6 +27,8 @@ export function ContactForm() {
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
 
+    if (data.website?.trim()) return
+
     await sendLeadToCRM(data)
 
     setSubmitted(true)
@@ -67,25 +69,33 @@ export function ContactForm() {
       className="rounded-2xl border border-border bg-card p-7 lg:p-8"
       onSubmit={handleSubmit}
     >
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
       <FieldGroup>
         <div className="grid gap-5 sm:grid-cols-2">
           <Field>
             <FieldLabel htmlFor="nome">Nome</FieldLabel>
-            <Input id="nome" name="nome" required placeholder="Seu nome completo" />
+            <Input id="nome" name="nome" required maxLength={120} placeholder="Seu nome completo" />
           </Field>
           <Field>
             <FieldLabel htmlFor="empresa">Empresa</FieldLabel>
-            <Input id="empresa" name="empresa" placeholder="Nome da empresa" />
+            <Input id="empresa" name="empresa" maxLength={160} placeholder="Nome da empresa" />
           </Field>
         </div>
         <div className="grid gap-5 sm:grid-cols-2">
           <Field>
             <FieldLabel htmlFor="email">E-mail</FieldLabel>
-            <Input id="email" name="email" type="email" required placeholder="seu@email.com.br" />
+            <Input id="email" name="email" type="email" required maxLength={254} placeholder="seu@email.com.br" />
           </Field>
           <Field>
             <FieldLabel htmlFor="telefone">Telefone</FieldLabel>
-            <Input id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+            <Input id="telefone" name="telefone" maxLength={30} placeholder="(00) 00000-0000" />
           </Field>
         </div>
         <Field>
@@ -104,7 +114,7 @@ export function ContactForm() {
         </Field>
         <Field>
           <FieldLabel htmlFor="mensagem">Como podemos ajudar?</FieldLabel>
-          <Textarea id="mensagem" name="mensagem" rows={5} placeholder="Conte um pouco sobre a sua necessidade..." />
+          <Textarea id="mensagem" name="mensagem" rows={5} maxLength={2000} placeholder="Conte um pouco sobre a sua necessidade..." />
         </Field>
         <Button type="submit" size="lg" className="w-full">
           Enviar mensagem

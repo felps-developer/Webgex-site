@@ -162,6 +162,7 @@ export function BlogList() {
             e.preventDefault()
             const form = e.currentTarget
             const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
+            if (data.website?.trim()) return
             data.origem = "newsletter"
             await sendLeadToCRM(data)
             form.reset()
@@ -170,8 +171,17 @@ export function BlogList() {
         >
           <input
             type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
+          />
+          <input
+            type="text"
             name="nome"
             required
+            maxLength={120}
             placeholder="Seu nome"
             aria-label="Seu nome"
             className="rounded-lg border border-border bg-card px-4 py-2.5 text-sm outline-none ring-primary focus:ring-2"
@@ -181,6 +191,7 @@ export function BlogList() {
               type="email"
               name="email"
               required
+              maxLength={254}
               placeholder="seu@email.com.br"
               aria-label="Seu e-mail"
               className="flex-1 rounded-lg border border-border bg-card px-4 py-2.5 text-sm outline-none ring-primary focus:ring-2"
@@ -189,6 +200,7 @@ export function BlogList() {
               type="tel"
               name="telefone"
               required
+              maxLength={30}
               placeholder="(00) 00000-0000"
               aria-label="Seu telefone"
               className="flex-1 rounded-lg border border-border bg-card px-4 py-2.5 text-sm outline-none ring-primary focus:ring-2"
@@ -210,6 +222,7 @@ export function BlogList() {
             <input
               type="text"
               name="empresa"
+              maxLength={160}
               placeholder="Sua empresa (opcional)"
               aria-label="Sua empresa"
               className="flex-1 rounded-lg border border-border bg-card px-4 py-2.5 text-sm outline-none ring-primary focus:ring-2"
