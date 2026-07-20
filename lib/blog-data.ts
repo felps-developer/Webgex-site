@@ -14,6 +14,29 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
 {
+    slug: "adesao-ao-sistema-e-pdv-conectado-quando-a-ferramenta-certa-transforma-a-operacao",
+    coverImage: "/blog/adesao-ao-sistema-e-pdv-conectado-quando-a-ferramenta-certa-transforma-a-operacao.png",
+    title: "Adesão ao sistema e PDV conectado: quando a ferramenta certa transforma a operação",
+    excerpt:
+      "Implantar um novo sistema de gestão é, para muitos empresários, sinônimo de dor de cabeça. A resistência da equipe, o medo de parar a operação durante a transição e a insegurança de trocar o que já funciona fazem com que várias empresas adiem essa decisão — mesmo sabendo que o sistema atual já não acompanha o ritmo do negócio.",
+    category: "Gestão",
+    date: "2026-07-20",
+    readingTime: "6 min",
+    author: "Equipe Webgex",
+    content: [
+      "Implantar um novo sistema de gestão é, para muitos empresários, sinônimo de dor de cabeça. A resistência da equipe, o medo de parar a operação durante a transição e a insegurança de \"trocar o que já funciona\" fazem com que várias empresas adiem essa decisão — mesmo sabendo que o sistema atual já não acompanha o ritmo do negócio.",
+      "Mas a verdade é que o problema raramente está em migrar de sistema. Está em migrar para a ferramenta errada, sem suporte adequado, sem integração real entre as pontas da operação. Quando a adesão é bem conduzida e o PDV conversa de verdade com o restante do sistema, a mudança deixa de ser um risco e passa a ser o divisor de águas que a operação precisava.",
+      "A resistência a mudanças é um comportamento natural, especialmente em equipes que já criaram rotina em cima de um processo, mesmo que ele seja falho. Segundo pesquisas da McKinsey sobre gestão de mudanças organizacionais, cerca de 70% das iniciativas de transformação falham, e a principal causa não é técnica — é a falta de engajamento das pessoas envolvidas no processo.",
+      "Isso mostra que a tecnologia sozinha não resolve nada. É preciso que a adesão ao novo sistema seja acompanhada de perto, com treinamento real, suporte próximo e uma implantação pensada para o dia a dia de quem vai operar o sistema — do caixa da loja ao setor financeiro.",
+      "Para o varejo, o atacado e os centros automotivos, o PDV (Ponto de Venda) é onde a operação acontece de fato: é ali que o cliente é atendido, o produto é vendido, o pagamento é processado e a informação nasce. Quando o PDV funciona isolado, desconectado do estoque, do financeiro e do fiscal, cada venda gera retrabalho em outro setor.",
+      "Um PDV conectado a um ERP integrado muda esse cenário na prática: baixa automática de estoque a cada venda, eliminando divergências entre o que está no sistema e o que está na prateleira; emissão fiscal automática, reduzindo erros manuais e riscos de autuação; múltiplas formas de pagamento integradas, com conciliação automática no financeiro; consulta de histórico do cliente em tempo real, direto no caixa, permitindo atendimento mais ágil e personalizado; e relatórios de vendas atualizados na hora, sem depender do fechamento do dia para saber o que realmente aconteceu na loja.",
+      "De acordo com dados da Zebra Technologies, empresas que utilizam soluções de PDV integradas registram redução de até 20% em erros operacionais e ganho de até 30% na velocidade de atendimento ao cliente. Em operações com alto volume de vendas, esse ganho de tempo se traduz diretamente em mais faturamento por hora de operação.",
+      "De nada adianta ter a melhor tecnologia se a equipe não sabe, não quer ou não consegue usá-la no dia a dia. Por isso, a adesão ao sistema precisa ser tratada como parte da estratégia, não como um detalhe técnico de implantação. Isso envolve treinamento prático e contínuo, e não apenas um manual entregue no primeiro dia; suporte próximo durante a transição, para tirar dúvidas no momento em que elas surgem; migração de dados cuidadosa, sem perda de histórico de clientes, estoque ou financeiro; e acompanhamento pós-implantação, ajustando parâmetros conforme a realidade da operação.",
+      "O ERP Webgex foi desenvolvido para que essa transição seja natural, com PDV integrado nativamente ao restante do sistema — financeiro, estoque, fiscal e CRM — e suporte dedicado durante toda a implantação. A ferramenta certa, quando bem adotada, deixa de ser apenas um sistema e passa a ser parte da rotina que sustenta o crescimento do negócio.",
+      "Está pensando em trocar de sistema, mas tem receio da transição? Fale com a equipe Webgex e veja como um PDV conectado a um ERP integrado pode transformar sua operação sem parar o seu negócio.",
+    ],
+  },
+{
     slug: "relacionamento-com-cliente-e-seguranca-da-informacao-o-que-o-seu-erp-precisa-entregar-alem-do-financeiro",
     coverImage: "/blog/customer-relationship.png",
     title: "Relacionamento com cliente e segurança da informação: o que o seu ERP precisa entregar além do financeiro",
