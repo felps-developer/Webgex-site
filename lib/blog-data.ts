@@ -14,6 +14,37 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
 {
+    slug: "orcamento-que-virou-escola-gestao-orcamentaria-na-pratica",
+    coverImage: "/blog/gestao-orcamentaria-artigo.jpg",
+    title: "O orçamento que virou escola: o que aprendemos ao implantar a Gestão Orçamentária na prática",
+    excerpt:
+      "Como um projeto de controle financeiro se transformou em um dos maiores casos de aprendizagem organizacional da nossa história — e por que isso importa para quem lidera centros de resultado hoje.",
+    category: "Gestão",
+    date: "2026-07-23",
+    readingTime: "8 min",
+    author: "Marcelo Miranda",
+    content: [
+      "Quando falamos em \"orçamento empresarial\", a primeira imagem que vem à cabeça costuma ser planilha, aprovação, corte de custos. Uma obrigação burocrática que desce da diretoria financeira para o resto da empresa.",
+      "Foi exatamente esse o cenário que encontramos no início de um dos projetos mais marcantes já conduzidos por nossa equipe: a implantação da gestão orçamentária em uma rede varejista de médio porte do setor de eletrônicos, com 58 filiais e cerca de 500 colaboradores. Todo o processo financeiro estava concentrado na figura do CFO. Os gestores de área não participavam da construção do orçamento — apenas pediam recursos por e-mail e esperavam.",
+      "Dois anos depois, a mesma empresa tinha dezoito gestores administrando seus próprios centros de resultado com autonomia, responsabilidade e domínio técnico sobre indicadores financeiros. E, mais importante: o modelo implantado naquele momento segue em uso até hoje, com apenas ajustes incrementais ao longo do caminho.",
+      "Esse case acabou de se tornar artigo acadêmico. Publicamos \"Aprendizagem Organizacional na Implementação da Gestão Orçamentária: Um Estudo de Caso Fundamentado no Ciclo PDCA, Curva de Aprendizado e Gestão da Mudança\", de autoria de Marcelo Miranda (Controller responsável pela implantação e hoje Diretor Comercial e de Projetos da Webgex), em parceria com a Universidade Estadual do Ceará (UECE) e a Universidade Corporativa WebGex (Unigex).",
+      "Leia o artigo completo: Aprendizagem Organizacional na Implementação da Gestão Orçamentária (https://www.academia.edu/170396103/Aprendizagem_Organizacional_na_Implementa%C3%A7%C3%A3o_da_Gest%C3%A3o_Or%C3%A7ament%C3%A1ria)",
+      "Por que esse case vale a pena conhecer",
+      "O artigo não é só um relato de \"como implantamos um ERP\". Ele documenta algo mais raro: como um projeto orçamentário pode se transformar em um mecanismo permanente de desenvolvimento gerencial, se conduzido com a metodologia certa.",
+      "Três achados se destacam:",
+      "Ciclo PDCA como rotina, não como projeto. Na maioria das implantações, o Ciclo PDCA (Planejar, Executar, Verificar, Agir) é usado só durante a fase inicial do projeto e depois é abandonado. Neste caso, ele nunca saiu de cena: cada ciclo orçamentário mensal virou uma nova oportunidade de ajuste e aprendizado, incorporada à rotina da empresa até os dias de hoje.",
+      "Mudança gradual vence mudança abrupta. A implantação foi dividida em cinco fases — da centralização financeira até a maturidade organizacional plena — cada uma só avançando quando os gestores realmente dominavam a etapa anterior. Essa lógica, inspirada no Kaizen, foi decisiva para reduzir a resistência inicial (\"orçamento não é minha função\") e transformá-la em senso de propriedade sobre os resultados.",
+      "O Controller como parceiro, não fiscal. Um dos pontos mais interessantes do estudo é a reformulação do papel do Controller: de fiscalizador de erros para educador e consultor interno, acompanhando cada gestor individualmente até a autonomia plena.",
+      "Uma leitura sem romantizar o processo",
+      "Vale destacar que o próprio artigo reconhece seus limites: é um estudo de caso único, baseado em observação participante, sem indicadores quantitativos longitudinais completos — o que abre espaço para trabalhos futuros, inclusive usando dados históricos do próprio ERP para construir dashboards de maturidade gerencial. É esse tipo de honestidade metodológica que torna o material útil como conteúdo de formação, e não apenas como case de sucesso.",
+      "Para quem é essa leitura",
+      "Se você lidera um centro de resultado, participa de comitês de orçamento ou está avaliando implantar (ou reformular) a gestão orçamentária da sua área, o artigo oferece um roteiro prático — com base teórica sólida (PDCA, Curva de Aprendizado, SECI, Kotter, Senge) — de como transformar um processo financeiro em um processo de desenvolvimento de pessoas.",
+      "O artigo integra o acervo de conteúdos da Universidade Corporativa WebGex (Unigex) e está disponível gratuitamente para consulta e download.",
+      "Acesse o artigo completo aqui: https://www.academia.edu/170396103/Aprendizagem_Organizacional_na_Implementa%C3%A7%C3%A3o_da_Gest%C3%A3o_Or%C3%A7ament%C3%A1ria",
+      "Em breve: episódio especial do nosso podcast reunindo o consultor responsável pela implantação e um consultor financeiro convidado para debater os bastidores do case. Fique de olho.",
+    ],
+  },
+{
     slug: "adesao-ao-sistema-e-pdv-conectado-quando-a-ferramenta-certa-transforma-a-operacao",
     coverImage: "/blog/adesao-ao-sistema-e-pdv-conectado-quando-a-ferramenta-certa-transforma-a-operacao.png",
     title: "Adesão ao sistema e PDV conectado: quando a ferramenta certa transforma a operação",
