@@ -1,3 +1,10 @@
+export type BlogImageBlock = {
+  type: "image"
+  src: string
+  alt?: string
+  caption?: string
+}
+
 export type BlogPost = {
   slug: string
   title: string
@@ -6,13 +13,130 @@ export type BlogPost = {
   date: string
   readingTime: string
   author: string
-  content: string[]
+  content: (string | BlogImageBlock)[]
   coverImage?: string
 }
 
 export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícias"] as const
 
 export const posts: BlogPost[] = [
+{
+    slug: "nota-fiscal-de-servico-com-erro-no-ambiente-nacional-entenda-o-que-esta-acontecendo",
+    title: "Nota fiscal de serviço com erro no Ambiente Nacional: entenda o que está acontecendo e por que não é uma falha do seu sistema",
+    excerpt:
+      "Notas presas com o status \"Aguardando envio\" e alerta de erro? O problema não está na sua operação, nem no Webgex — está na comunicação entre a prefeitura e o Ambiente Nacional de Dados (ADN). Entenda o que está acontecendo e o que estamos fazendo a respeito.",
+    category: "Fiscal",
+    date: "2026-08-01",
+    readingTime: "6 min",
+    author: "Equipe Webgex",
+    content: [
+      "Se você emite Notas Fiscais de Serviço (NFS-e) e notou notas presas com o status \"Aguardando envio\" acompanhadas de um alerta de erro, este post é para você. O problema não está na sua operação, nem no Webgex — ele acontece em uma etapa que está fora do alcance de qualquer sistema de emissão: a comunicação entre a prefeitura do seu município e o Ambiente Nacional de Dados (ADN) do governo federal.",
+      {
+        type: "image",
+        src: "/blog/nfs-e-aguardando-envio.png",
+        alt: "Nota fiscal de serviço com status Aguardando envio e alerta de erro",
+      },
+      "Vamos explicar exatamente o que está acontecendo, por que isso foge do nosso controle direto e o que estamos fazendo a respeito.",
+      "O contexto: por que existe um \"Ambiente Nacional\" agora?",
+      "Até pouco tempo atrás, cada prefeitura do Brasil tinha seu próprio sistema, layout e regras para emissão de NFS-e — mais de 5 mil modelos diferentes. Com a Reforma Tributária, a Lei Complementar nº 214/2025 determinou que todos os municípios brasileiros passassem a integrar suas informações a um único Ambiente Nacional da NFS-e, padronizado pela Receita Federal em parceria com a ABRASF e a Confederação Nacional de Municípios.",
+      "Isso significa que, mesmo quando você emite a nota pelo sistema da sua prefeitura (ou por um sistema como o Webgex, que se conecta a ele), essa informação precisa, em algum momento, ser repassada para o Ambiente Nacional. É exatamente nessa passagem que alguns municípios estão enfrentando dificuldades.",
+      "Onde exatamente o erro acontece",
+      "O caminho de uma nota fiscal de serviço passa, de forma simplificada, por três etapas:",
+      "1. Emissão: o sistema (Webgex) monta e envia a nota para a prefeitura do seu município.",
+      "2. Validação municipal: a prefeitura recebe, confere e aprova os dados. Para o seu sistema e para você, a nota é concluída aqui — ela aparece emitida, com número, e o serviço está formalmente prestado.",
+      "3. Transmissão ao Ambiente Nacional: depois de aprovar, a prefeitura (ou a empresa contratada por ela para essa finalidade) tem a obrigação de repassar os dados da nota para o sistema do governo federal.",
+      "O erro que aparece na tela — como o exemplo abaixo — acontece justamente na etapa 3, depois que a sua nota já foi aceita pela prefeitura:",
+      "Status: ERRO\nCódigo: E1235 – Falha no esquema XML do DF-e\nComplemento: elemento 'cLocalidadeIncid' inválido — valor '0' não corresponde\nao tipo de dado esperado; padrão de 'TSCodMunIBGE' não atendido.",
+      {
+        type: "image",
+        src: "/blog/nfs-e-erro-transmissao.png",
+        alt: "Alerta de erro na transmissão da nota fiscal de serviço ao Ambiente Nacional",
+      },
+      "Em termos simples: o sistema que faz esse repasse ao governo federal está enviando um código de município (IBGE) ou uma informação de localidade em formato inválido ou zerado. Esse é um erro de configuração de quem faz a transmissão — não um erro gerado pela sua nota fiscal, que já havia sido validada e aprovada anteriormente.",
+      "Por que não conseguimos resolver isso diretamente",
+      "Muitas prefeituras não mantêm equipe própria ou processo interno para lidar com toda a complexidade técnica de conexão ao Ambiente Nacional — algo natural, já que isso não é a atividade-fim de uma administração municipal. Por isso, é comum que a prefeitura contrate uma empresa especializada para atuar exclusivamente nessa ponte entre o sistema municipal e o sistema federal.",
+      "Quando isso acontece, essa empresa contratada substitui a prefeitura nessa etapa específica — ela é quem efetivamente processa e transmite os dados ao Ambiente Nacional. O Webgex não tem acesso a esse ambiente intermediário: nossa integração é com o sistema da prefeitura, e o que acontece depois da aprovação municipal é uma responsabilidade exclusiva do poder público local e de quem ele contratou para essa função.",
+      "Isso significa que, quando o erro está nessa camada, nenhum sistema de emissão — seja o Webgex, seja qualquer outro ERP do mercado — consegue corrigi-lo remotamente. A correção depende de ação da prefeitura junto à empresa responsável pela transmissão.",
+      "O que isso significa para você, na prática",
+      "- Sua nota fiscal já foi emitida e aprovada. O serviço prestado está formalmente documentado; o número da nota existe e é válido.",
+      "- O status \"Aguardando envio\" com alerta indica apenas que a etapa seguinte — o repasse ao governo federal — ainda não foi concluída pela prefeitura.",
+      "- Isso não é uma cobrança em duplicidade nem uma nota inválida. É uma pendência técnica de transmissão que ocorre depois da sua parte no processo.",
+      "- A resolução depende de terceiros (prefeitura e/ou empresa contratada por ela), e não do seu sistema de emissão.",
+      "O que estamos fazendo",
+      "Sempre que identificamos esse tipo de erro, entramos em contato diretamente com a prefeitura responsável para relatar a falha e acompanhar a correção. Em muitos casos, a própria prefeitura ainda não tinha conhecimento do problema, já que ele acontece em uma camada terceirizada que ela não monitora ativamente. Assim que a transmissão é regularizada do lado municipal, as notas pendentes são automaticamente processadas, sem necessidade de reemissão.",
+      "O que você pode fazer enquanto isso",
+      "- Guarde o número e o comprovante da nota já emitida — ela é válida para fins de comprovação do serviço prestado.",
+      "- Evite reemitir a nota; isso não acelera o processo e pode gerar duplicidade.",
+      "- Se precisar do documento com urgência para um cliente ou órgão específico, fale com nosso suporte: podemos orientar sobre a situação atual da prefeitura do seu município.",
+      "Estamos acompanhando de perto a adequação de cada prefeitura ao Ambiente Nacional e atualizaremos este espaço sempre que houver evolução relevante no processo de padronização da NFS-e em todo o país.",
+      "Ficou com dúvida sobre uma nota específica? Fale com o suporte Webgex e verifique com nossa equipe o status da integração da sua prefeitura.",
+    ],
+  },
+{
+    slug: "penalidades-do-ibs-e-da-cbs-entram-em-vigor-o-que-muda-na-sua-operacao",
+    coverImage: "/blog/penalidades-do-ibs-e-da-cbs-entram-em-vigor.jpg",
+    title: "Penalidades do IBS e da CBS entram em vigor: o que muda na sua operação a partir de agora",
+    excerpt:
+      "A partir de 3 de agosto de 2026, todas as empresas do regime regular são obrigadas a preencher os campos de IBS e CBS em cada nota fiscal — e o período de tolerância contra multas chegou ao fim. Entenda as penalidades, a base legal e o que muda na sua operação.",
+    category: "Fiscal",
+    date: "2026-08-03",
+    readingTime: "9 min",
+    author: "Equipe Webgex",
+    content: [
+      "Se você emite documentos fiscais eletrônicos, esta semana marca um divisor de águas na Reforma Tributária. A partir de 3 de agosto de 2026, todas as empresas do regime regular passam a ser obrigadas a preencher os campos de IBS e CBS em cada nota fiscal — e o período de tolerância que vinha protegendo os contribuintes de multas por esse tipo de falha chega ao fim.",
+      "Não é mais \"regra que vai entrar em vigor\". É regra em vigor agora. E entender exatamente o que muda, com que penalidade e a partir de que base legal, é o que separa uma empresa preparada de uma empresa exposta a autuação.",
+      "A linha do tempo até aqui",
+      "Para situar o momento, vale reconstruir o caminho:",
+      "- A Lei Complementar nº 214/2025 instituiu o IBS, a CBS e o Imposto Seletivo, estabelecendo as normas gerais da tributação sobre o consumo.",
+      "- A Lei Complementar nº 227/2026 incluiu na LC 214/2025 um capítulo específico — os artigos 341-A a 341-H — dedicado exclusivamente às infrações e penalidades do novo sistema.",
+      "- Em 30 de abril de 2026, foram publicados os regulamentos operacionais: o Decreto nº 12.955/2026 (CBS) e a Resolução CGIBS nº 6/2026 (IBS).",
+      "- O Ato Conjunto RFB/CGIBS nº 1/2025 definiu que não haveria aplicação de multas até o primeiro dia do quarto mês seguinte à publicação desses regulamentos — ou seja, até 1º de agosto de 2026.",
+      "Esse prazo de tolerância terminou. A partir de agora, a ausência ou o preenchimento incorreto das informações de IBS e CBS nos documentos fiscais está sujeito a penalização.",
+      "O que passa a valer na prática",
+      "Obrigatoriedade nos documentos fiscais",
+      "Desde 3 de agosto, não é mais permitido emitir NF-e ou outros documentos fiscais eletrônicos sem os campos de IBS e CBS preenchidos, incluindo a alíquota teste de 1% (0,1% de IBS e 0,9% de CBS) que está em vigor neste período de transição.",
+      "Multa de mora",
+      "Para tributo pago em atraso, a multa é de 0,33% ao dia, com teto de 20% após cerca de 60 dias de atraso.",
+      "Multa por lançamento de ofício",
+      "Quando o Fisco identifica tributo não declarado, declarado a menor ou crédito utilizado indevidamente, a multa é de 75% sobre o valor apurado. Esse percentual sobe para 100% em casos de sonegação, fraude, simulação ou conluio, e para 150% quando há reincidência (nova infração da mesma natureza dentro de 3 anos).",
+      "Base de cálculo em UPF",
+      "As infrações acessórias — que não envolvem diretamente o valor do tributo, mas o cumprimento de obrigações formais — são calculadas em UPF (Unidade Padrão Fiscal), fixada em R$ 200,00 para 2026 e reajustada anualmente pelo IPCA. Alguns exemplos previstos no art. 341-G:",
+      "Não fazer ou atualizar inscrição cadastral no prazo: 10 UPF (R$ 2.000).",
+      "Atraso na entrega de arquivos fiscais: 20 UPF (R$ 4.000) por período.",
+      "Atraso após intimação da fiscalização: 30 UPF (R$ 6.000) por período.",
+      "Embaraçar ou resistir à fiscalização: 50 UPF (R$ 10.000) por evento.",
+      "Instalar software que reduza tributo indevidamente: 100 UPF (R$ 20.000) por equipamento.",
+      "Desenvolver ou fornecer esse tipo de software: 150 UPF (R$ 30.000) por equipamento.",
+      "Os valores podem variar conforme regulamentação complementar e interpretação da Receita Federal e do Comitê Gestor do IBS; consulte seu contador ou assessoria tributária para o enquadramento específico da sua operação.",
+      "Ajuste SINIEF 49/2025: a mesma data, outra frente",
+      "Coincidindo com o fim da tolerância das penalidades, também entra em vigor nesta data o Ajuste SINIEF nº 49/2025, que havia sido prorrogado de maio para 3 de agosto de 2026. Ele padroniza a emissão de documentos fiscais para quatro situações que até então geravam dúvida generalizada entre contadores e desenvolvedores de sistemas:",
+      "Venda para entrega futura com pagamento antecipado — exige emissão de NF-e de débito no momento do pagamento e NF-e normal na entrega efetiva, referenciando a nota anterior.",
+      "Baixa de estoque por perda, furto, roubo ou perecimento — deve ser formalizada com NF-e de débito, sem destaque de ICMS, com justificativa detalhada nas informações adicionais.",
+      "Redução de valores ou quantidades quando não é mais possível cancelar a nota original — exige NF-e de crédito referenciando a nota original.",
+      "Retorno por recusa ou não localização do destinatário — exige NF-e de crédito para anular a operação.",
+      "Empresas que não adaptarem a emissão a essas quatro situações ficam sujeitas às mesmas penalidades acessórias descritas acima, já que o descumprimento passa a ser tratado como erro ou omissão na documentação fiscal.",
+      "Onde o ERP entra nessa história",
+      "Nenhuma dessas regras se cumpre manualmente, nota por nota. É o sistema de gestão que precisa aplicar automaticamente os campos corretos de IBS e CBS, gerar a NF-e de débito ou crédito no cenário certo, e manter rastreabilidade suficiente para que, se a fiscalização perguntar, a resposta esteja pronta.",
+      "Um ERP atualizado para essa nova realidade deve garantir:",
+      "Preenchimento automático dos campos de IBS e CBS em cada documento fiscal emitido, sem depender de digitação manual.",
+      "Emissão correta de notas de débito e crédito conforme os cenários do Ajuste SINIEF 49/2025, sem improviso do operador.",
+      "Cadastros sempre atualizados, evitando as multas por falha cadastral do art. 341-G.",
+      "Cumprimento de prazos de escrituração e envio de arquivos fiscais, com alertas antes que o atraso se torne penalidade.",
+      "Trilha de auditoria, documentando justificativas de baixas de estoque, cancelamentos e ajustes.",
+      "O ERP Webgex já vem acompanhando essas mudanças, atualizando o sistema para o novo modelo fiscal e mantendo os clientes preparados antes de cada marco da Reforma Tributária entrar em vigor — como este que estamos vivendo agora.",
+      "O que fazer a partir de hoje",
+      "Se sua empresa ainda não confirmou que o sistema está preenchendo corretamente os campos de IBS e CBS, ou se ainda tem dúvidas sobre como emitir notas de débito e crédito nos quatro cenários do Ajuste SINIEF 49/2025, esse é o momento de agir — não daqui a um mês.",
+      "Precisa validar se o seu sistema está de acordo com as novas regras? Fale com a equipe Webgex e garanta que sua operação está protegida contra as penalidades que já estão em vigor.",
+      "Este conteúdo tem caráter informativo e não substitui a orientação de um contador ou advogado tributarista. A regulamentação da Reforma Tributária segue em evolução; consulte sempre as fontes oficiais e um profissional especializado para o enquadramento da sua empresa.",
+      "Fontes oficiais para aprofundamento:",
+      "Lei Complementar nº 214/2025 — planalto.gov.br",
+      "Lei Complementar nº 227/2026 — planalto.gov.br",
+      "Ato Conjunto RFB/CGIBS nº 1/2025",
+      "Decreto nº 12.955/2026 e Resolução CGIBS nº 6/2026",
+      "Comitê Gestor do IBS (CGIBS) — cgibs.gov.br",
+      "Ajuste SINIEF nº 49/2025 — CONFAZ (confaz.fazenda.gov.br)",
+    ],
+  },
 {
     slug: "orcamento-que-virou-escola-gestao-orcamentaria-na-pratica",
     coverImage: "/blog/gestao-orcamentaria-artigo.jpg",

@@ -92,9 +92,20 @@ export default async function BlogPostPage({
                   <img src={post.coverImage} alt={post.title} className="w-full object-cover" />
                 </div>
               )}
-              {post.content.map((paragraph, i) => (
-                <p key={i} className="text-pretty">{paragraph}</p>
-              ))}
+              {post.content.map((block, i) =>
+                typeof block === "string" ? (
+                  <p key={i} className="whitespace-pre-line text-pretty">{block}</p>
+                ) : (
+                  <figure key={i} className="-mx-4 overflow-hidden rounded-xl sm:mx-0">
+                    <img src={block.src} alt={block.alt ?? post.title} className="w-full" />
+                    {block.caption && (
+                      <figcaption className="px-1 pt-2 text-center text-sm text-muted-foreground">
+                        {block.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ),
+              )}
             </div>
 
             <div className="mt-12 rounded-2xl border border-border bg-muted/40 p-8 text-center">
