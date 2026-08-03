@@ -22,6 +22,7 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 export const posts: BlogPost[] = [
 {
     slug: "nota-fiscal-de-servico-com-erro-no-ambiente-nacional-entenda-o-que-esta-acontecendo",
+    coverImage: "/blog/nota-fiscal-de-servico-com-erro-no-ambiente-nacional-entenda-o-que-esta-acontecendo.png",
     title: "Nota fiscal de serviço com erro no Ambiente Nacional: entenda o que está acontecendo e por que não é uma falha do seu sistema",
     excerpt:
       "Notas presas com o status \"Aguardando envio\" e alerta de erro? O problema não está na sua operação, nem no Webgex — está na comunicação entre a prefeitura e o Ambiente Nacional de Dados (ADN). Entenda o que está acontecendo e o que estamos fazendo a respeito.",
