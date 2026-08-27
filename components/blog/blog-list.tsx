@@ -164,7 +164,8 @@ export function BlogList() {
             const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
             if (data.website?.trim()) return
             data.origem = "newsletter"
-            await sendLeadToCRM(data)
+            const accepted = await sendLeadToCRM(data)
+            if (!accepted) return
             form.reset()
             alert("Inscrição confirmada! Verifique seu e-mail.")
           }}

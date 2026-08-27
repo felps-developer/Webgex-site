@@ -29,7 +29,8 @@ export function ContactForm() {
 
     if (data.website?.trim()) return
 
-    await sendLeadToCRM(data)
+    const accepted = await sendLeadToCRM(data)
+    if (!accepted) return
 
     setSubmitted(true)
   }

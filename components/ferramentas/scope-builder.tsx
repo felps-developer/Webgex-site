@@ -14,7 +14,7 @@ import {
   USER_PRICE,
   type ScopeSelection,
 } from "@/lib/scope-builder"
-import { isAllowedConsultantEmail, normalizeEmail, sendLeadToCRM, sendProposalEmail, redirectToWhatsApp, makeWhatsAppMessage } from "@/lib/form-submit"
+import { isAllowedConsultantEmail, normalizeEmail, sendLeadToCRM, sendProposalEmail, redirectToWhatsApp, sanitize } from "@/lib/form-submit"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -73,9 +73,9 @@ export function ScopeBuilder() {
   function buildProposalMessage(data: Record<string, string>): string {
     const lines = [
       `Olá! Recebi a proposta de escopo Webgex. Seguem os detalhes:\n`,
-      `*Empresa:* ${data.empresa || "(não informada)"}`,
-      `*Nome:* ${data.nome}`,
-      `*Segmento:* ${data.segmento || "Não informado"}\n`,
+      `*Empresa:* ${sanitize(data.empresa || "(não informada)")}`,
+      `*Nome:* ${sanitize(data.nome)}`,
+      `*Segmento:* ${sanitize(data.segmento || "Não informado")}\n`,
       `*Módulos selecionados:*`,
     ]
     estimate.modules.forEach((m) => lines.push(`  ✅ ${m.label}`))
@@ -185,7 +185,11 @@ export function ScopeBuilder() {
 
     setSending(true)
 
-    await sendLeadToCRM(data)
+    const accepted = await sendLeadToCRM(data)
+    if (!accepted) {
+      setSending(false)
+      return
+    }
 
     const emailHtml = buildEmailBody(data)
     await sendProposalEmail({

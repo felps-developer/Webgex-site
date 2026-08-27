@@ -86,12 +86,16 @@ export default function RootLayout({
       <head>
         <meta httpEquiv="Content-Security-Policy" content="
           default-src 'self';
-          script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.googletagmanager.com https://*.googleadservices.com https://*.doubleclick.net https://connect.facebook.net https://*.facebook.com;
+          script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://*.googleadservices.com https://*.doubleclick.net https://connect.facebook.net https://*.facebook.com;
           img-src 'self' data: https://www.google.com https://*.googleadservices.com https://*.doubleclick.net https://*.googletagmanager.com https://connect.facebook.net https://*.facebook.com;
           style-src 'self' 'unsafe-inline';
           font-src 'self';
           connect-src 'self' https://www.google.com https://*.googleadservices.com https://*.doubleclick.net https://*.googletagmanager.com https://*.google-analytics.com https://webgex-crm-proxy-241464300074.southamerica-east1.run.app https://unigex-email-241464300074.southamerica-east1.run.app https://api.whatsapp.com;
           frame-src https://www.googletagmanager.com https://*.doubleclick.net;
+          object-src 'none';
+          base-uri 'self';
+          frame-ancestors 'none';
+          form-action 'self';
         " />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />

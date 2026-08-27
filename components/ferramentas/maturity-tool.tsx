@@ -116,7 +116,11 @@ export function MaturityTool() {
     data.segmento = data.segmento || "outro"
 
     setSending(true)
-    await sendLeadToCRM(data)
+    const accepted = await sendLeadToCRM(data)
+    if (!accepted) {
+      setSending(false)
+      return
+    }
 
     const msg = makeWhatsAppMessage(data)
     redirectToWhatsApp(msg)

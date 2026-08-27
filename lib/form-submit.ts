@@ -19,8 +19,34 @@ const SEGMENT_MAP: Record<string, string> = {
   moveis: "05",
 }
 
+const MALICIOUS_RE =
+  /(<\s*\/?\s*(script|iframe|object|embed|form|link|meta|style|base)\b)|(on(load|error|click|mouseover|focus|blur|change|submit|keyup|keydown)\s*=)|(javascript\s*:)|(vbscript\s*:)|(data\s*:\s*text\/html)|(<\s*svg\b)|(expression\s*\()|(\bunion\s+select\b)|(select\s+\w+\s+from\b)|(\binsert\s+into\b)|(\bdelete\s+from\b)|(\bdrop\s+table\b)|(\balter\s+table\b)|(;\s*--\s)|(\bselect\s+load_file\b)|(\b0x[0-9a-f]{4,})\b/i
+
+function isMalicious(str: string): boolean {
+  if (typeof str !== "string" || !str.trim()) return false
+  return MALICIOUS_RE.test(str)
+}
+
+export function containsMalicious(data: Record<string, unknown>): boolean {
+  return Object.values(data).some((v) => isMalicious(String(v)))
+}
+
 export function sanitize(str: string): string {
-  return str.slice(0, MAX_FIELD_LENGTH).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;")
+  return String(str)
+    .slice(0, MAX_FIELD_LENGTH)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/`/g, "&#96;")
+    .replace(/\\/g, "&#92;")
+}
+
+const PHONE_RE = /^[+()\-\s\d]{8,20}$/
+
+export function isValidPhone(phone: string): boolean {
+  return PHONE_RE.test(String(phone).trim())
 }
 
 export function normalizeEmail(email: string): string {
@@ -78,9 +104,12 @@ export function makeWhatsAppMessage(data: Record<string, string>): string {
   return lines.join("\n")
 }
 
-export async function sendLeadToCRM(data: Record<string, string>): Promise<void> {
+export async function sendLeadToCRM(data: Record<string, string>): Promise<boolean> {
   try {
-    if (hasHoneypot(data) || !withinClientLimit("crm", MAX_CRM_SUBMISSIONS)) return
+    if (hasHoneypot(data) || containsMalicious(data) || !withinClientLimit("crm", MAX_CRM_SUBMISSIONS)) return false
+
+    if (data.email && !isValidEmail(data.email)) return false
+    if (data.telefone && !isValidPhone(data.telefone)) return false
 
     const sanitized: Record<string, string> = {}
     for (const [k, v] of Object.entries(data)) {
@@ -91,8 +120,10 @@ export async function sendLeadToCRM(data: Record<string, string>): Promise<void>
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(sanitized),
     })
+    return true
   } catch (err) {
     console.error("CRM integration error:", err)
+    return false
   }
 }
 
@@ -113,6 +144,7 @@ export async function sendProposalEmail(data: {
   try {
     const email = normalizeEmail(data.email)
     if (!isValidEmail(email) || !withinClientLimit("email", MAX_EMAIL_SUBMISSIONS)) return false
+    if (containsMalicious({ subject: data.subject, message: data.message })) return false
 
     const formData = new FormData()
     formData.append("email", sanitize(email))
