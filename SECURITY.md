@@ -214,9 +214,13 @@ Deploy é **separado** do site (site → bucket GCS via `deploy.sh`; funções �
 - [ ] Testar com payload legítimo (e confirmar que payload XSS dá 400)
 
 **Bloco 4 — Rotação das credenciais vazadas (POR ÚLTIMO, como pedido):**
-- [ ] Rotacionar a chave `WGX-API-KEY` em `api-v2.webgex.com.br`
+- [x] Rotacionar a chave `WGX-API-KEY` em `api-v2.webgex.com.br`
+      — **feita e implementada; teste de funcionalidade executado (CORS OK,
+      validação/rate-limit OK, chave definida OK; 502 = API Webgex recusou o
+      lead de teste, pendente investigação manual do payload na API)**
 - [ ] Rotacionar a senha SMTP
 - [ ] Atualizar os novos valores no Secret Manager (nova versão do segredo)
+      — `WGX_API_KEY`: nova versão salva; `SMTP_SENHA`: pendente
 - [ ] Confirmar que as URLs dos serviços permanecem as mesmas em
       `lib/form-submit.ts:1` e `lib/form-submit.ts:134`
 
