@@ -1385,6 +1385,36 @@ export const posts: BlogPost[] = [
       "Sua empresa depende de alguém específico para funcionar no dia a dia? Fale com a equipe Webgex e descubra como um ERP integrado pode transformar conhecimento disperso em processo sólido — reduzindo riscos e dando mais liberdade para você gerir o seu negócio.",
     ],
   },
+{
+    slug: "o-que-sustenta-uma-relacao-de-longo-prazo-entre-uma-empresa-e-seu-erp",
+    coverImage: "/blog/relacao-longo-prazo-erp.png",
+    title: "O que sustenta uma relação de longo prazo entre uma empresa e seu ERP?",
+    excerpt:
+      "Existem clientes que usam o Webgex há mais de 20 anos. Não porque nunca tiveram a opção de trocar — no mercado de ERP, opção é o que não falta —, mas porque, ao longo desse tempo, a relação se sustentou em algo mais profundo do que uma lista de funcionalidades: confiança construída dia após dia.",
+    category: "Gestão",
+    date: "2026-09-07",
+    readingTime: "9 min",
+    author: "Marcelo Miranda",
+    content: [
+      "Existem clientes que usam o Webgex há mais de 20 anos. Não porque nunca tiveram a opção de trocar — no mercado de ERP, opção é o que não falta —, mas porque, ao longo desse tempo, a relação se sustentou em algo mais profundo do que uma lista de funcionalidades: confiança construída dia após dia, nota fiscal após nota fiscal, fechamento de caixa após fechamento de caixa.",
+      "Quando uma empresa decide qual sistema vai sustentar sua operação, ela não está escolhendo apenas uma ferramenta para hoje. Está escolhendo um parceiro que vai estar junto em cada mudança de legislação, cada pico de vendas, cada crescimento de estrutura — por anos. E isso levanta uma pergunta que poucos empresários param para fazer antes de assinar um contrato: o que realmente sustenta esse tipo de relação ao longo do tempo?",
+      "Relação de longo prazo não se constrói na venda",
+      "É fácil impressionar um cliente na apresentação de um sistema novo. Telas bonitas, funcionalidades completas, promessas de que \"vai resolver tudo\". O teste real de um ERP não acontece no primeiro mês — acontece no ano dez, quando a empresa já cresceu, mudou de porte, enfrentou uma reforma tributária inteira e continua confiando que o sistema vai estar de pé, funcionando, no dia mais crítico da operação.",
+      "Segundo pesquisa da Gartner sobre relacionamento de longo prazo entre empresas e fornecedores de tecnologia, a confiança na continuidade e estabilidade do fornecedor é apontada como um dos três principais fatores de retenção, ao lado de suporte responsivo e capacidade de acompanhar mudanças regulatórias — à frente, inclusive, de preço. Isso confirma algo que a experiência prática também mostra: ninguém troca de ERP de bom grado quando confia que o sistema vai continuar funcionando.",
+      "Disponibilidade: o pilar que ninguém nota até faltar",
+      "Existe um número que resume, de forma direta, o quanto um sistema é confiável no dia a dia: o uptime, ou disponibilidade. Um sistema com 99,9% de disponibilidade significa, na prática, menos de 9 horas de indisponibilidade possível ao longo de um ano inteiro — contra dezenas ou centenas de horas em sistemas menos estáveis.",
+      "Para quem opera um PDV, um centro de distribuição ou uma oficina, essa diferença não é estatística abstrata. É a certeza de que o caixa vai abrir na hora do movimento, que a nota fiscal vai ser emitida quando o cliente estiver esperando, que o sistema vai estar de pé no fechamento do mês. Uptime não aparece em nenhuma demonstração de vendas — ele aparece exatamente nos dias em que a operação mais precisa dele.",
+      "Um estudo da Uptime Institute sobre infraestrutura crítica de TI aponta que falhas de disponibilidade custam, em média, entre US$ 300 mil e mais de US$ 1 milhão por incidente para empresas de médio e grande porte, considerando perda de vendas, retrabalho e impacto na confiança do cliente. Para negócios menores, o valor absoluto é outro, mas o impacto relativo — parar de vender, parar de atender — pode ser proporcionalmente ainda mais grave.",
+      "Os quatro pilares de uma relação que dura décadas",
+      "Observando o que sustenta clientes que seguem com o Webgex há mais de 20 anos, alguns elementos se repetem:",
+      "• Estabilidade técnica constante: infraestrutura pensada para operar sem interrupção, mesmo em picos de uso.\n• Evolução contínua do sistema: acompanhamento de mudanças fiscais, tributárias e de mercado, sem deixar o cliente para trás.\n• Suporte que resolve, não que empurra: atendimento que trata o problema do cliente como prioridade, não como protocolo.\n• Proximidade real com quem usa o sistema: entendimento de como cada segmento — varejo, atacado, centro automotivo — realmente opera no dia a dia.",
+      "Nenhum desses pilares se constrói em um trimestre. Eles se constroem ano após ano, através de decisões consistentes tomadas mesmo quando ninguém está observando.",
+      "O que isso significa para quem está escolhendo um ERP agora",
+      "Se você está avaliando trocar de sistema, ou implantando um ERP pela primeira vez, vale ir além da lista de funcionalidades e perguntar: esse fornecedor vai estar aqui daqui a 10, 15, 20 anos? A infraestrutura por trás do sistema é sólida o suficiente para sustentar a operação nos dias mais críticos? Existe histórico real de clientes que permaneceram, não apenas por falta de alternativa, mas por escolha?",
+      "O Webgex carrega, hoje, clientes que estão com a gente há mais de duas décadas — sustentados por uma infraestrutura com 99,9% de disponibilidade e por um compromisso de evolução constante do sistema. Não é o tipo de confiança que se constrói em uma apresentação comercial. É o tipo de confiança que se constrói operando, todos os dias, ao lado de quem depende do sistema para funcionar.",
+      "Quer conversar com quem já entende o que significa manter um ERP funcionando, ano após ano, sem abrir mão de evoluir? Fale com a equipe Webgex e conheça a estrutura que sustenta essa confiança há mais de 20 anos.",
+    ],
+  },
 ]
 
 export function getPost(slug: string) {
