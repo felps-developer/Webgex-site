@@ -21,6 +21,35 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
 {
+    slug: "por-que-a-gestao-de-estoque-ganha-outra-dimensao-em-um-centro-automotivo",
+    coverImage: "/blog/por-que-a-gestao-de-estoque-ganha-outra-dimensao-em-um-centro-automotivo.png",
+    title: "Por que a gestão de estoque ganha outra dimensão em um centro automotivo?",
+    excerpt:
+      "Em um centro automotivo, o estoque não sustenta apenas a venda de um produto — ele sustenta a execução de um serviço, muitas vezes em tempo real, com o carro do cliente parado esperando a peça certa chegar ao mecânico. Entenda por que \"saldo total\" não é suficiente e como tratar peça, unidade e ordem de serviço conectadas.",
+    category: "Gestão",
+    date: "2026-09-21",
+    readingTime: "5 min",
+    author: "Equipe Webgex",
+    content: [
+      "Em boa parte dos negócios, gestão de estoque significa responder uma pergunta relativamente simples: quanto eu tenho de cada produto, e quando preciso repor. Em um centro automotivo, essa pergunta é só o começo. Porque ali, o estoque não sustenta apenas a venda de um produto — ele sustenta a execução de um serviço, muitas vezes em tempo real, com o carro do cliente parado esperando a peça certa chegar ao mecânico.",
+      "Essa diferença muda completamente o que \"gerir estoque\" precisa significar para uma oficina, um centro automotivo multiloja ou uma rede de autopeças com serviço agregado. Conhecer apenas o saldo total de um item, sem entender onde ele está, para que ordem de serviço está reservado ou em que condição se encontra, não é gestão de estoque — é apenas um número que não ajuda ninguém na hora em que mais importa.",
+      "Um centro automotivo administra, no mínimo, dois mundos ao mesmo tempo",
+      "Peça e serviço parecem estar no mesmo negócio, mas se comportam de forma muito diferente dentro da operação. A peça é um item físico, com custo, fornecedor, curva de giro e risco de obsolescência. O serviço é tempo, mão de obra qualificada e uma ordem de serviço que precisa avançar etapa por etapa. O problema aparece quando esses dois mundos não estão conectados: a peça certa existe no estoque geral, mas ninguém sabe se ela já está reservada para outra ordem de serviço, se está na loja errada, ou se está fisicamente disponível na bancada do mecânico.",
+      "Segundo levantamento da Associação Brasileira de Distribuidores de Autopeças (ASSOBRAV), ruptura de estoque — a falta do item certo no momento da venda ou do serviço — está entre os principais motivos de perda de faturamento no setor automotivo, tanto em concessionárias quanto em oficinas independentes. E ruptura, nesse setor, não significa apenas perder uma venda: significa um carro parado, um cliente esperando, e um mecânico ocioso enquanto a peça não chega.",
+      "Por que \"saldo total\" não é suficiente",
+      "Em um centro automotivo com mais de uma unidade, ou mesmo em uma única loja com múltiplas frentes de trabalho, o saldo total de um item esconde informações essenciais:\n- Em qual estabelecimento a peça está fisicamente disponível — de nada adianta ter saldo positivo se o item está na filial errada.\n- Se está reservada para uma ordem de serviço em andamento, mesmo que ainda não tenha sido baixada do sistema.\n- Se está em trânsito entre unidades ou vindo de um fornecedor, com prazo definido.\n- Sua condição — peça nova, recondicionada, ou aguardando garantia — categorias que não podem ser tratadas como o mesmo item no controle.",
+      "Sem esse nível de detalhe, o gestor de um centro automotivo trabalha sempre um passo atrás: descobre a falta do item quando o mecânico já está com o carro na bancada, não antes.",
+      "O que muda quando o estoque é tratado com essa dimensão extra",
+      "Centros automotivos que estruturam o controle de estoque considerando essa complexidade conseguem:\n- Reservar peça por ordem de serviço, evitando que duas OS disputem o mesmo item sem que ninguém perceba.\n- Ter visibilidade entre unidades, permitindo transferência rápida quando uma loja tem o item que outra precisa.\n- Diferenciar peça nova, recondicionada e em garantia, mantendo o controle fiscal e de custo correto para cada categoria.\n- Vincular o consumo de peça diretamente à ordem de serviço, dando visibilidade real de quanto cada serviço realmente consome — informação essencial para precificar corretamente.\n- Antecipar reposição com base no giro real por unidade, não em uma média genérica que ignora as diferenças entre lojas.",
+      "Um estudo da McKinsey sobre gestão de peças de reposição no setor automotivo aponta que operações com controle de estoque multiloja integrado reduzem em até 20% o capital parado em peças de baixo giro, ao mesmo tempo em que reduzem rupturas em itens de alta demanda — um equilíbrio que só é possível quando o sistema enxerga o estoque por unidade e por reserva, não apenas pelo total consolidado.",
+      "Como o Webgex sustenta essa dinâmica",
+      "O ERP Webgex foi desenvolvido considerando exatamente essa realidade de quem opera centros automotivos: o módulo de estoque acompanha peça por estabelecimento, permite reserva vinculada à ordem de serviço, diferencia categorias de peça e mantém o financeiro e o fiscal conectados a cada movimentação — sem depender de controle manual paralelo em planilha.",
+      "Isso significa que, quando o mecânico abre uma ordem de serviço, o sistema já sabe se a peça está disponível, em qual unidade, e reserva automaticamente para aquele atendimento — reduzindo o tempo que o carro fica parado e aumentando a previsibilidade de quando cada serviço será concluído.",
+      "Gerir estoque em um centro automotivo nunca foi sobre contar quantos itens existem. É sobre saber, a qualquer momento, se a peça certa está no lugar certo, para o serviço certo — e é essa dimensão extra que separa uma operação organizada de uma operação que só descobre o problema quando o cliente já está esperando.",
+      "Sua operação automotiva ainda enxerga o estoque como um número único, ou já consegue ver peça, unidade e ordem de serviço conectados? Fale com a equipe Webgex e veja como um controle de estoque pensado para centros automotivos pode reduzir ruptura e tempo parado na sua operação.",
+    ],
+  },
+{
     slug: "orcamento-sem-limite-e-implantacao-sem-diagnostico",
     coverImage: "/blog/orcamento-sem-limite-implantacao-sem-diagnostico.png",
     title: "Orçamento sem limite não é planejamento, e implantação sem diagnóstico não é solução",
