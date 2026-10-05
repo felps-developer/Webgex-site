@@ -12,6 +12,23 @@ export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }))
 }
 
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g)
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.startsWith("**") && part.endsWith("**") ? (
+          <strong key={i} className="font-semibold text-secondary">
+            {part.slice(2, -2)}
+          </strong>
+        ) : (
+          part
+        ),
+      )}
+    </>
+  )
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -92,10 +109,39 @@ export default async function BlogPostPage({
                   <img src={post.coverImage} alt={post.title} className="w-full object-cover" />
                 </div>
               )}
-              {post.content.map((block, i) =>
-                typeof block === "string" ? (
-                  <p key={i} className="whitespace-pre-line text-pretty">{block}</p>
-                ) : (
+              {post.content.map((block, i) => {
+                if (typeof block === "string") {
+                  return (
+                    <p key={i} className="whitespace-pre-line text-pretty">
+                      <RichText text={block} />
+                    </p>
+                  )
+                }
+                if (block.type === "heading") {
+                  return (
+                    <h2
+                      key={i}
+                      className="text-balance pt-4 text-2xl font-bold tracking-tight text-secondary"
+                    >
+                      <RichText text={block.text} />
+                    </h2>
+                  )
+                }
+                if (block.type === "list") {
+                  return (
+                    <ul key={i} className="space-y-3 pl-1">
+                      {block.items.map((item, j) => (
+                        <li key={j} className="flex gap-3 text-pretty">
+                          <span aria-hidden="true" className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          <span>
+                            <RichText text={item} />
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )
+                }
+                return (
                   <figure key={i} className="-mx-4 overflow-hidden rounded-xl sm:mx-0">
                     <img src={block.src} alt={block.alt ?? post.title} className="w-full" />
                     {block.caption && (
@@ -104,8 +150,8 @@ export default async function BlogPostPage({
                       </figcaption>
                     )}
                   </figure>
-                ),
-              )}
+                )
+              })}
             </div>
 
             <div className="mt-12 rounded-2xl border border-border bg-muted/40 p-8 text-center">

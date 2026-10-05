@@ -5,6 +5,18 @@ export type BlogImageBlock = {
   caption?: string
 }
 
+export type BlogHeadingBlock = {
+  type: "heading"
+  text: string
+}
+
+export type BlogListBlock = {
+  type: "list"
+  items: string[]
+}
+
+export type BlogBlock = string | BlogImageBlock | BlogHeadingBlock | BlogListBlock
+
 export type BlogPost = {
   slug: string
   title: string
@@ -13,13 +25,53 @@ export type BlogPost = {
   date: string
   readingTime: string
   author: string
-  content: (string | BlogImageBlock)[]
+  content: BlogBlock[]
   coverImage?: string
 }
 
 export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícias"] as const
 
 export const posts: BlogPost[] = [
+{
+    slug: "visibilidade-na-gestao-e-a-informacao-certa-onde-ela-precisa-estar",
+    coverImage: "/blog/visibilidade-na-gestao-e-a-informacao-certa-onde-ela-precisa-estar.png",
+    title: "Visibilidade na gestão não é ter mais dados. É ter a informação certa onde ela precisa estar.",
+    excerpt:
+      "Nunca houve tanta informação disponível dentro de uma empresa. O problema nunca foi a quantidade de dados, mas sim a informação certa estar disponível para a pessoa certa, no momento certo. Entenda como a integração entre os módulos transforma visibilidade em decisão.",
+    category: "Gestão",
+    date: "2026-10-05",
+    readingTime: "5 min",
+    author: "Equipe Webgex",
+    content: [
+      "Nunca houve tanta informação disponível dentro de uma empresa. Relatórios, planilhas, registros de vendas, extrato bancário, histórico de atendimento — tudo isso existe, em algum lugar, na maioria dos negócios. O problema não é quantidade. É que a informação certa raramente está disponível para a pessoa certa, no momento certo, sem depender de alguém ir buscar, consolidar e interpretar antes de repassar.",
+      "Essa lacuna — entre a informação existir e a informação estar acessível onde precisa estar — é o que separa uma gestão que reage de uma gestão que antecipa. E ela aparece em dois lugares ao mesmo tempo: nas decisões do gestor e no relacionamento com o cliente.",
+      { type: "heading", text: "O gestor que decide no escuro não decide errado por falta de esforço" },
+      "A maioria dos empresários que tomam decisões com base em percepção, e não em dado, não fazem isso por descuido. Fazem porque a informação que precisariam consultar está distribuída entre um sistema financeiro, uma planilha de estoque, um relatório exportado no fim do mês e a memória de quem \"acompanha aquela conta\". Reunir tudo isso em tempo hábil para uma decisão pontual seria mais trabalho do que a decisão justifica.",
+      "Segundo pesquisa da McKinsey sobre maturidade analítica em empresas de médio porte, apenas 37% dos gestores afirmam ter acesso a informações de gestão em tempo real — os demais dependem de relatórios periódicos ou de pedidos manuais de consolidação para ter uma visão do negócio. Isso significa que, na maior parte do tempo, a gestão está tomando decisões com um retrato do passado, não com o estado atual da operação.",
+      "O impacto aparece em situações concretas e recorrentes: uma compra de reposição feita sem saber o saldo real do estoque naquele momento, uma concessão de prazo de pagamento sem consultar o fluxo de caixa dos próximos dias, um desconto aprovado sem visibilidade da margem real daquele produto. Cada uma dessas decisões, isolada, parece razoável. Somadas ao longo do mês, corroem resultado sem deixar rastro claro de onde veio a perda.",
+      { type: "heading", text: "A mesma lacuna que prejudica o gestor também prejudica o cliente" },
+      "Quando a informação não circula de forma integrada dentro da empresa, o cliente sente — muitas vezes antes do gestor. O vendedor que não sabe o status real do pedido. O atendente que não tem acesso ao histórico de compras de quem está na linha. A equipe de cobrança que não sabe se aquele cliente tem uma negociação em andamento com o comercial. O financeiro que não sabe que o cliente acabou de reclamar de um produto e precisa de atenção antes de receber uma régua de cobrança automática.",
+      "Cada uma dessas situações cria uma fricção desnecessária na relação com o cliente — não porque a empresa não se importa, mas porque a informação que resolveria a situação existia em algum lugar do sistema, só não estava disponível para quem precisava dela naquele momento.",
+      "Um estudo da Salesforce sobre experiência do cliente no B2B aponta que 76% dos compradores esperam que as empresas conheçam suas necessidades e histórico de interação ao serem contatados. Essa expectativa não é nova — o que muda é que, com a tecnologia atual, não atendê-la deixou de ser uma limitação do sistema e passou a ser uma escolha de gestão.",
+      { type: "heading", text: "O que muda quando a informação está integrada" },
+      "Quando financeiro, estoque, vendas, CRM e fiscal operam sobre a mesma base de dados — e não em sistemas que precisam ser \"sincronizados\" periodicamente — a informação deixa de ser um recurso que alguém precisa buscar e passa a ser parte natural de cada processo:",
+      {
+        type: "list",
+        items: [
+          "**O gestor consulta o fluxo de caixa projetado antes de aprovar um prazo**, não depois de perceber que o caixa ficou curto.",
+          "**O vendedor sabe, na hora do atendimento, o histórico de compras, pendências financeiras e preferências do cliente** — sem precisar perguntar para outro setor.",
+          "**O financeiro vê o impacto de cada venda no resultado do período em tempo real**, não só no fechamento mensal.",
+          "**O relatório gerencial reflete o que está acontecendo agora**, não o que aconteceu há três semanas quando alguém exportou a planilha pela última vez.",
+        ],
+      },
+      "Essa disponibilidade de informação no momento e no lugar certo não é um recurso de luxo reservado para grandes empresas — é o que permite que uma empresa de médio porte tome decisões com a mesma qualidade de quem tem um departamento inteiro de análise de dados.",
+      { type: "heading", text: "Como o Webgex organiza essa visibilidade" },
+      "O ERP Webgex foi construído para que a informação gerada em qualquer ponto da operação esteja disponível, de forma integrada, para todos os módulos que precisam dela — do PDV ao financeiro, do relacionamento com o cliente ao planejamento da próxima compra.",
+      "Isso significa que o histórico do cliente que fecha uma venda hoje já está disponível para o suporte amanhã, que o estoque baixado no caixa já aparece no relatório de compras em tempo real, e que o gestor não precisa esperar o fim do mês para saber se o negócio está caminhando na direção certa.",
+      "Ter mais dados nunca foi o problema. O problema sempre foi saber onde cada informação precisa estar — e garantir que ela chegue lá sem depender de esforço manual, consolidação periódica ou boa memória de quem \"acompanha aquilo\".",
+      "**Sua empresa tem as informações que precisa para gerir bem — mas elas estão no lugar certo quando você precisa delas?** Fale com a equipe Webgex e veja como a integração real de dados transforma visibilidade em decisão.",
+    ],
+  },
 {
     slug: "ate-onde-um-erp-pode-acompanhar-as-necessidades-de-uma-empresa",
     coverImage: "/blog/ate-onde-um-erp-pode-acompanhar-as-necessidades-de-uma-empresa.png",
