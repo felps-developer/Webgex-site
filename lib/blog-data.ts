@@ -33,6 +33,38 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
 {
+    slug: "escolher-um-erp-nao-termina-na-implantacao",
+    coverImage: "/blog/escolher-um-erp-nao-termina-na-implantacao.png",
+    title: "Escolher um ERP não termina na implantação. A solução precisa continuar fazendo sentido na rotina.",
+    excerpt:
+      "Existe uma ilusão comum no processo de escolha de um sistema de gestão: a de que o trabalho termina quando o sistema entra em operação. Na prática, é exatamente aí que a relação real com o ERP começa — e a qualidade dessa parceria depende do que acontece depois do go-live.",
+    category: "Gestão",
+    date: "2026-10-19",
+    readingTime: "5 min",
+    author: "Equipe Webgex",
+    content: [
+      "Existe uma ilusão comum no processo de escolha de um sistema de gestão: a de que o trabalho termina quando o sistema entra em operação. A empresa pesquisa, avalia, negocia, implanta — e na hora em que o sistema vai ao ar, sente que a decisão está concluída. Na prática, é exatamente aí que a relação real com o ERP começa.",
+      "Porque um sistema de gestão não é um produto que se compra e se usa. É uma parceria que precisa funcionar no dia a dia, semana após semana, mês após mês — através de mudanças de legislação, de crescimento da equipe, de novas operações que a empresa não tinha quando o sistema foi implantado. E a qualidade dessa parceria, ao longo do tempo, depende muito mais do que acontece depois da implantação do que do que foi prometido antes dela.",
+      { type: "heading", text: "O que acontece quando o acompanhamento para na virada do go-live" },
+      "A maioria das empresas que troca de ERP não faz isso porque o sistema anterior era ruim desde o início. Faz porque, em algum momento após a implantação, o acompanhamento diminuiu, os problemas foram se acumulando sem resolução, e o sistema que parecia completo na demonstração foi revelando lacunas que só aparecem na operação real — e que ninguém estava mais presente para resolver.",
+      "Esse padrão tem nome no mercado de software: é o \"abismo pós-implantação\". O fornecedor concentra energia na venda e na implantação, e a intensidade do suporte cai justamente no período em que a equipe do cliente ainda está aprendendo a usar o sistema na prática, com volume real, em situações que o treinamento não cobriu.",
+      "Segundo pesquisa da Technology Services Industry Association (TSIA), 40% das empresas que relatam insatisfação com seu ERP apontam a qualidade do suporte pós-implantação — e não as funcionalidades do sistema — como principal fator de frustração. O sistema entregou o que prometeu; o que falhou foi a presença de quem deveria ajudar a fazê-lo funcionar na rotina.",
+      { type: "heading", text: "Resolver problema real é diferente de entregar funcionalidade" },
+      "Há uma diferença importante entre um sistema que tem uma funcionalidade e um sistema que resolve o problema que aquela funcionalidade deveria resolver. Um módulo de conciliação bancária existe no sistema — mas se ninguém na empresa sabe configurá-lo corretamente para o banco que o cliente usa, o problema de conciliação continua existindo, só que agora dentro de uma ferramenta mais cara.",
+      "Resolver problemas reais exige presença depois da implantação. Exige acompanhar se o que foi configurado está gerando os resultados esperados. Exige perceber quando uma rotina do sistema não está sendo usada porque a equipe não entendeu o fluxo correto — não porque não quer usar. Exige estar disponível quando surge uma situação nova que o sistema precisa absorver: um novo produto com uma classificação fiscal diferente, uma nova unidade com um CNPJ distinto, uma mudança de regime tributário que altera toda a lógica de apuração.",
+      "Essa presença contínua não é suporte reativo — é o que mantém o sistema fazendo sentido na rotina, mês após mês, à medida que a empresa evolui.",
+      { type: "heading", text: "O que diferencia uma relação de longo prazo de uma implantação e abandono" },
+      "Clientes que permanecem com o mesmo ERP por muitos anos — e que falam bem do sistema para outros — invariavelmente descrevem a relação com o fornecedor em termos que vão além da funcionalidade: falam de atendimento que resolve, de equipe que conhece a operação deles, de um sistema que foi evoluindo junto com o negócio.",
+      "Essa experiência não acontece por acaso. É resultado de uma postura do fornecedor que trata o pós-implantação como parte da entrega, não como um serviço adicional cobrado à parte. E é exatamente essa postura que define se o cliente vai recomendar o sistema — ou vai trocar na primeira oportunidade em que sentir que ficou sozinho.",
+      "Segundo dados da Bain & Company sobre retenção em empresas de software B2B, clientes que percebem alto valor no suporte contínuo têm probabilidade de renovação até 2,5 vezes maior do que clientes satisfeitos apenas com o produto em si. O sistema pode ser excelente — mas sem acompanhamento, ele não chega a ser percebido como excelente.",
+      { type: "heading", text: "Como o Webgex sustenta essa continuidade" },
+      "A relação com o Webgex não termina na virada do go-live. O suporte próximo, o acompanhamento de implantação e a evolução contínua do sistema fazem parte da mesma experiência — porque depois de 30 anos no mercado, a empresa sabe que cliente que fica faz isso por confiança, não por falta de opção.",
+      "Isso significa que quando a legislação muda — como aconteceu com a Reforma Tributária e as novas obrigações de IBS e CBS —, o sistema é atualizado e o cliente é orientado sobre o impacto na sua operação antes de ser pego de surpresa. Quando a empresa cresce e abre uma nova unidade, o sistema já tem estrutura para absorver isso sem uma nova implantação do zero. E quando surge um problema que o cliente não sabe resolver, existe uma equipe que conhece o sistema e conhece a operação — não um chatbot com respostas genéricas.",
+      "Escolher um ERP é uma decisão importante. Mas a decisão que realmente define o resultado não é a que acontece antes da implantação. É a que acontece todos os dias depois dela.",
+      "**Seu ERP atual ainda faz sentido na sua rotina — ou o acompanhamento parou quando o sistema foi ao ar?** Fale com a equipe Webgex e descubra como uma relação de verdade com o sistema de gestão muda o resultado da operação no longo prazo.",
+    ],
+  },
+{
     slug: "a-gestao-da-operacao-de-hoje-define-as-decisoes-sobre-o-sistema-de-amanha",
     coverImage: "/blog/a-gestao-da-operacao-de-hoje-define-as-decisoes-sobre-o-sistema-de-amanha.png",
     title: "A gestão da operação de hoje define as decisões sobre o sistema de amanhã",
