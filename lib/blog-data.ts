@@ -32,6 +32,118 @@ export type BlogPost = {
 export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícias"] as const
 
 export const posts: BlogPost[] = [
+  {
+    slug: "comprar-bem-durante-a-reforma-tributaria-depende-de-um-erp-que-acompanhe-o-pedido-e-o-imposto",
+    coverImage:
+      "/blog/comprar-bem-durante-a-reforma-tributaria-depende-de-um-erp-que-acompanhe-o-pedido-e-o-imposto.png",
+    title:
+      "Comprar bem durante a reforma tributária depende de um ERP que acompanhe o pedido e o imposto",
+    excerpt:
+      "Com a Reforma Tributária do Consumo, o imposto deixa de ser um detalhe resolvido depois e passa a fazer parte da decisão de compra. Entenda por que o comprador precisa comparar custo líquido — e como um ERP que acompanha pedido e imposto sustenta essa rotina.",
+    category: "Fiscal",
+    date: "2026-11-06",
+    readingTime: "6 min",
+    author: "Equipe Webgex",
+    content: [
+      "Quem compra para uma empresa sempre soube que a decisão tem várias camadas: fornecedor, preço, prazo, condição de pagamento, prazo de entrega. O que muda com a Reforma Tributária do Consumo é que o imposto deixa de ser um detalhe que o fiscal resolve depois. Ele passa a fazer parte da própria decisão de compra, porque o tributo pago na entrada pode virar crédito na saída, e isso altera o custo real de cada item.",
+      "Na rotina de uma distribuidora, de uma loja ou de uma oficina, essas duas coisas acontecem ao mesmo tempo: o comprador fecha o pedido e, no mesmo movimento, define como aquela mercadoria vai ser tratada fiscalmente. Por isso, comprar bem nesta transição depende de um sistema que acompanhe o pedido e o imposto juntos, sem exigir que a empresa troque de ferramenta a cada etapa.",
+      { type: "heading", text: "O custo da compra agora inclui o crédito" },
+      "Pela Lei Complementar 214/2025, o IBS e a CBS seguem o princípio da não cumulatividade: o imposto pago nas compras gera crédito para abater o que é devido nas vendas, com um alcance bem mais amplo do que o do PIS e da Cofins atuais. Os créditos de cada tributo são compensados de forma separada, ou seja, crédito de IBS abate IBS e crédito de CBS abate CBS.",
+      "Na prática, isso muda a pergunta que o comprador precisa fazer. Antes, ele comparava preços de nota. Agora, ele precisa comparar o custo líquido: o preço do fornecedor menos o crédito que aquela compra efetivamente gera. Dois fornecedores com o mesmo preço podem representar custos diferentes, dependendo de como o documento fiscal é emitido e de como a empresa classifica o item na entrada.",
+      "Esse é um dos motivos pelos quais o que comentamos em outro artigo continua valendo: o cadastro de produtos e as parametrizações fiscais precisam estar corretos. Um item mal classificado na entrada compromete o crédito, o custo e, depois, o preço de venda.",
+      { type: "heading", text: "A transição chega em etapas, e o sistema precisa acompanhar cada uma" },
+      "A Reforma não entra em vigor de uma vez. O calendário é gradual:",
+      {
+        type: "list",
+        items: [
+          "**2026:** fase de testes, com alíquotas simbólicas de IBS e CBS e preenchimento dos novos campos nos documentos fiscais.",
+          "**2027:** início da cobrança efetiva da CBS, com a extinção do PIS e da Cofins.",
+          "**2029 a 2032:** o IBS cresce gradualmente enquanto o ICMS e o ISS diminuem na mesma proporção.",
+          "**2033:** o ICMS e o ISS deixam de existir, e o novo modelo passa a valer por completo.",
+        ],
+      },
+      "O ponto central para quem compra é que, durante vários anos, os dois mundos convivem. A empresa vai receber e emitir documentos em que ICMS, ISS, PIS, Cofins, IBS e CBS aparecem em proporções diferentes a cada ano. Um sistema que só sabe trabalhar com a regra de um momento obriga a empresa a improvisar a cada mudança, ou, no pior cenário, a pensar em trocar de ERP justamente quando o volume de ajustes é maior.",
+      { type: "heading", text: "O que o ERP precisa acompanhar no pedido de compra" },
+      "Para que o comprador decida com segurança, o sistema precisa manter conectados, na mesma base, os pontos que antes ficavam espalhados:",
+      {
+        type: "list",
+        items: [
+          "**O pedido de compra e a nota de entrada**, para que o que foi negociado seja comparado com o que chegou no documento fiscal.",
+          "**A classificação tributária do item**, aplicada de forma consistente em todas as compras daquele produto.",
+          "**O crédito apropriado**, calculado de acordo com as regras de cada etapa da transição.",
+          "**O custo real do produto em estoque**, já considerando o crédito, e não apenas o valor da nota.",
+          "**O contas a pagar**, alinhado ao que foi comprado e à condição de pagamento acordada.",
+          "**A formação do preço de venda**, que parte do custo correto e protege a margem.",
+        ],
+      },
+      "Quando esses pontos estão em sistemas separados, alguém precisa conciliar tudo manualmente, e o risco de divergência cresce justamente no período em que as regras mudam.",
+      { type: "heading", text: "Como o Webgex acompanha essa rotina" },
+      "No Webgex, pedido de compra, nota de entrada, estoque e financeiro operam sobre a mesma base de dados. O sistema é atualizado de forma contínua conforme cada etapa da Reforma Tributária entra em vigor, para que a empresa continue operando no mesmo ambiente do início ao fim da transição, sem precisar trocar de sistema a cada mudança de regra.",
+      "Isso não elimina a responsabilidade da empresa de manter cadastros atualizados e de validar o enquadramento tributário com sua assessoria contábil. Mas garante que, quando as informações estão corretas, o comprador enxerga o pedido e o imposto no mesmo lugar e toma a decisão com o custo real à vista.",
+      { type: "heading", text: "Para quem compra, um roteiro simples" },
+      {
+        type: "list",
+        items: [
+          "Revise o cadastro dos itens de maior volume de compra, com apoio do seu contador.",
+          "Compare fornecedores pelo custo líquido, e não só pelo preço da nota.",
+          "Confira se a nota de entrada corresponde ao que foi negociado no pedido.",
+          "Acompanhe o impacto no custo do estoque e na margem de venda a cada etapa da transição.",
+          "Alinhe com a assessoria tributária o que muda para a sua empresa em 2027.",
+        ],
+      },
+      "**Sua empresa consegue ver, no mesmo lugar, o pedido de compra e o tratamento fiscal de cada item?** Fale com a equipe Webgex e veja como acompanhar a transição da Reforma Tributária sem trocar de sistema.",
+      "Este conteúdo tem caráter informativo e não substitui a orientação de um contador ou advogado tributarista. O cronograma e as regras da Reforma Tributária seguem em regulamentação e podem ser ajustados; consulte sempre as fontes oficiais e a sua assessoria.",
+    ],
+  },
+  {
+    slug: "reforma-tributaria-do-consumo-o-sistema-calcula-mas-quem-responde-ao-fisco-e-a-empresa",
+    coverImage:
+      "/blog/reforma-tributaria-do-consumo-o-sistema-calcula-mas-quem-responde-ao-fisco-e-a-empresa.png",
+    title:
+      "Reforma Tributária do Consumo: o sistema calcula, mas quem responde ao Fisco é a empresa",
+    excerpt:
+      "Se o sistema calculou, está certo? Essa é uma das ideias mais arriscadas deste momento. Entenda por que a responsabilidade pela informação fiscal é da empresa — e o que cabe ao fornecedor de ERP.",
+    category: "Fiscal",
+    date: "2026-11-06",
+    readingTime: "7 min",
+    author: "Valder Cantídio — sócio-diretor de Produto e Tecnologia da UNIGEX",
+    content: [
+      "Há uma ideia que circula entre empresários e que eu considero uma das mais arriscadas deste momento: a de que, se o sistema calculou, está certo. Em outras palavras, a de que cabe ao fornecedor de software dizer o que está certo e o que está errado.",
+      "Li recentemente, de um especialista da área fiscal, uma advertência que resume bem o problema: não transfira ao seu fornecedor de software a responsabilidade de dizer o que é correto, porque, no dia em que o Fisco autuar a empresa, não adianta alegar que o software calculou errado. Concordo integralmente. E, como quem desenvolve um ERP há décadas, sinto que é minha obrigação dizer isso com clareza aos nossos clientes, antes que a transição da Reforma Tributária do Consumo transforme essa confusão em autuação.",
+      { type: "heading", text: "Quem responde por quê" },
+      "A Reforma Tributária é uma das maiores transformações do sistema tributário brasileiro, e a transição segura depende de cada participante fazer a sua parte:",
+      {
+        type: "list",
+        items: [
+          "**O ERP Webgex** disponibiliza ferramentas confiáveis, cálculo automatizado e recursos adequados às exigências da legislação, incluindo a operacionalização do IBS e da CBS, e é atualizado continuamente para isso.",
+          "**A empresa contribuinte** mantém seus cadastros atualizados e garante que as informações usadas nas operações correspondam à realidade do negócio.",
+          "**A assessoria contábil e tributária** orienta a empresa sobre o enquadramento correto de produtos, serviços e operações, à luz da legislação aplicável.",
+        ],
+      },
+      "O sistema aplica as regras que foram configuradas. Ele não conhece a operação do seu cliente, não sabe se aquele produto tem um benefício fiscal específico e não decide por conta própria qual é o enquadramento tributário correto de cada item. Essa definição pertence à empresa, amparada por seus profissionais contábeis e fiscais.",
+      { type: "heading", text: "Por que o cadastro virou o ponto mais sensível" },
+      "Na prática, a conformidade fiscal na Reforma Tributária passa por parâmetros que parecem técnicos demais para o dia a dia, mas que ditam o que vai em cada nota fiscal: o CST, o cClassTrib, as alíquotas, os benefícios fiscais e os demais parâmetros tributários. Um cadastro de produto com classificação incorreta não gera um erro de cálculo. Gera um cálculo perfeitamente executado em cima de uma informação errada, e esse é o tipo de falha mais difícil de perceber, porque nada \"quebra\".",
+      "Esse risco não é teórico. Desde 3 de agosto de 2026, o preenchimento dos campos de IBS e CBS passou a ser obrigatório nos documentos fiscais, e o período de tolerância para penalidades chegou ao fim em agosto. A legislação prevê multa de mora de 0,33% ao dia, limitada a 20%, e multa de ofício de 75% sobre o tributo não declarado ou declarado a menor, que sobe para 100% em casos de fraude e para 150% na reincidência. Quem sofre essas penalidades é o contribuinte, ou seja, a empresa que emitiu o documento.",
+      { type: "heading", text: "O que a empresa pode fazer agora" },
+      "A transição é uma janela para organizar a casa. Algumas providências que recomendo, sempre em conjunto com o contador ou o assessor tributário da empresa:",
+      {
+        type: "list",
+        items: [
+          "**Revisar o cadastro de produtos e serviços.** Conferir NCM, CST, cClassTrib e demais parâmetros de cada item, começando pelos de maior volume e de maior valor.",
+          "**Validar benefícios fiscais e alíquotas.** Confirmar com a assessoria tributária se cada benefício aplicado realmente cabe à operação da empresa.",
+          "**Conferir os dados fiscais de clientes e fornecedores.** Cadastro incompleto ou desatualizado também vira inconsistência no documento.",
+          "**Testar antes de virar rotina.** Validar o resultado em uma amostra de operações reais e conferir se o que sai na nota corresponde ao que a assessoria definiu.",
+          "**Registrar quem validou o quê.** Manter a evidência de que o enquadramento foi analisado por um profissional é uma proteção importante caso a empresa precise explicar uma decisão ao Fisco.",
+        ],
+      },
+      { type: "heading", text: "O que cabe ao fornecedor" },
+      "Responsabilidade compartilhada não é uma forma de o fornecedor se eximir. Cabe à UNIGEX garantir que os recursos do Webgex funcionem como foram projetados e corrigir qualquer inconsistência que seja de responsabilidade do sistema. Se um cálculo não corresponde à regra que a empresa configurou, o problema é nosso, e vamos resolver.",
+      "A equipe Webgex continuará acompanhando a evolução da Reforma Tributária, implementando as adequações necessárias e prestando suporte técnico aos clientes. Acreditamos que a melhor forma de atravessar essa transformação é a colaboração entre as empresas, os profissionais tributários e os fornecedores de tecnologia, cada um assumindo o seu papel com clareza.",
+      "Nossa recomendação é simples: aproveite este período de transição para revisar seus cadastros e validar suas parametrizações fiscais. Uma preparação cuidadosa hoje se traduz em operações mais seguras e eficientes amanhã.",
+      "**Quer revisar a parametrização fiscal da sua operação com quem conhece o Webgex por dentro?** Fale com a equipe Webgex e organize essa validação junto com a sua assessoria contábil e tributária.",
+      "Este conteúdo tem caráter informativo e não substitui a orientação de um contador ou advogado tributarista. A regulamentação da Reforma Tributária segue em evolução; consulte sempre as fontes oficiais e a sua assessoria para o enquadramento específico da sua empresa.",
+    ],
+  },
 {
     slug: "escolher-um-erp-nao-termina-na-implantacao",
     coverImage: "/blog/escolher-um-erp-nao-termina-na-implantacao.png",
