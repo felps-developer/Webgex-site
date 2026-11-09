@@ -33,6 +33,68 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
   {
+    slug: "para-atender-clientes-maiores-a-empresa-precisa-antes-organizar-o-proprio-cadastro",
+    coverImage:
+      "/blog/para-atender-clientes-maiores-a-empresa-precisa-antes-organizar-o-proprio-cadastro.png",
+    title:
+      "Para atender clientes maiores, a empresa precisa antes organizar o próprio cadastro",
+    excerpt:
+      "Quando surge a oportunidade de atender um cliente maior, as respostas dependem de informações que precisam estar confiáveis na empresa: prazo, condição de pagamento, histórico e especificação do produto. Entenda por que o cadastro organizado é a base para responder com segurança e crescer.",
+    category: "Gestão",
+    date: "2026-11-09",
+    readingTime: "6 min",
+    author: "Equipe Webgex",
+    content: [
+      "Chega o dia em que a empresa recebe a oportunidade que esperava: um cliente maior, com mais volume, mais exigência e mais visibilidade. A reunião vai bem, o interesse é real, e então começam as perguntas. Qual é o prazo de entrega para esse volume? Que condição de pagamento vocês conseguem oferecer? Qual o histórico de vendas de vocês com clientes desse porte? E aquele produto, vocês têm em quantidade e com a mesma especificação em todas as entregas?",
+      "São perguntas simples de ouvir. O que muita empresa descobre nessa hora é que respondê-las com segurança depende de algo que ninguém costuma colocar na lista de prioridades de crescimento: ter o próprio cadastro organizado.",
+      { type: "heading", text: "Onde moram as respostas que o cliente maior quer" },
+      "Cada pergunta de um cliente maior aponta para uma informação que precisa estar em algum lugar da empresa, de forma confiável:",
+      {
+        type: "list",
+        items: [
+          "**Prazo de entrega** depende do cadastro do produto, do saldo em estoque e do prazo do fornecedor que abastece aquele item.",
+          "**Condição de pagamento** depende do cadastro do cliente, do limite de crédito e da política comercial definida para ele.",
+          "**Histórico de relacionamento** depende de o cliente ter um registro único, que reúna tudo o que foi comprado, pago e negociado ao longo do tempo.",
+          "**Especificação e regularidade do produto** dependem de um cadastro completo, com unidade de medida, classificação e variantes bem definidas.",
+        ],
+      },
+      "Quando essas informações estão espalhadas, duplicadas ou desatualizadas, a resposta passa a depender de quem pergunta para quem. O vendedor liga para o estoque, o estoque confere uma planilha, o financeiro consulta outro sistema. Cada passo é uma chance de a resposta sair incompleta, e prometer o que não se consegue cumprir é um dos jeitos mais rápidos de perder um cliente maior.",
+      { type: "heading", text: "O custo escondido do cadastro duplicado" },
+      "Em empresas que cresceram aos poucos, é comum encontrar o mesmo cliente cadastrado duas ou três vezes, com grafias diferentes. O mesmo produto aparece com códigos distintos em cada setor. O mesmo fornecedor existe com dados de contato desatualizados em um cadastro e atualizados em outro.",
+      "Esse tipo de desordem raramente causa um problema visível no dia a dia. Ele aparece quando a empresa precisa de uma visão completa, e é exatamente o que um cliente maior exige:",
+      {
+        type: "list",
+        items: [
+          "O histórico do cliente fica dividido entre registros, e ninguém consegue dizer com segurança quanto ele já comprou.",
+          "O limite de crédito é aplicado a um registro e ignorado no outro.",
+          "O estoque de um produto aparece fragmentado entre códigos diferentes.",
+          "Uma informação fiscal errada em um cadastro se repete em todas as notas emitidas a partir dele, problema que ganhou ainda mais peso com a Reforma Tributária.",
+        ],
+      },
+      { type: "heading", text: "O que significa ter um único registro" },
+      "Ter um único registro significa que cada produto, cada cliente e cada fornecedor existe uma só vez na empresa, e que todas as áreas usam essa mesma informação. Compras, vendas, estoque, financeiro e fiscal consultam a mesma base, e uma alteração feita uma vez vale para todos.",
+      "Isso muda a qualidade das respostas. Quando o cliente maior pergunta sobre condição de pagamento, a resposta vem do cadastro dele, com o limite e a política já definidos. Quando pergunta sobre histórico, vem do registro único, completo. Quando pergunta sobre disponibilidade, vem do produto e do estoque, sem conciliação manual.",
+      { type: "heading", text: "Como começar a organizar" },
+      "Não é preciso parar a empresa para arrumar o cadastro. Alguns passos já fazem diferença:",
+      {
+        type: "list",
+        items: [
+          "**Identifique as duplicidades**, começando pelos clientes e pelos produtos de maior movimento.",
+          "**Defina os campos essenciais** de cada tipo de cadastro e torne-os obrigatórios para novos registros.",
+          "**Registre as condições comerciais** de cada cliente: prazo, limite de crédito e política de preços.",
+          "**Revise a classificação fiscal** dos produtos com a assessoria contábil.",
+          "**Nomeie um responsável** pela manutenção do cadastro e estabeleça uma regra simples para criar novos registros.",
+          "**Revise periodicamente**, para que a base não volte a se desorganizar.",
+        ],
+      },
+      { type: "heading", text: "Como o Webgex sustenta essa base" },
+      "No Webgex, produtos, clientes e fornecedores ficam em cadastros que alimentam todos os módulos do sistema: compras, vendas, estoque, financeiro, fiscal e CRM. As condições comerciais e o limite de crédito ficam associados ao cliente, o histórico de relacionamento fica reunido no CRM e o cadastro de produtos suporta variantes, para que o estoque e a venda tratem cada versão do item de forma separada e organizada.",
+      "Isso significa que a empresa responde às perguntas de um cliente maior consultando uma única fonte, e não montando a resposta a partir de vários lugares.",
+      "Crescer, na prática, é receber mais perguntas, de clientes mais exigentes. A empresa que tem a base organizada responde com segurança e transforma a oportunidade em relacionamento. A que ainda depende de planilhas e de memória descobre, no meio da negociação, que o crescimento começava um passo antes.",
+      "**Sua empresa conseguiria responder hoje, com segurança, às perguntas de um cliente muito maior do que os atuais?** Fale com a equipe Webgex e veja como organizar a base de cadastros que sustenta o seu crescimento.",
+    ],
+  },
+  {
     slug: "comprar-bem-durante-a-reforma-tributaria-depende-de-um-erp-que-acompanhe-o-pedido-e-o-imposto",
     coverImage:
       "/blog/comprar-bem-durante-a-reforma-tributaria-depende-de-um-erp-que-acompanhe-o-pedido-e-o-imposto.png",
