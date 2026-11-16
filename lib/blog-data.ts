@@ -33,6 +33,89 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
   {
+    slug: "uma-distribuidora-pode-ter-um-erp-completo-sem-montar-uma-equipe-de-ti",
+    coverImage:
+      "/blog/uma-distribuidora-pode-ter-um-erp-completo-sem-montar-uma-equipe-de-ti.png",
+    title: "Uma distribuidora pode ter um ERP completo sem montar uma equipe de TI",
+    excerpt:
+      "Para ter um ERP completo, uma distribuidora não precisa manter servidor próprio nem formar uma equipe de TI. Entenda o que um sistema em nuvem assume, o que continua sendo da empresa e como avaliar essa escolha.",
+    category: "Tecnologia",
+    date: "2026-11-16",
+    readingTime: "6 min",
+    author: "Equipe Webgex",
+    content: [
+      "Quando uma distribuidora começa a crescer, uma pergunta costuma aparecer na mesa do dono: para ter um sistema de gestão à altura da operação, preciso montar uma área de tecnologia? Servidor, backup, atualização, suporte para os usuários, acesso para quem trabalha na rua. Para muita empresa, essa lista parece o preço inevitável de ter um ERP completo.",
+      "Não precisa ser. Uma distribuidora pode usar um sistema que cobre a operação inteira, do pedido à entrega, sem manter servidor próprio nem formar uma equipe de TI para sustentá-lo. O que torna isso possível é um ponto simples: o sistema estar em nuvem.",
+      { type: "heading", text: "O que a operação de uma distribuidora exige do sistema" },
+      "A rotina de distribuição tem características próprias. O sistema precisa acompanhar uma cadeia que passa por várias mãos:",
+      {
+        type: "list",
+        items: [
+          "**O pedido do representante**, que entra no sistema sem ser digitado de novo no escritório.",
+          "**A política comercial**, com tabelas de preço e limites de desconto que o vendedor não consegue contornar.",
+          "**O estoque em mais de um depósito**, com rastreabilidade por lote e validade.",
+          "**O cálculo de impostos por estado**, incluindo a substituição tributária, que muda conforme o destino da mercadoria.",
+          "**A margem real de cada pedido**, considerando imposto, frete e custo operacional.",
+          "**O faturamento e a emissão da nota fiscal**, ligados ao pedido, ao estoque e ao financeiro.",
+          "**A entrega**, com a informação chegando à expedição e ao cliente.",
+        ],
+      },
+      "O Webgex atende essa operação desde 2012. São mais de uma década de evolução de um sistema pensado para esse fluxo, em vez de uma adaptação feita para outro tipo de negócio.",
+      { type: "heading", text: "O que costuma exigir uma equipe de TI" },
+      "Quando o sistema roda em servidor da própria empresa, aparecem tarefas que não têm nada a ver com vender ou entregar:",
+      {
+        type: "list",
+        items: [
+          "manter o servidor ligado, protegido e com espaço suficiente;",
+          "fazer e testar as cópias de segurança;",
+          "instalar as atualizações do sistema e as mudanças da legislação fiscal;",
+          "liberar e proteger o acesso de representantes e de filiais;",
+          "resolver as quedas e dar suporte aos usuários.",
+        ],
+      },
+      "Cada uma dessas tarefas é uma responsabilidade contínua. Em uma distribuidora, em que a operação não pode parar no horário de pico de pedidos, o custo de falhar em qualquer uma delas é alto. Por isso, a conta de \"ter um ERP completo\" costuma incluir pessoas, equipamentos e tempo da gestão dedicados à infraestrutura.",
+      { type: "heading", text: "O que muda com um sistema em nuvem" },
+      "No Webgex, que opera em nuvem, a infraestrutura fica sob a responsabilidade do fornecedor. A distribuidora acessa o sistema pela internet, de qualquer lugar e de qualquer dispositivo, sem manter servidor próprio.",
+      "Na prática, isso significa:",
+      {
+        type: "list",
+        items: [
+          "**Sem servidor para manter.** A empresa não compra, instala nem protege equipamento para rodar o ERP.",
+          "**Atualizações pelo fornecedor.** As mudanças do sistema e as adequações à legislação, como a Reforma Tributária, chegam sem que a empresa precise instalar nada.",
+          "**Acesso para quem está na rua.** Representantes e filiais usam o mesmo sistema, em tempo real.",
+          "**Disponibilidade acompanhada.** A infraestrutura é mantida para operar de forma contínua, com disponibilidade de 99,9%.",
+        ],
+      },
+      { type: "heading", text: "O que continua sendo da empresa" },
+      "Não ter uma equipe de TI não significa não ter responsabilidade. Uma distribuidora que usa um ERP em nuvem ainda precisa:",
+      {
+        type: "list",
+        items: [
+          "manter os cadastros de produtos, clientes e fornecedores atualizados e organizados;",
+          "definir quem acessa o quê, com perfis de usuário adequados;",
+          "validar com sua assessoria contábil o enquadramento fiscal dos itens;",
+          "ter alguém interno que conheça os processos e seja o ponto de contato com o fornecedor.",
+        ],
+      },
+      "Em outras palavras, a empresa deixa de cuidar da infraestrutura e passa a cuidar apenas do que é do próprio negócio. Essa pessoa de contato pode ser alguém da operação ou da administração, e não precisa ser um profissional de tecnologia.",
+      { type: "heading", text: "Perguntas para avaliar um ERP em nuvem" },
+      "Antes de escolher, vale perguntar ao fornecedor:",
+      {
+        type: "list",
+        items: [
+          "O sistema atende o fluxo completo da distribuição, do pedido à entrega, ou só uma parte?",
+          "Quem cuida das cópias de segurança e das atualizações fiscais?",
+          "Como os representantes acessam o sistema na rua?",
+          "Qual é a disponibilidade acompanhada e o que acontece em caso de falha?",
+          "Que tipo de suporte a empresa recebe no dia a dia e na implantação?",
+        ],
+      },
+      { type: "heading", text: "Como o Webgex responde a isso" },
+      "O Webgex reúne pedido, política comercial, estoque, fiscal, financeiro e entrega no mesmo ambiente, em nuvem, para que a distribuidora use um ERP completo sem montar uma estrutura de tecnologia para sustentá-lo. A equipe da empresa fica focada em vender, abastecer e entregar, e o fornecedor cuida do que roda por trás.",
+      "**Sua distribuidora está adiando um ERP completo por causa do que isso exigiria de estrutura?** Fale com a equipe Webgex e veja como usar o sistema em nuvem sem montar uma equipe de TI.",
+    ],
+  },
+  {
     slug: "para-atender-clientes-maiores-a-empresa-precisa-antes-organizar-o-proprio-cadastro",
     coverImage:
       "/blog/para-atender-clientes-maiores-a-empresa-precisa-antes-organizar-o-proprio-cadastro.png",
