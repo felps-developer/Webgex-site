@@ -33,6 +33,62 @@ export const categories = ["Todos", "Gestão", "Tecnologia", "Fiscal", "Notícia
 
 export const posts: BlogPost[] = [
   {
+    slug: "dois-fornecedores-com-o-mesmo-preco-podem-ter-custos-diferentes-na-reforma-tributaria",
+    coverImage:
+      "/blog/dois-fornecedores-com-o-mesmo-preco-podem-ter-custos-diferentes-na-reforma-tributaria.png",
+    title: "Dois fornecedores com o mesmo preço podem ter custos diferentes na reforma tributária",
+    excerpt:
+      "Dois fornecedores podem cobrar o mesmo preço e gerar créditos diferentes de IBS e CBS. Entenda como o regime do fornecedor, a classificação do item e a qualidade do documento mudam o custo real da compra.",
+    category: "Fiscal",
+    date: "2026-11-23",
+    readingTime: "7 min",
+    author: "Equipe Webgex",
+    content: [
+      "Todo comprador conhece a cena: duas propostas na mesa, o mesmo valor total na nota e a pergunta de sempre, \"qual dos dois entrega melhor?\". Até hoje, quando o preço empatava, a decisão ia para prazo, frete e relacionamento. Com a Reforma Tributária do Consumo, existe um critério a mais, e ele não aparece no valor da nota: o crédito que cada compra gera para a empresa.",
+      "Duas notas de mesmo valor podem representar custos reais diferentes. Entender por quê é o que separa quem apenas compra de quem compra bem durante a transição.",
+      { type: "heading", text: "O que a lei muda na lógica da compra" },
+      "Pela Lei Complementar 214/2025, o IBS e a CBS seguem a não cumulatividade: o tributo pago nas compras vira crédito para abater o que a empresa deve nas vendas. Os dois tributos são apropriados separadamente, e o direito ao crédito depende de a operação estar comprovada por um documento fiscal eletrônico idôneo.",
+      "Isso desloca o centro da conta. O custo de uma compra deixa de ser só o valor da nota e passa a ser o valor da nota menos o crédito que ela efetivamente gera. E quem determina esse crédito, em boa parte, é o documento emitido pelo fornecedor.",
+      { type: "heading", text: "Três fatores que fazem o custo variar" },
+      { type: "heading", text: "1. O regime tributário do fornecedor" },
+      "Quando o fornecedor está no regime regular, ele destaca o IBS e a CBS no documento fiscal, e o comprador também no regime regular se credita desses valores. Quando o fornecedor é optante do Simples Nacional e mantém o recolhimento dentro do DAS, o crédito que passa ao comprador é limitado à parcela de IBS e de CBS devida dentro do Simples, e costuma ser menor. O optante do Simples também pode escolher apurar o IBS e a CBS pelo regime regular, caso em que o crédito transferido aos clientes é integral.",
+      "Na prática, dois fornecedores com o mesmo preço, um no regime regular e outro no Simples, podem entregar créditos bem diferentes. E o comprador que também é optante do Simples não se credita, e para ele a comparação continua sendo pelo preço.",
+      { type: "heading", text: "2. A classificação tributária do item" },
+      "Cada item da nota tem a sua classificação tributária (o cClassTrib, que se liga a artigos específicos da LC 214/2025). A tabela já tem mais de 150 códigos, e uma nota com 50 itens diferentes pode ter 50 blocos de classificação distintos. Uma classificação diferente pode significar um tratamento diferente, e isso muda o tributo destacado e, com ele, o crédito.",
+      { type: "heading", text: "3. A qualidade do documento" },
+      "Um documento com informações incompletas ou divergentes do que a empresa compradora tem cadastrado gera retrabalho e incerteza sobre o crédito. Por isso, a qualidade do documento fiscal do fornecedor passa a fazer parte do custo, e não só da burocracia.",
+      { type: "heading", text: "Um exemplo ilustrativo" },
+      "Os números abaixo são hipotéticos, usados só para mostrar a lógica, e não correspondem às alíquotas reais.",
+      {
+        type: "list",
+        items: [
+          "**Valor da nota:** R$ 10.000 nos dois fornecedores.",
+          "**Fornecedor A (regime regular):** R$ 1.000 de tributo destacado e R$ 1.000 de crédito para o comprador.",
+          "**Fornecedor B (Simples, no DAS):** parcela menor de tributo, dentro do Simples, gerando R$ 150 de crédito.",
+          "**Custo líquido:** R$ 9.000 no fornecedor A e R$ 9.850 no fornecedor B.",
+        ],
+      },
+      "O preço é o mesmo, mas o custo líquido de uma compra é R$ 850 menor. Em um volume grande, essa diferença muda a margem, o preço de venda e a escolha do fornecedor.",
+      { type: "heading", text: "Como comparar fornecedores daqui para a frente" },
+      {
+        type: "list",
+        items: [
+          "**1. Peça o regime e a forma de apuração do fornecedor.** Saber se ele está no regime regular ou no Simples, e como pretende apurar o IBS e a CBS, é parte da proposta.",
+          "**2. Compare pelo custo líquido**, e não só pelo valor da nota.",
+          "**3. Confira a classificação dos itens** de maior volume e valor, com o apoio da assessoria contábil e tributária.",
+          "**4. Verifique o documento na entrada**, comparando o que veio na nota com o pedido e com o cadastro do produto.",
+          "**5. Considere o prazo de apropriação do crédito**, que também afeta o caixa.",
+          "**6. Registre a decisão**, para que a escolha do fornecedor possa ser explicada depois.",
+        ],
+      },
+      { type: "heading", text: "Onde o ERP entra nessa conta" },
+      "Comparar fornecedores pelo custo líquido exige que o pedido, a nota de entrada, o cadastro do produto, o estoque e o financeiro conversem na mesma base. Quando cada informação fica em um lugar, alguém precisa montar a conta à mão, e o risco de errar cresce justamente no período em que as regras mudam.",
+      "No Webgex, pedido de compra, nota de entrada, cadastro de produtos, estoque e financeiro operam sobre a mesma base de dados, e o sistema é atualizado conforme cada etapa da Reforma Tributária entra em vigor. Isso permite à empresa olhar o pedido e o imposto no mesmo lugar, e decidir com o custo real à vista. A validação do enquadramento tributário continua sendo da empresa, com o apoio de seus profissionais contábeis e fiscais.",
+      "**Sua empresa sabe dizer, hoje, qual dos seus fornecedores é realmente o mais barato?** Fale com a equipe Webgex e veja como acompanhar o custo real das compras durante a Reforma Tributária.",
+      "Este conteúdo tem caráter informativo e não substitui a orientação de um contador ou advogado tributarista. O exemplo é ilustrativo, com números hipotéticos. A regulamentação da Reforma Tributária segue em evolução; consulte sempre as fontes oficiais e a sua assessoria para a situação específica da sua empresa.",
+    ],
+  },
+  {
     slug: "uma-distribuidora-pode-ter-um-erp-completo-sem-montar-uma-equipe-de-ti",
     coverImage:
       "/blog/uma-distribuidora-pode-ter-um-erp-completo-sem-montar-uma-equipe-de-ti.png",
